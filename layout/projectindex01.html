@@ -875,7 +875,7 @@
             }
 
             #section06 .diagram {
-                background: url(../img/diagram.svg) no-repeat;
+                background: url(img/diagram.svg) no-repeat;
                 background-size: contain;
                 margin-top: 30px;
                 width: 100%;
@@ -919,7 +919,7 @@
             }
 
             .flowChart {
-                background: url(../img/flowChart.svg) no-repeat;
+                background: url(img/flowChart.svg) no-repeat;
                 background-size: contain;
                 width: 100%;
                 height: 100%;
@@ -1045,9 +1045,15 @@
             }
         }
 
-        #video {
-            margin: 0 auto;
+        /* section__video */
+        #section__video {
+            margin-bottom: 300px;
         }
+        #section__video .container {
+            display: flex;
+            justify-content: center;
+        }
+        /* //section__video */
 
         /* section09 */
         #section09 {
@@ -1428,9 +1434,13 @@
     </section>
     <!--//section08-->
 
-    <section id="video">
-        <iframe width="1000" height="800" src="https://www.youtube.com/embed/TFjP-4BEtOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- section__video -->
+    <section id="section__video">
+        <div class="container">
+            <iframe width="1000" height="800" src="https://www.youtube.com/embed/TFjP-4BEtOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </section>
+    <!-- //section__video -->
 
     <!-- section09 송준섭 -->
     <section id="section09">
