@@ -59,28 +59,30 @@
         #parallax__nav {
             position: fixed;
             right: 20px;
-            top: 20px;
+            top: -200px;
             z-index: 1000;
             background-color: rgba(0,0,0,0.4);
             padding: 15px 20px;
             border-radius: 50px;
+            transition: top 0.2s ease-in-out;
         }
         #parallax__nav li {
             list-style: none;
             display: inline;
         }
+        #parallax__nav.show {
+            top: 20px;
+        }
         #parallax__nav li a {
             display: inline-block;
-            width: 30px;
-            height: 30px;
-            padding: 5px;
+            padding: 5px 20px;
             text-align: center;
             line-height: 30px;
         }
         #parallax__nav li.active a {
             background: #fff;
             color: #000;
-            border-radius: 50%;
+            border-radius: 30px;
         }
         #parallax__cont {
             max-width: 1600px;
@@ -208,53 +210,17 @@
             list-style: none;
             line-height: 1.6;
         }
-        #parallax__dot {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            background: rgba(0,0,0,0.4);
-            padding: 20px 10px;
-            border-radius: 30px;
-        }
-        #parallax__dot li {
-            position: relative;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            list-style: none;
-            margin: 12px 8px;
-            box-shadow: 0 0 0 2px rgba(255,255,255,0);
-            transition: box-shadow .2s ease;
-        }
-        #parallax__dot li a {
-            background: #fff;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-radius: 50%;
-            transition: all 0.2s ease;
-        }
-        #parallax__dot li.active {
-            box-shadow: 0 0 0 2px rgba(255,255,255,1);
-        }
-        #parallax__dot li.active a {
-            transform: scale(0.4);
-        }
     </style>
 </head>
 <body>
     <!-- header -->
     <header id="parallax__title">
-        <h1><a href="parallaxEffect.html">JavaScript Parallax Effect02</a></h1>
-        <p>패럴랙스 스크롤링 효과 - 사이드 메뉴 이동</p>
+        <h1><a href="parallaxEffect.html">JavaScript Parallax Effect03</a></h1>
+        <p>패럴랙스 스크롤링 효과 - 숨김 메뉴</p>
         <ul>
             <li><a href="parallaxEffect01.html">1</a></li>
-            <li class="active"><a href="parallaxEffect02.html">2</a></li>
-            <li><a href="parallaxEffect03.html">3</a></li>
+            <li><a href="parallaxEffect02.html">2</a></li>
+            <li class="active"><a href="parallaxEffect03.html">3</a></li>
             <li><a href="parallaxEffect04.html">4</a></li>
             <li><a href="parallaxEffect05.html">5</a></li>
             <li><a href="parallaxEffect06.html">6</a></li>
@@ -264,17 +230,17 @@
     <!-- //header -->
 
 <!-- parallax__dot -->
-    <nav id="parallax__dot">
+    <nav id="parallax__nav">
         <ul>
-            <li class="active"><a href="#section1"><span>s1</span></a></li>
-            <li><a href="#section2"><span>s2</span></a></li>
-            <li><a href="#section3"><span>s3</span></a></li>
-            <li><a href="#section4"><span>s4</span></a></li>
-            <li><a href="#section5"><span>s5</span></a></li>
-            <li><a href="#section6"><span>s6</span></a></li>
-            <li><a href="#section7"><span>s7</span></a></li>
-            <li><a href="#section8"><span>s8</span></a></li>
-            <li><a href="#section9"><span>s9</span></a></li>
+            <li class="active"><a href="#section1"><span>메뉴1</span></a></li>
+            <li><a href="#section2"><span>메뉴2</span></a></li>
+            <li><a href="#section3"><span>메뉴3</span></a></li>
+            <li><a href="#section4"><span>메뉴4</span></a></li>
+            <li><a href="#section5"><span>메뉴5</span></a></li>
+            <li><a href="#section6"><span>메뉴6</span></a></li>
+            <li><a href="#section7"><span>메뉴7</span></a></li>
+            <li><a href="#section8"><span>메뉴8</span></a></li>
+            <li><a href="#section9"><span>메뉴9</span></a></li>
         </ul>
     </nav>
     <!-- //parallax__dot -->
@@ -383,69 +349,67 @@
 
     <!-- script -->
     <script>
-        document.querySelectorAll("#parallax__dot a").forEach(el => {
-            el.addEventListener("click", e => {
-                e.preventDefault();
-
-                // window.scroll(0, 1000);
-                // window.scroll({left: 0, top: 1000});
-                // window.scroll({left: 0, top: 1000, behavior: "smooth"});
-                
-                // window.scrollTo(0, 1000);
-                // window.scrollTo({left: 0, top: 1000});
-                // window.scrollTo({left: 0, top: 1000, behavior: "smooth"});
-
-                // window.scrollBy(0, 1000);
-                // window.scrollBy({left: 0, top: 1000});
-                // window.scrollBy({left: 0, top: 1000, behavior: "smooth"});
-
-                document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
-            })
-        })
-
         window.addEventListener("scroll", () => {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
-            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
-
-            // for(let i=1; i<=9; i++){
-            //     if(scrollTop >= document.getElementById("section" + i).offsetTop -2){
-            //         document.querySelectorAll("#parallax__dot li").forEach(li => {
-            //             li.classList.remove("active");
-            //         })
-            //         document.querySelector("#parallax__dot li:nth-child("+i+")").classList.add("active")
-            //     }
+            // //스크롤 값이 0보다 크면 show 클래스를 추가 #parallax__nav
+            // if(scrollTop > 0){
+            //     document.querySelector("#parallax__nav").classList.add("show")
+            // } else {
+            //     document.querySelector("#parallax__nav").classList.remove("show")
             // }
+
+            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
 
             document.querySelectorAll(".content__item").forEach((el, index) => {
                 if(scrollTop >= el.offsetTop -2){
-                    document.querySelectorAll("#parallax__dot ul li").forEach(li => {
+                    document.querySelectorAll("#parallax__nav ul li").forEach(li => {
                     li.classList.remove("active")
                     })
-                    document.querySelector("#parallax__dot ul li:nth-child("+(index+1)+")").classList.add("active")
+                    document.querySelector("#parallax__nav ul li:nth-child("+(index+1)+")").classList.add("active")
                 }
             })
+        })        
+
+        let nowScroll = true;       //내가 스크롤링을 하고있다는걸 감지
+        let lastScroll = 0;
+
+        function scrollProgress(){
+            nowScroll = true;
+
+            setInterval(() => {                 //시간차를 이용해서 이전위치와 현재 위치를 비교
+                if(nowScroll){
+                    nowScroll = false;
+                    hasScroll();
+                }
+            }, 300);
+
+            console.log(nowScroll)
+        }
+
+        function hasScroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+            if(scrollTop < lastScroll){
+                document.querySelector("#parallax__nav").classList.add("show")
+            } else {
+                document.querySelector("#parallax__nav").classList.remove("show")
+            }
+
+            lastScroll = scrollTop;
+
+            console.log("lastScroll : " + lastScroll)
+        }
+
+        window.addEventListener("scroll", scrollProgress)
+
+        document.querySelectorAll("#parallax__nav li a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior:"smooth"
+                })
+            })
         })
-
-
-        // //스크롤 값 구하기
-            // window.screenX          //ie에서 작동안됨 최신 브라우저만 사용가능
-            // window.pageXOffset    //모든 브라우저에서 사용 가능
-            // document.documentElement.scrollLeft
-
-            // window.screenY
-            // window.pageYOffset
-            // document.documentElement.scrollTop
-
-            // //스크롤 값으로 이동하기
-            // window.scroll()
-            // window.scrollTo()   //절대적 위치
-            // window.scrollBy()   //현재 있는 위치 기준 상대적 위치
-
-            // element.scroll()
-            // element.scrollTo()
-            // element.scrollBy()
-            // element.scrollIntoview()
     </script>
     <!-- //script -->
 </body>
