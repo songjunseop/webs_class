@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/cssimg.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/cssimg.png">
+    <link rel="icon" href="../assets/face/cssimg.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <div class="top"><a href="#header01">Top</a></div>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>송준섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2 id="header01"><a href="css.html">CSS <em>Block/Inline</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li class="active"><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float</a></li>
+                <li><a href="cssRefer07.html">벤더프리픽스</a></li>
+                <li><a href="cssRefer08.html">이미지 표현 방법</a></li>
+                <li><a href="cssRefer09.html">반응형 이미지 사용방법</a></li>
+                <li><a href="cssRefer10.html">IR 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>Block구조 와 Inline구조</h3>
+                <h4>블록 구조(block)</h4>
+                <p>
+                    블록 요소는 일단 기본적으로 줄 바꿈이 일어나는 형태로 영역의 너비가 상위 영역의 전체 너비만큼 만들어지는 형태입니다.<br>
+                    블록 요소에는 일부를 제외한 블록 요소를 포함하고, <strong>인라인 요소까지 포함 가능</strong>합니다.<br>
+                    <strong>block 요소</strong><br>
+                    div, p, h1~h6, ul, li, ol, table, form, section, footer, address, article, aside, blockgquote, canvas, dd, dl, hr, header, pre, video등<br>
+                </p>
+                <div class="line">
+                    <ul>
+                        <li>block은 height와 width값을 지정 할 수 있다.</li>
+                        <li>block은 margin과 padding을 지정 할 수 있다.</li>
+                    </ul>
+                </div>
+                <h4>인라인 구조(inline)</h4>
+                <p>
+                    인라인 구조는 주로 텍스트를 주입 할 때 사용 되는 형태입니다.<br>
+                    기본적으로 컨텐츠 영역만큼 자동으로 잡히게 되며 라인이 새로 추가 되지 않습니다.<br>
+                    높이 값은 폰트의 크기만큼 잡힙니다.(line-height로 설정이 가능)<br>
+                    인라인 구조는 블록구조를 감쌀수 없습니다.<br>
+                    그러나 예외적으로 <strong>&lt;a&gt;태그</strong>는 유일하게 블록구조를 감쌀수 있습니다.<br>
+                    <strong>inline 요소</strong><br>
+                    a, i, span, abbr, img, strong, b, input, sub, br, code, em, samll, tt, map, textarea, label, sup, q. button, cite등<br>
+                </p>
+                <div class="line">
+                    <ul>
+                        <li>width와 height를 명시 할 수 없다.</li>
+                        <li>margin은 위아래엔 적용 되지 않는다.</li>
+                        <li>padding은 좌우는 공간과 시각적인 부분이 모두 적용 되지만 위아래는 시각적으로는 추가되지만 공간을 차지 하지는 않는다.</li>
+                    </ul>
+                </div>
+                <h4>inline-block</h4>
+                <p>
+                    inline-block 은 말그대로 inline의 특징과 block의 특징을 모두 가진 요소입니다.
+                </p>
+                <strong>inline-block의 특징</strong>
+                <div class="line">
+                    <ul>
+                        <li>줄바꿈이 이루어지지 않는다.</li>
+                        <li>block처럼 width와 height를 지정 할 수 있다.</li>
+                        <li>만약 width와 height를 지정하지 않을 경우, inline과 같이 컨텐츠만큼만 영역이 잡힌다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- //refer -->
+    </main>
+    
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

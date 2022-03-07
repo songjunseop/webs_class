@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout05</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 100%;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #EFEBE9;
+        }
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #BCAAA4;
+        }
+        #contents {
+            width: 100%;
+            height: 780px;
+            background-color: #8D6E63;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #4E342E;
+        }
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            height: inherit;
+            background-color: rgba(0,0,0,0.3);
+        }
+        #contents .container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;            
+        }
+        #contents .container .aside {
+            width: 400px;
+            height: 780px;
+            background-color: #795548;
+        }
+        #contents .container .article1 {
+            width: 800px;
+            height: 390px;
+            background-color: #6D4C41;
+        }
+        #contents .container .article2 {
+            width: 800px;
+            height: 390px;
+            background-color: #5D4037;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container"></div>
+        </header>
+        <nav id="nav">
+            <div class="container"></div>
+        </nav>
+        <section id="contents">
+            <div class="container">
+                <aside class="aside"></aside>
+                <article class="article1"></article>
+                <article class="article2"></article>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="container"></div>
+        </footer>
+    </div>
+</body>
+</html>

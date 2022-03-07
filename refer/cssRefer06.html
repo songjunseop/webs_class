@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/cssimg.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/cssimg.png">
+    <link rel="icon" href="../assets/face/cssimg.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <div class="top"><a href="#header01">Top</a></div>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>송준섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2 id="header01"><a href="css.html">CSS <em>float</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li class="active"><a href="cssRefer06.html">float</a></li>
+                <li><a href="cssRefer07.html">벤더프리픽스</a></li>
+                <li><a href="cssRefer08.html">이미지 표현 방법</a></li>
+                <li><a href="cssRefer09.html">반응형 이미지 사용방법</a></li>
+                <li><a href="cssRefer10.html">IR 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>float</h3>
+                <h4>float란?</h4>
+                <p>float 속성은 블록요소의 정렬 상태를 설정합니다.</p>
+                <h4>문법</h4>
+                <p>float: none | left | right</p>
+                <h4>속성</h4>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>속성값</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>inherit</th>
+                                <td>부모 요소에서 상속</td>
+                            </tr>
+                            <tr>
+                                <th>none</th>
+                                <td>float의 성질을 적용하지 않습니다.</td>
+                            </tr>
+                            <tr>
+                                <th>left</th>
+                                <td>블록요소를 왼쪽으로 정렬합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>right</th>
+                                <td>블록요소를 오른쪽으로 정렬합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h4>예제</h4>
+                <div class="code">
+<pre><code>&lt;style&gt;
+    .float-container{
+        width: 320px;
+        border: 2px solid #09c;
+    }
+    .float-container img{
+        float: left;
+        margin: 5px;
+        padding: 5px;
+        border: 2px solid #90C;
+    }
+&lt;/style&gt;</code></pre>
+                </div>
+                <h4>float 속성 사용시 영역이 깨지는 버그</h4>
+                <p>float 시 해당 객체는 높이, 넓이 값을 잃어버립니다.<br>
+                그렇기때문에 <strong>.clearfix</strong>라는 클래스를 만들어 쓰는 것이 일반적입니다.</p>
+                <div class="code">
+<pre><code>clearfix 설정방법
+/*float_clear*/ 
+.clearfix {*zoom: 1} 
+
+.clearfix:before, .clearfix:after {display:table; content:""; line-height:0} 
+
+.clearfix:after {clear:both}</code></pre>
+
+                </div>
+            </div>
+        </div>
+        <!-- //refer -->
+    </main>
+    
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

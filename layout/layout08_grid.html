@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        .wrap {
+            margin: 0 auto;
+            width: 1200px;
+            background-color: #E1F5FE;
+            display: grid;
+            grid-template-areas: 
+            "header header"
+            "nav nav"
+            "aside main"
+            "aside section"
+            "aside article"
+            "footer footer";
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 100px 100px 260px 260px 260px 100px;
+        }
+        header {
+            grid-area: hedaer;
+            background-color: #B3E5FC;
+        }
+        nav {
+            grid-area: nav;
+            background-color: #81D4FA;
+        }
+        aside {
+            grid-area: aside;
+            background-color: #4FC3F7;
+        }
+        main {
+            grid-area: main;
+            background-color: #29B6F6;
+        }
+        section {
+            grid-area: section;
+            background-color: #03A9F4;
+        }
+        article {
+            grid-area: article;
+            background-color: #039BE5;
+        }
+        footer {
+            grid-area: footer;
+            background-color: #0288D1;
+        }
+        @media(max-width: 1220px){
+            .wrap {
+                width: 96%;
+                grid-template-areas: 
+                "header header header"
+                "nav nav nav"
+                "aside main main"
+                "aside section article"
+                "footer footer footer";
+                grid-template-columns: 30% 35% 35%;
+                grid-template-rows: 100px 100px 260px 520px 100px;
+            }
+        }
+        @media(max-width: 768px){
+            .wrap {
+                width: 100%;
+                grid-template-areas: 
+                "header header"
+                "nav nav"
+                "aside main"
+                "aside section"
+                "footer footer";
+                grid-template-columns: 40% 60%;
+                grid-template-rows: 100px 100px 390px 390px 100px;
+            }
+        }
+        @media(max-width: 600px){
+            .wrap {
+                width: 100%;
+                grid-template-areas: 
+                "header"
+                "nav"
+                "aside"
+                "main"
+                "section"
+                "footer";
+                grid-template-columns: 100%;
+                grid-template-rows: 100px 100px 200px 430px 150px 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header></header>
+        <nav></nav>
+        <aside></aside>
+        <main></main>
+        <section></section>
+        <article></article>
+        <footer></footer>
+    </div>
+</body>
+</html>

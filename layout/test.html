@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+
+    <style>
+        .wrap {
+            margin: 0 auto;
+            font-family: 'Poppins', sans-serif;
+        }
+        #header {
+            height: 100px;
+            padding-top: 50px;
+        }
+        #header .container {
+            display: flex;
+            width: 1440px;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;       
+        }
+        #header .logo {
+            position: relative ;
+        }
+        #header .icon1 {
+            width: 35px;
+            height: 35px;
+            background: url(../site/webClass/img/icon2.svg);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #header h1 {
+            display: inline-block;
+            font-size: 20px;
+            margin-left: 50px;
+        }
+        #header ul {
+            font-size: 17px;
+            font-weight: 500;
+        }
+        #header li{
+            display: inline-block;
+            padding: 0 20px 0px;
+        }
+        #header li a {
+            position: relative;
+        }
+        #header li a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background: #000;
+            transform: scaleX(0);
+            transition: all 0.3s ease;
+        }
+        #header li a:hover::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background: #000;
+            transform: scaleX(1);
+        }#header .container::before {
+            content: '';
+            width: 100%;
+            background: #eee;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 1px;
+        }
+        #header .logo {
+            position: relative ;
+        }
+        #header .icon1 {
+            width: 35px;
+            height: 35px;
+            background: url(../site/webClass/img/icon2.svg);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #header h1 {
+            display: inline-block;
+            font-size: 20px;
+            margin-left: 50px;
+        }
+        #header ul {
+            font-size: 17px;
+            font-weight: 500;
+        }
+        #header li{
+            display: inline-block;
+            padding: 0 20px 0px;
+        }
+        #header li a {
+            position: relative;
+        }
+        #header li a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background: #000;
+            transform: scaleX(0);
+            transition: all 0.3s ease;
+        }
+        #header li a:hover::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background: #000;
+            transform: scaleX(1);
+        }
+        
+        .icons {
+            display: flex;
+            width: 100px;
+            justify-content: space-between;
+        }
+        .icons .icon2 {
+            height: 19px;
+            width: 19px;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position: -50px 0;
+        }
+        .icons .icon3 {
+            width: 20px;
+            height: 19px;
+            background-color: #000;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position: 0 -50px;
+            margin: 0 15px;
+        }
+        .icons .icon4 {
+            width: 19px;
+            height: 19px;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position: -50px -50px;
+        }
+        
+        #main {
+            margin: 0 auto;
+            height: 750px;
+            background: url(../site/webClass/img/Image1.jpg) right no-repeat;
+        }
+        #main .contents {
+            width: 1440px;
+            margin: 0 auto;
+        }
+        #main h2 {
+            font-size: 80px;
+            font-weight: 500;
+            text-align: left;
+            line-height: 1;
+            letter-spacing: -1.6px;
+            margin-bottom: 70px; 
+            margin-top: 138px;           
+        }
+        .contents p {
+            margin-bottom: 60px;
+        }
+        .contents .btn {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .contents .btn .btn1 {
+            background-color: #c4a586;
+            padding: 21px 45px 21px 36px;
+            margin-right: 13px;
+        }
+        .contents .btn .btn2 {
+            border: 1px solid #c4a586;
+            padding: 21px 53px 21px 55px;
+            margin-left: 13px;
+        }
+        #article1 {
+            height: 250px;
+        }
+        #article1 p {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 70px;
+        }
+        #article1 .icons2 {
+            margin: 0 auto;
+            display: flex;
+            width: 1109px;
+            justify-content: space-between;
+        }
+        .icons2 .icon6 {
+            width: 97px;
+            height: 47px;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position: -100px 0;
+        }
+        .icons2 .icon7 {
+            width: 109px;
+            height: 38px;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position: -191px 0;
+            margin-top: 3px;
+        }
+        .icons2 .icon8 {
+            width: 147px;
+            height: 50px;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position: -100px -50px;
+            margin-top: 7px;
+        }
+        .icons2 .icon9 {
+            width: 110px;
+            height: 32px;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position: 0px -100px;
+        }
+        .icons2 .icon10 {
+            width: 67px;
+            height: 28px;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position: 0px -150px;
+            margin-top: 3px;
+        }
+        .icons2 .icon11 {
+            width: 122px;
+            height: 24px;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position: 0px -200px;
+            margin-top: 10px;
+        }
+        #article2 {
+            height: 400px;
+            display: flex;
+        }
+        #article2 .left {
+            width: 50%;
+            background: url(../site/webClass/img/Image2.jpg) right no-repeat;
+            background-color: #fcefe9;
+            position: relative;
+        }
+        #article2 .left_con {
+            position: absolute;
+            right: 430px;
+            top: 100px;
+            font-weight: 700;
+        }
+        #article2 .left h3 {
+            font-size: 34px;
+            margin-bottom: 90px;
+        }
+        #article2 .right {
+            width: 50%;
+            background: url(../site/webClass/img/image3.jpg) left no-repeat;
+            background-color: #fae2c8;
+            position: relative;
+        }
+        #article2 .right_con {
+            position: absolute;
+            left: 70px;
+            top: 100px;
+            font-weight: 700;
+        }
+        #article2 .right h3 {
+            font-size: 34px;
+            margin-bottom: 90px;
+        }
+        #article3 .nav {
+            margin: 0 auto;
+            width: 1085px;
+            display: inline-block;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 173px;
+            margin-bottom: 110px;
+        }
+        #article3 .nav h2 {
+            font-size: 50px;
+        }
+        #article3 .nav ul {
+            display: flex;
+            width: 600px;
+            justify-content: space-evenly;
+            margin-left: -130px;
+        }
+        #article3 .nav li a {
+            font-size: 24px;
+            color: #a9a7a6;
+        }
+        .nav .all {
+            width: 120px;
+        }
+        .nav .all p {
+            font-size: 16px;
+        }
+        .nav .all a {
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav .all a span {
+            width: 42px;
+            height: 19px;
+            background: url(../site/webClass/img/Arrow.png);
+            display: inline-block;
+        }
+        #article3 .category {
+            width: 450px;
+            margin: 0 auto;
+            margin-bottom: 130px;
+        }
+        #article3 .category ul {
+            display: flex;
+            justify-content: space-between;
+        }
+        #article3 .category a {
+            color: #a9a7a6;
+        }
+        #article3 .category a:hover {
+            color: #000;
+        }
+        #article3 .imgBox1 {
+            width: 1200px;
+            display: flex;
+            margin: 0 auto;
+            margin-bottom: 35px;
+        }
+        #article3 .imgBox1 .imgB1 {
+            width: 450px;
+            height: 460px;
+            background: url(../site/webClass/img/imgB1.jpg) no-repeat;
+            position: relative;
+            margin-left: -5px;
+        }
+        .imgB1 h4 {
+            position: absolute;
+            left: 23%;
+            top: 33px;
+            font-size: 26px;
+        }
+        .imgB1 .dallor1 {
+            font-weight: bold;
+            position: absolute;
+            left: 23%;
+            top: 18%;
+            font-size: 19px;
+        }
+        .imgB1 .dallor2 {
+            font-weight: bold;
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            font-size: 15px;
+            color: #a9a7a6;
+            position: relative;
+            display: inline-block;
+        }
+        .imgB1 .dallor2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 100%;
+            height: 1px;
+            background-color: #a9a7a6;
+        }
+        .imgB1 .btnC {
+            display: inline-block;
+            padding: 14px 48px 12px 18px;
+            background: #d9ab82;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 14px;
+            position: absolute;
+            left: 35%;
+            top: -23px;
+        }
+        .imgB1 a span {
+            width: 26px;
+            height: 26px;
+            background: url(../site/webClass/img/basket.png);
+            display: inline-block;
+            position: absolute;
+            right: 29%;
+            top: -12px;
+            z-index: 10;
+        }
+        #article3 .imgBox1 .imgB2 {
+            width: 450px;
+            height: 460px;
+            background: url(../site/webClass/img/imgb2.jpg) no-repeat;
+            position: relative;
+            margin-left: 35px;
+        }        
+        .imgB2 h4 {
+            position: absolute;
+            left: 20%;
+            top: 33px;
+            font-size: 26px;
+        }
+        .imgB2 .dallor1 {
+            font-weight: bold;
+            position: absolute;
+            left: 20%;
+            top: 18%;
+            font-size: 19px;
+        }
+        .imgB2 .dallor2 {
+            font-weight: bold;
+            position: absolute;
+            left: 47%;
+            top: 20%;
+            font-size: 15px;
+            color: #a9a7a6;
+            position: relative;
+            display: inline-block;
+        }        
+        .imgB2 .dallor2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 100%;
+            height: 1px;
+            background-color: #a9a7a6;
+        }
+        .imgB2 .btnC {
+            display: inline-block;
+            padding: 14px 48px 12px 18px;
+            background: #d9ab82;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 14px;
+            position: absolute;
+            left: 31%;
+            top: -23px;
+        }
+        .imgB2 a span {
+            width: 26px;
+            height: 26px;
+            background: url(../site/webClass/img/basket.png);
+            display: inline-block;
+            position: absolute;
+            right: 33%;
+            top: -12px;
+            z-index: 10;
+        }
+        #article3 .imgBox1 .imgB3 {
+            width: 450px;
+            height: 460px;
+            background: url(../site/webClass/img/imgB3.jpg) no-repeat;
+            position: relative;
+            margin-left: 1px;
+        }
+        .imgB3 h4 {
+            position: absolute;
+            left: 23%;
+            top: 33px;
+            font-size: 26px;
+        }
+        .imgB3 .dallor1 {
+            font-weight: bold;
+            position: absolute;
+            left: 23%;
+            top: 18%;
+            font-size: 19px;
+        }
+        .imgB3 .dallor2 {
+            font-weight: bold;
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            font-size: 15px;
+            color: #a9a7a6;
+            position: relative;
+            display: inline-block;
+        }
+        .imgB3 .dallor2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 100%;
+            height: 1px;
+            background-color: #a9a7a6;
+        }
+        .imgB3 .btnC {
+            display: inline-block;
+            padding: 14px 48px 12px 18px;
+            background: #d9ab82;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 14px;
+            position: absolute;
+            left: 35%;
+            top: -23px;
+        }
+        .imgB3 a span {
+            width: 26px;
+            height: 26px;
+            background: url(../site/webClass/img/basket.png);
+            display: inline-block;
+            position: absolute;
+            right: 29%;
+            top: -12px;
+            z-index: 10;
+        }
+        #article3 .imgBox2 {
+            width: 1200px;
+            display: flex;
+            margin: 0 auto;
+            margin-bottom: 35px;
+            justify-content: space-evenly;
+        }
+        #article3 .imgBox2 .imgB4 {
+            width: 450px;
+            height: 460px;
+            background: url(../site/webClass/img/imgB4.jpg) no-repeat;
+            position: relative;
+            margin-left: 55px;
+        }
+        .imgB4 h4 {
+            position: absolute;
+            left: 10%;
+            top: 33px;
+            font-size: 26px;
+        }
+        .imgB4 .dallor1 {
+            font-weight: bold;
+            position: absolute;
+            left: 10%;
+            top: 18%;
+            font-size: 19px;
+        }
+        .imgB4 .dallor2 {
+            font-weight: bold;
+            position: absolute;
+            left: 38%;
+            top: 20%;
+            font-size: 15px;
+            color: #a9a7a6;
+            position: relative;
+            display: inline-block;
+        }
+        .imgB4 .dallor2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 100%;
+            height: 1px;
+            background-color: #a9a7a6;
+        }
+        .imgB4 .btnC {
+            display: inline-block;
+            padding: 14px 48px 12px 18px;
+            background: #d9ab82;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 14px;
+            position: absolute;
+            left: 24%;
+            top: -23px;
+        }
+        .imgB4 a span {
+            width: 26px;
+            height: 26px;
+            background: url(../site/webClass/img/basket.png);
+            display: inline-block;
+            position: absolute;
+            right: 34.5%;
+            top: -13px;
+            z-index: 10;
+        }
+        #article3 .imgBox2 .imgB5 {
+            width: 450px;
+            height: 460px;
+            background: url(../site/webClass/img/imgB5.jpg) no-repeat;
+            position: relative;
+            margin-left: 65px;
+        }
+        .imgB5 h4 {
+            position: absolute;
+            left: 12%;
+            top: 33px;
+            font-size: 26px;
+        }
+        .imgB5 .dallor1 {
+            font-weight: bold;
+            position: absolute;
+            left: 12%;
+            top: 18%;
+            font-size: 19px;
+        }
+        .imgB5 .dallor2 {
+            font-weight: bold;
+            position: absolute;
+            left: 41%;
+            top: 20%;
+            font-size: 15px;
+            color: #a9a7a6;
+            position: relative;
+            display: inline-block;
+        }
+        .imgB5 .dallor2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 100%;
+            height: 1px;
+            background-color: #a9a7a6;
+        }
+        .imgB5 .btnC {
+            display: inline-block;
+            padding: 14px 48px 12px 18px;
+            background: #d9ab82;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 14px;
+            position: absolute;
+            left: 24%;
+            top: -23px;
+        }
+        .imgB5 a span {
+            width: 26px;
+            height: 26px;
+            background: url(../site/webClass/img/basket.png);
+            display: inline-block;
+            position: absolute;
+            right: 34.5%;
+            top: -12px;
+            z-index: 10;
+        }
+        #article3 .imgBox2 .imgB6 {
+            width: 450px;
+            height: 460px;
+            background: url(../site/webClass/img/imgB6.jpg) no-repeat;
+            position: relative;
+            margin-left: 70px;
+        }
+        .imgB6 h4 {
+            position: absolute;
+            left: 11%;
+            top: 33px;
+            font-size: 26px;
+        }
+        .imgB6 .dallor1 {
+            font-weight: bold;
+            position: absolute;
+            left: 11%;
+            top: 18%;
+            font-size: 19px;
+        }
+        .imgB6 .dallor2 {
+            font-weight: bold;
+            position: absolute;
+            left: 41%;
+            top: 20%;
+            font-size: 15px;
+            color: #a9a7a6;
+            position: relative;
+            display: inline-block;
+        }
+        .imgB6 .dallor2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 100%;
+            height: 1px;
+            background-color: #a9a7a6;
+        }
+        .imgB6 .btnC {
+            display: inline-block;
+            padding: 14px 48px 12px 18px;
+            background: #d9ab82;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 14px;
+            position: absolute;
+            left: 24%;
+            top: -23px;
+        }
+        .imgB6 a span {
+            width: 26px;
+            height: 26px;
+            background: url(../site/webClass/img/basket.png);
+            display: inline-block;
+            position: absolute;
+            right: 34.5%;
+            top: -12px;
+            z-index: 10;
+        }
+        .imgBox3 {
+            padding-top: 150px;
+            margin: 0 auto;
+            width: 1100px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 200px;
+        }
+        .imgP {
+            background: url(../site/webClass/img/image4.jpg);
+            width: 470px;
+            height: 588px;
+        }
+        .imgPd {
+            position: relative;
+        }
+        .imgPd h4 {
+            font-weight: 700;
+            font-size: 50px;
+            margin-bottom: 50px;
+            margin-top: 50px;
+            line-height: 1;
+        }
+        .imgPd p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 28px;
+        }
+        .imgPd p.fist {
+            margin-bottom: 100px;
+        }
+        .imgPd p.second {
+            margin-left: 100px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .imgPd p.third {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #a9a7a6;
+            margin: 15px 20px 0 100px;
+        }
+        .imgPd .star {
+            position: absolute;
+            background: url(../site/webClass/img/Star.svg);
+            right: 190px;
+            bottom: 87px;
+            width: 67px;
+            height: 10px;
+        }
+        .imgPd .imgPd__ArrowL {
+            position: absolute;
+            bottom: 0px;
+            left: 100px;
+            width: 32px;
+            height: 32px;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position:  0px -250px;
+        }
+        .imgPd .imgPd__ArrowR {
+            position: absolute;
+            bottom: 0px;
+            left: 150px;
+            width: 32px;
+            height: 32px;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position:  -50px -250px;
+        }
+        #footer {
+            margin: 0 auto;
+            background-color: #fff;
+            width: 1200px;
+        }
+        #footer button {
+            background: #fffdfb;
+            border: 1px solid #fe8432;
+            color: #fe8432;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 35px;
+            border-radius: 18px;
+            margin-bottom: 30px;
+        }
+        .footer__box {
+            position: relative;
+        }
+        .footer__desc {
+            height: 300px;
+        }
+        .footer__desc h4 {
+            font-size: 50px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 70px;
+        }
+        .footer__desc p {
+            text-decoration: underline;
+            position: absolute;
+            right: 450px;
+        }
+        .footer__desc .footer__img2 {
+            background: url(../site/webClass/img/icon2.svg);
+            width: 71px;
+            height: 59px;
+            background-position: -150px -200px;
+            position: absolute;
+            right: 600px;
+            top: 162px;
+        }
+        .footer__img {
+            background: url(../site/webClass/img/image5.jpg);
+            width: 444px;
+            height: 380px;
+            position: absolute;
+            right: -130px;
+            top: -70px;
+        }
+        #footer .container {
+            display: flex;
+            width: 1230px;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto; 
+            height: 100px;
+        }
+        #footer .logo {
+            position: relative ;
+        }
+        #footer .icon1 {
+            width: 35px;
+            height: 35px;
+            background: url(../site/webClass/img/icon2.svg);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #footer h1 {
+            display: inline-block;
+            font-size: 20px;
+            margin-left: 50px;
+        }
+        #footer ul {
+            font-size: 17px;
+            font-weight: 500;
+        }
+        #footer li{
+            display: inline-block;
+            padding: 0 20px 0px;
+        }
+        #footer li a {
+            position: relative;
+        }
+        #footer li a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background: #000;
+            transform: scaleX(0);
+            transition: all 0.3s ease;
+        }
+        #footer li a:hover::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background: #000;
+            transform: scaleX(1);
+        }
+        #footer .icons {
+            display: flex;
+            width: 120px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .icons .icon8 {
+            height: 13px;
+            width: 12px;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position: -150px -100px;
+        }
+        .icons .icon9 {
+            width: 20px;
+            height: 12px;
+            background-color: #000;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position: -200px -100px;
+            margin: 0 15px;
+        }
+        .icons .icon10 {
+            width: 19px;
+            height: 9px;
+            background: url(../site/webClass/img/icon2.svg);
+            background-position: -250px -100px;
+        }
+        .Copy {
+            width: 1230px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 300;
+            color: adadad;
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../site/webClass/css/reset.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrap">
+        <header id="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><span class="icon1 ir_so">로고</span></a>
+                    <h1><a href="index.html">MISTRIUM</a></h1>   
+                </div>
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">products</a></li>
+                    <li><a href="#">faqs</a></li>
+                    <li><a href="#">contact us</a></li>
+                </ul>
+                <div class="icons">
+                    <span class="icon2"></span>
+                    <span class="icon3"></span>
+                    <span class="icon4"></span>
+                </div>
+            </div>
+        </header>
+        <main id="main">
+            <div class="contents">
+                <h2>Modern Furniture For<br>
+                    Modern Living Style
+                </h2>
+                <p>In unfeeling existence objection immediate repulsive<br>
+                    on he in. Imprudence comparison uncommonly me<br>
+                    he difficulty diminution resolution. Likewise proposal<br>
+                    differed scarcely dwelling as on raillery.<br>
+                    <br>
+                    September few dependent extremity own continued<br>
+                    and ten prevailed attending. Early to weeks we could.<br>
+                    Do commanded an shameless we disposing do.<br>
+                    Indulgence ten remarkably nor are impression out.<br>
+                    Power is lived means oh every in we quiet.
+                </p>
+                <div class="btn">
+                    <a href="#" class="btn1">Request a Quote</a>
+                    <a href="#" class="btn2">Watch Video</a>
+                </div>   
+            </div> 
+        </main>
+        <article id="article1">
+            <p>SOME OF OUR TRUSTED CLIENTS</p>
+            <div class="icons2">
+                <span class="icon6"></span>
+                <span class="icon7"></span>
+                <span class="icon8"></span>
+                <span class="icon9"></span>
+                <span class="icon10"></span>
+                <span class="icon11"></span>
+            </div>
+        </article>
+        <article id="article2">
+            <div class="left">
+                <div class="left_con">
+                    <h3>
+                        Residential<br>
+                        Furniture
+                    </h3>
+                    <p>Browse Collection</p>
+                </div>
+            </div>
+            <div class="right">
+                <div class="right_con">
+                    <h3>
+                        Hospitality<br>
+                        Furniture
+                    </h3>
+                    <p>Browse Collection</p>
+                </div>
+            </div>
+        </article>
+        <article id="article3">
+            <div class="nav">
+                <h2>PORDUCTS</h2>
+                <ul>
+                    <li><a href="#">Best Selling</a></li>
+                    <li><a href="#">Most Popular</a></li>
+                </ul>
+                <div class="all">
+                    <a href="#">
+                        <p>See All</p>
+                        <span class="arrow"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="category">
+                <ul>
+                    <li><a href="#">All</a></li>
+                    <li><a href="#">Bed</a></li>
+                    <li><a href="#">Sofa</a></li>
+                    <li><a href="#">Chair</a></li>
+                    <li><a href="#">Light</a></li>
+                </ul>
+            </div>
+            <div class="imgBox1">
+                <div class="imgB1">
+                    <a href="#"><div class="btnC">Add To Cart</div><span></span></a>
+                    <h4>Ramen Stool</h4>
+                    <p class="dallor1">$65.00</p>
+                    <p class="dallor2">$95.00</p>
+                </div>
+                <div class="imgB2">
+                    <a href="#"><div class="btnC">Add To Cart</div><span></span></a>
+                    <h4>Flexform</h4>
+                    <p class="dallor1">$35.00</p>
+                    <p class="dallor2">$55.00</p>
+                </div>
+                <div class="imgB3">
+                    <a href="#"><div class="btnC">Add To Cart</div><span></span></a>
+                    <h4>Porada</h4>
+                    <p class="dallor1">$87.00</p>
+                    <p class="dallor2">$97.00</p>
+                </div>
+            </div>
+            <div class="imgBox2">                
+                <div class="imgB4">
+                    <a href="#"><div class="btnC">Add To Cart</div><span></span></a>
+                    <h4>Taknion</h4>
+                    <p class="dallor1">$45.00</p>
+                    <p class="dallor2">$55.00</p>
+                </div>
+                <div class="imgB5">
+                    <a href="#"><div class="btnC">Add To Cart</div><span></span></a>
+                    <h4>Amora</h4>
+                    <p class="dallor1">$65.00</p>
+                    <p class="dallor2">$95.00</p>
+                </div>
+                <div class="imgB6">
+                    <a href="#"><div class="btnC">Add To Cart</div><span></span></a>
+                    <h4>Liquid Contract</h4>
+                    <p class="dallor1">$35.00</p>
+                    <p class="dallor2">$45.00</p>
+                </div>
+            </div>
+            <div class="imgBox3">
+                <div class="imgP"></div>
+                <div class="imgPd">
+                    <h4>Let's see what our<br>
+                    customer's say</h4>
+                    <p class="fist">Dwelling and speedily ignorant any steepest.<br>
+                    Admiration instrument affronting invitation reasonably<br>
+                    up to do of prosperous in. Shy saw declared age debating<br>
+                    ecstatic man. Call in so want pure rank am dear were.<br>
+                    Remarkably to continuing in surrounded diminution on.</p>
+                    <p class="second">Mike Taylor</p>
+                    <p class="third">20 January 2020</p>
+                    <span class="star"></span>
+                    <span class="imgPd__ArrowL"></span><span class="imgPd__ArrowR"></span>
+                </div>
+            </div>
+        </article>
+        <footer id="footer">
+            <button>Mistrium Interiror</button>
+            <div class="footer__box">
+                <div class="footer__desc">
+                    <h4>Signup to receive updates<br>
+                        about new products</h4>
+                    <span class="footer__img2"></span>
+                    <p>Watch intro video</p>
+                </div>
+                <div class="footer__img"></div>
+            </div>
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><span class="icon1 ir_so">로고</span></a>
+                    <h1><a href="index.html">MISTRIUM</a></h1>   
+                </div>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="icons">
+                    <span class="icon8"></span>
+                    <span class="icon9"></span>
+                    <span class="icon10"></span>
+                </div>
+            </div>
+            <div class="Copy">
+                Copyright &copy; 2022. https://github.com/songjunseop.com
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

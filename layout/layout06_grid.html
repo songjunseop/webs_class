@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        body {
+            background-color: #f5f5f5;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            display: grid;
+            grid-template-areas: 
+                "header header"
+                "nav nav"
+                "aside article"
+                "footer footer";
+                grid-template-columns: 30% 70%;
+                grid-template-rows: 100px 100px 780px 100px;
+        }
+        header {
+            background-color: #ffe0b2;
+            grid-area: header;
+        }
+        nav {
+            background-color: #ffcc80;
+            grid-area: nav;
+        }
+        aside {
+            background-color: #ffb74d;
+            grid-area: aside;
+        }
+        article {
+            background-color: #ffa726;
+            grid-area: article;
+        }
+        footer {
+            background-color: #ff9800;
+            grid-area: footer;
+        }
+        @media (max-width: 1220px){
+            #wrap { 
+                width: 96%;
+            }
+        }
+        @media (max-width: 768px){
+            #wrap { 
+                width: 100%;
+            }
+        }
+        @media (max-width: 600px){
+            #wrap { 
+                width: 100%;
+                grid-template-areas: 
+                "header"
+                "nav"
+                "aside"
+                "article"
+                "footer";
+                grid-template-columns: 100%;
+                grid-template-rows: 100px 100px 300px 480px 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <nav></nav>
+        <aside></aside>
+        <article></article>
+        <footer></footer>
+    </div>
+</body>
+</html>

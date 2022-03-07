@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/cssimg.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/cssimg.png">
+    <link rel="icon" href="../assets/face/cssimg.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <div class="top"><a href="#header01">Top</a></div>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>송준섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2 id="header01"><a href="css.html">CSS <em>이미지 표현 방법</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float</a></li>
+                <li><a href="cssRefer07.html">벤더프리픽스</a></li>
+                <li class="active"><a href="cssRefer08.html">이미지 표현 방법</a></li>
+                <li><a href="cssRefer09.html">반응형 이미지 사용방법</a></li>
+                <li><a href="cssRefer10.html">IR 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>웹 접근성 이미지 표현</h3>
+                <h4>이미지를 표현하는 방법</h4>
+                <ul>
+                    <li>HTML --> img 태그로 표현(이미지가 의미가 있을 때)
+                        <div class="code">
+                            &lt;a href="#" class="icon1"&gt;&lt;img src="이미지경로" alt="아이콘1"&gt;&lt;/a&gt;
+                        </div><br>
+                        <p><strong>alt 태그</strong><br>이미지가 없을때 출력할 대체 문자 표현(웹 접근성 조건)</p>
+                    </li>
+                    <li>CSS --> background 속성으로 표현(이미지가 의미가 없을 때) / 대체문자X
+                        <div class="code">
+                            background: url(../img/icon.png) repeat-x
+                            background: url(../img/icon.png) no-repeat 9px(가로) 8px(세로);
+                        </div>
+                    </li>
+                </ul>
+                <h4>이미지 스프라이트 기법(Image Sprite)</h4>
+                <div class="line">
+                    <ul>
+                        <li>여러 개의 이미지를 하나의 이미지로 합쳐서 관리합니다.</li>
+                        <li>이미지 스프라이트 기법을 사용하면 이미지 관리가 용이하며 웹페이지의 로딩 시간 및 용량을 줄일 수 있습니다.</li>
+                        <li>이미지 스프라이트 기법으로 이미지를 넣을 때는 웹표준 준수를 위해 가상으로 대체 문자를 만들어야 합니다.</li>
+                        <li>가상으로 대체 문자를 만들어 주기 위해서는 IR 기법을 사용합니다.</li>
+                        <li>먼저 이미지의 크기를 지정 해주고 Background 태그를 사용해서 이미지를 넣습니다.</li>
+                        <li>그 후에  Background-position을 사용해서 이미지 위치를 지정하여 원하는 이미지를 로딩 합니다.</li>
+                    </ul>
+                </div>
+                <div class="code">
+                    width: 23px; height: 23px; background: url(../img/icon.png) no-repeat;<br>
+                    background-position: -150px -120px;
+                </div>
+            </div>
+        </div>
+        <!-- //refer -->
+    </main>
+    
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

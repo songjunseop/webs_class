@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout02</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #000;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #222;
+        }
+        #nav {
+            width: 1200px;
+            height: 100px;
+            background-color: #333;
+        }
+        #main {
+            width: 1200px;
+            display: flex;
+        }
+        #main .aside {
+            width: 300px;
+            height: 780px;
+            background-color: #666;
+        }
+        #main .content {
+            width: 600px;
+            height: 780px;
+            background-color: #777;
+        }
+        #main .article {
+            width: 300px;
+            height: 780px;
+            background-color: #888;
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside class="aside"></aside>
+            <content class="content"></content>
+            <article class="article"></article>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

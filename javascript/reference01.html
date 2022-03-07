@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+<body>
+    <div class="top"><a href="#header">Top</a></div>
+        <header id="header">
+                <h1><a href="index.html">Javascript</a></h1>
+                <nav>
+                    <ul>
+                        <li class="active"><a href="reference01.html">기초 문법</a></li>
+                        <li><a href="reference02.html">변수</a></li>
+                        <li><a href="reference03.html">자료형</a></li>
+                        <li><a href="reference04.html">for문</a></li>
+                        <li><a href="reference05.html">연산자</a></li>
+                        <li><a href="reference06.html">조건문</a></li>
+                        <li><a href="reference07.html">반복문</a></li>
+                        <li><a href="reference08.html">함수</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="javascript05.html">문자열 객체</a></li>
+                        <li><a href="javascript06.html">배열 객체</a></li>
+                        <li><a href="javascript07.html">수학 객체</a></li>
+                        <li><a href="javascript08.html">숫자 객체</a></li>
+                        <li><a href="javascript09.html">브라우저 객체</a></li>
+                        <li><a href="javascript10.html">요소 객체</a></li>
+                        <li><a href="javascript11.html">이벤트 객체</a></li>
+                    </ul>
+                </nav>
+        </header>
+
+        <main id="main">
+            <div class="doc">
+                <h2>자바스크립트 선언문</h2>
+                <p>
+                    선언문은 자바스크립트 코드를 작성할 영역을 선언하는 것이라고 이해하면 됩니다.<br>
+                    &lt;script&gt;라는 태그로 선언문이 시작된 곳부터 &lt;/script&gt;라는 태그로 종료된 곳까지를 스크립트 영역이라고 부릅니다.<br>
+                    선언문은 &lt;head&gt; 태그 영역 또는 &lt;body&gt; 태그 영역에 선언하면 됩니다.
+                </p>
+                <h2>자바스크립트 주석처리</h2>
+                <p>
+                    자바스크립트 선언문 안에서 코드가 아닌 설명글을 넣고 싶을 때는 주석 처리를 하면 됩니다.<br>
+                    이때 한 줄 주석일 경우에는 '//한 줄 설명글'로 작성하고 여러줄 주석일 경우에는 '/*여러 줄 설명글*/'로 작성하면 됩니다.
+                </p>
+                <h2>코드 입력시 주의사항</h2>
+                <p>1. 자바스크립트는 대ㆍ소문자를 구분하여 작성합니다.</p>
+                <div class="code">
+<pre><code>날짜 객체 생성: New date(); (X)
+날짜 객체 생성: new Date(); (O)
+</code></pre>
+                </div>
+                <p>
+                    2. 코드 한 줄을 작성한 후에는 세미콜론(;)을 쓰는 것이 좋습니다.<br>세미콜론을 쓰지 않으면 다음 예제처럼 한 줄에 2개의 코드를 작성할 경우 오류가 발생합니다.
+                </p>
+                <div class="code">
+<pre><code>document.write("hi") document.write("bye")   (X)
+document.write("hi"); document.write("bye");  (O)
+</code></pre>
+                </div>
+                <p>3. 하지만 코드를 작성할 때는 할 줄에 한 문장만 작성하는 것이 가독성을 위해 좋습니다.</p>
+                <p>4. 문자형 데이터를 작성할 때는 큰따옴표("")와 작은따옴표('')의 겹침 오류를 주의해야 합니다.</p>
+                <div class="code">
+<pre><code>큰따옴표 겹침 오류
+document.write("책에 "자바스크립트는 대소문자를 구분해야 합니다"라고 나와 있다.");
+
+잘된 예
+document.write('책에 "자바스크립트는 대소문자를 구분해야 합니다"라고 나와 있다.');
+document.write('책에 |"자바스크립트는 대소문자를 구분해야 합니다|"라고 나와 있다.");
+</code></pre>
+                </div>
+            <p>
+                5. 코드를 작성할 때 중괄호{} 또는 소괄호()의 짝이 맞아야 합니다.
+            </p>
+                <div class="code">
+<pre><code>document.write("welcome!";   (X)
+document.write("welcome!");  (O)
+</code></pre>
+                </div>
+
+            </div>
+
+        </main>
+</body>
+</html>

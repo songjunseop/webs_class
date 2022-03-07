@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+<body>
+    <div class="top"><a href="#header">Top</a></div>
+        <header id="header">
+                <h1><a href="index.html">Javascript</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="reference01.html">기초 문법</a></li>
+                        <li><a href="reference02.html">변수</a></li>
+                        <li><a href="reference03.html">자료형</a></li>
+                        <li><a href="reference04.html">for문</a></li>
+                        <li><a href="reference05.html">연산자</a></li>
+                        <li class="active"><a href="reference06.html">조건문</a></li>
+                        <li><a href="reference07.html">반복문</a></li>
+                        <li><a href="reference08.html">함수</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="javascript05.html">문자열 객체</a></li>
+                        <li><a href="javascript06.html">배열 객체</a></li>
+                        <li><a href="javascript07.html">수학 객체</a></li>
+                        <li><a href="javascript08.html">숫자 객체</a></li>
+                        <li><a href="javascript09.html">브라우저 객체</a></li>
+                        <li><a href="javascript10.html">요소 객체</a></li>
+                        <li><a href="javascript11.html">이벤트 객체</a></li>
+                    </ul>
+                </nav>
+        </header>
+
+        <main id="main">
+            <div class="doc">
+                <h2>조건문</h2>
+                <p>
+                    조건문은 조건식의 값이 참(true)인지, 거짓(false)인지에 따라 자바스크립트 코드를 제어합니다.<br>
+                    조건문의 종류에는 if문, else문 그리고 if else문이 있습니다.
+                </p>
+
+                <h3>if 문</h3>
+                <p>
+                    if문은 조건식을 만족(true)할 경우에만 코드를 실행합니다.<br>
+                    조건식은 Boolean() 내장 메서드와 마찬가지로 그 어떤 데이터를 입력해도 true 또는 false를 반환합니다.
+                </p>
+                <p>
+                    기본형
+                </p>
+                <div class="line">
+                    if(조건식){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드;<br>
+                        }
+                </div>
+                <p class="mt10">
+                    적용 예제
+                </p>
+                <div class="code">
+<pre><code>var num=10;
+    if(num<500){    //true를 반환합니다.
+        document.write("hello");
+}</code></pre>
+                </div>
+                <p>
+                    num&lt;500 의 비교 결과는 10&lt;500 이므로 true를 반환합니다. 조건문 내의 코드를 실행하면 "hello"가 출력됩니다.
+                </p>
+                <h4 class="mt20">조건식에 논리형 데이터가 아닌 다른 형이 오는 경우</h4>
+                <p>
+                    조건식에 논리형 데이터(true, flase)가 아닌 다른 형의 데이터가 입력되어도 true 또는 flase로 인식됩니다.
+                </p>
+                <div class="line">
+                    0, null, ""(빈 문자), undefined
+                </div>
+                <p class="mt10">
+                    출력되는 경우
+                </p>
+                <div class="code">
+<pre><code>var num=3;
+if(num){    //3은 true입니다.
+    document.write(num);
+}</code></pre>
+                </div>
+                <p>
+                    출력되지 않는 경우
+                </p>
+                <div class="code">
+<pre><code>var num=0;
+if(num){    //0은 false입니다.
+    document.write(num);
+}</code></pre>
+                </div>
+                <h3>else문</h3>
+                <p>
+                    else문은 조건식을 만족할(true) 경우와 만족하지 않을(false) 경우에 따라 실행되는 코드가 달라집니다.
+                </p>
+                <p>
+                    기본형
+                </p>
+                <div class="line">
+                    if(조건식){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드1;<br>
+                    } else {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드2;<br>
+                    }
+                </div>
+                <p class="mt10">
+                    적용예제
+                </p>
+                <div class="code">
+<pre><code>&lt;script&gt;
+    var num = prompt("당신이 좋아하는 숫자는?", "0");
+
+    if(num % 2 == 0) {    //짝수일 경우에 실행
+        document.write("당신이 좋아하는 숫자는 짝수입니다.");
+    } else {              //홀수일 경우에 실행
+        document.write("당신이 좋아하는 숫자는 홀수입니다.");
+    }
+&lt;script&gt;</code></pre>
+                </div>
+                <p>
+                    num의 값을 2로 나눈 나머지의 값이 0이면 코드 1을 실행하고, 0이 아니면 코드 2를 실행합니다.
+                </p>
+                <h3>if else문</h3>
+                <p>
+                    if else문은 두 가지 이상의 조건식과 정해 놓은 조건을 만족하지 않았을 때 실행되는코드로 이루어져 있습니다.
+                </p>
+                <p>
+                    기본형
+                </p>
+                <div class="line">
+                    if(조건식1){<br>
+                    코드1;<br>
+                    } else if(조건식2){<br>
+                    코드2;<br>
+                    } else if(조건식3){<br>
+                    코드3;<br>    
+                    } else if(조건식4){<br>
+                    코드4;<br>    
+                    } else if(조건식5){<br>
+                    코드5;<br>    
+                    } else {<br>
+                    코드6;<br>    
+                    }
+                </div>
+                <p class="mt10">
+                    가장 위에 있는 조건식 1부터 5까지 차례로 조건 검사를 하면서 만족(true)하는 값이 나오면 그에 해당하는 코드를 실행하고 조건문을 종료합니다.<br>
+                    조건식 중 만족(true)하는 값이 하나도 없으면 else문의 중괄호{...}에 있는 코드를 실행합니다.
+                </p>
+                <h3>중첩 if문</h3>
+                <p>
+                    조건문 안에 조건문이 있으면 중첩 if문이라고 합니다.
+                </p>
+                <p>
+                    기본형
+                </p>
+                <div class="line">
+                    if(조건식1){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if(조건식2){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
+                <p class="mt10">
+                    중첩 if문은 바깥쪽에 있는 조건문인 조건식1을 만족해야만 안쪽에 있는 조건문인 조건식2를 검사합니다.<br>
+                    만일 안쪽 if문의 조건식2를 만족하지 않으면 바깥쪽 조건문인 조건식1의 중괄호 안에 있는 코드만 실행하고 종료됩니다.
+                </p>
+                <p>
+                    적용예제
+                </p>
+                <div class="code">
+<pre><code>&lt;script&gt;
+    var id = "easy1004";    //아이디
+    var pw = "112233";      //비밀번호
+
+    var user_id = prompt("아이디는?","");    //아이디 입력
+    var user_pw = prompt("비밀번호?","");    //비밀번호 입력
+
+    if(id == user_id) { ---아이디가 일치하면 실행
+        if(pw == user_pw) {
+            document.write(user_id + "님 반갑습니다!");  ---비밀번호가 일치하면 실행
+        } else {
+            alert("비밀번호가 일치하지 않습니다.");  ---비밀번호가 일치하지 않으면 실행
+            location.reload();  ---브라우저 새로 고침
+        }
+    } else {
+        alert("아이디가 일치하지 않습니다.");  ---아이디가 일치하지 않으면 실행
+        location.reload();
+    }
+&lt;script&gt;</code></pre>
+                </div>
+                <p>
+                    중첩 if문을 사용해 아이디와 비밀번호가 일치했을 때 환영 문구가 출력되도록 작성한 예제 입니다.<br>
+                    비밀번호가 일치하지 않을 경우에는 브라우저가 새로 고침이 되도록 했습니다.
+                </p>
+            </div>
+        </main>
+</body>
+</html>

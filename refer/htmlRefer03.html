@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/htmlimg.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/htmlimg.png">
+    <link rel="icon" href="../assets/face/htmlimg.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <div class="top"><a href="#header01">Top</a></div>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>송준섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2 id="header01"><a href="html.html">HTML <em>레퍼런스 북</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="html.html">속성</a></li>
+                <li><a href="htmlRefer01.html">기초 문법</a></li>
+                <li><a href="htmlRefer02.html">웹표준/웹접근성/웹호환성</a></li>
+                <li class="active"><a href="htmlRefer03.html">시맨틱 태그</a></li>
+                <li><a href="htmlRefer04.html">SEO</a></li>
+                <li><a href="htmlRefer05.html">그리드 시스템</a></li>
+                <li><a href="htmlRefer06.html">와이어 프레임</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>시맨틱 태그</h3>
+                <p>시맨틱(Semantic)은 "의미의, 의미론적인"이라는 뜻으로 의미를 가지는 태그가 시맨틱 태그입니다.<br>
+                즉, HTML5에 도입된 시맨틱 태그는 개발자와 브라우저에게 의미있는 태그를 제공하게 됩니다.</p>
+
+                <h3>종류</h3>
+                <div class="table">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>&lt;header&gt;</th>
+                                <td>&lt;header&gt; 태그는 머리말 영역으로 문서 또는 섹션의 헤더를 나타낼 때 사용합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;nav&gt;</th>
+                                <td>&lt;header&gt; 태그는 내비게이션를 나타낼 때 사용합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;main&gt;</th>
+                                <td>&lt;main&gt; 태그는 문서의 주요 컨텐츠를 나타낼 때 사용합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;aside&gt;</th>
+                                <td>&lt;aside&gt; 태그는 사이드에 위치하는 공간을 나타낼 때 사용합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;section&gt;</th>
+                                <td>&lt;section&gt; 태그는 주제별 그룹의 컨텐츠 섹션을 나타낼 때 사용합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;article&gt;</th>
+                                <td>&lt;article&gt; 태그는 문서 본문 중 독립된 콘텐츠(개별 뉴스 기사, 게시물)를 나타낼 때 사용합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;footer&gt;</th>
+                                <td>&lt;footer&gt; 태그는 꼬리말을 나타낼 때 사용합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;address&gt;</th>
+                                <td>&lt;address&gt; 태그는 컨텐츠 작성자나 사이트 소유자의 정보등을 부가적으로 담을때 사용합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;hgroup&gt;</th>
+                                <td>&lt;hgroup&gt; 태그는 제목과 관련된 부제목을 묶을 때 사용합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;details&gt;</th>
+                                <td>&lt;details&gt; 태그는 주변 문맥에서 표시된 구절의 관련성 또는 중요성으로 인해 참조 또는 표기 목적으로 표시되거나 강조된 텍스트를 나타냅니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;figure&gt;</th>
+                                <td>&lt;figure&gt; 태그는 이미지, 다이어그램, 사진 등 독립적인 컨텐츠를 정의할 때 사용됩니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;figcaption&gt;</th>
+                                <td>&lt;figcaption&gt; 태그는 &lt;figure&gt;요소의 설명 캡션(caption)정의합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;mark&gt;</th>
+                                <td>&lt;mark&gt; 태그는 현재 맥락에 관련이 깊거나 중요한 부분을 강조합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;time&gt;</th>
+                                <td>&lt;time&gt; 태그는 시간의 특정 지점 또는 구간, datetime과 같은 속성을 이용해 알림같은 기능을 구현합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;summary&gt;</th>
+                                <td>&lt;summary&gt; 태그는 details 요소에 대한 요약, 캡션 또는 범례를 지정합니다. summary요소를 클릭하면 상위 details 요소의 상태가 열리고 닫힙니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>HTML5에 없어진 태그</h3>
+                <p>&lt;basefont&gt;, &lt;big&gt;, &lt;center&gt;, &lt;font&gt;, &lt;frame&gt;, &lt;frameset&gt;,&lt;noframes&gt;, &lt;tt&gt;, &lt;s&gt;, &lt;strike&gt;, &lt;u&gt;, &lt;acronym&gt;, &lt;applet&gt;, &lt;isindex&gt;, &lt;dir&gt;, &lt;noscript&gt;</p>
+                <h3>HTML5에 의미가 변경된 태그</h3>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>태그</th>
+                            <th>변경 전</th>
+                            <th>변경 후</th>
+                        </tr>
+                        <tr>
+                            <th>&lt;a&gt;</th>
+                            <td>href="#", href="javascript:;"로 null link(널링크) 사용.</td>
+                            <td>href 속성없이 사용하면 바로 null link(널링크)로 사용</td>
+                        </tr>
+                        <tr>
+                            <th>&lt;adress&gt;</th>
+                            <td>이름, 이메일주소, 전화번호 등 제작자에 대한 정보 표시</td>
+                            <td>실제 우편 주소를 표시</td>
+                        </tr>
+                        <tr>
+                            <th>&lt;b&gt;</th>
+                            <td>텍스트를 진하게</td>
+                            <td>내용이 중요하지는 않지만 진하게 표시할 때 사용</td>
+                        </tr>
+                        <tr>
+                            <th>&lt;hr&gt;</th>
+                            <td>단순한 가로줄 표시</td>
+                            <td>단락 단위로 주제 변경 시 사용</td>
+                        </tr>
+                        <tr>
+                            <th>&lt;i&gt;</th>
+                            <td>텍스트 기울어지게 표시</td>
+                            <td>텍스트를 기울어지게 할 뿐 아니라 중요한 정보가 들어있지 않은 주변 요소로부터 텍스트를 따로 표시할 때 사용</td>
+                        </tr>
+                        <tr>
+                            <th>&lt;menu&gt;</th>
+                            <td>사용하지 않도록 권고</td>
+                            <td>실제 문서 메뉴 정보를 제공하는데 사용</td>
+                        </tr>
+                        <tr>
+                            <th>&lt;small&gt;</th>
+                            <td>작은 글자로 표시</td>
+                            <td>세부 주석이나 법적 인쇄 문서에서 작은 인쇄 정보를 표시할 때 사용</td>
+                        </tr>
+                        <tr>
+                            <th>&lt;strong&gt;</th>
+                            <td>글자 강조</td>
+                            <td>단순히 글자를 강조하는 것 보다 중요한 내용을 표시할 때 사용</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- //refer -->
+    </main>
+    
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/cssimg.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/cssimg.png">
+    <link rel="icon" href="../assets/face/cssimg.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <div class="top"><a href="#header01">Top</a></div>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>송준섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2 id="header01"><a href="css.html">CSS <em>레퍼런스 북</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li class="active"><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float</a></li>
+                <li><a href="cssRefer07.html">벤더프리픽스</a></li>
+                <li><a href="cssRefer08.html">이미지 표현 방법</a></li>
+                <li><a href="cssRefer09.html">반응형 이미지 사용방법</a></li>
+                <li><a href="cssRefer10.html">IR 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            
+            <div class="title">
+                <ul>
+                    <li><a href="css.html">Alphabet</a></li>
+                    <li><a href="cssSelector.html">Selector</a></li>
+                    <li><a href="cssFlex.html">flex</a></li>
+                    <li class="active"><a href="cssGrid.html">grid</a></li>
+                    <li><a href="cssTransform.html">transform</a></li>
+                    <li><a href="cssAnimation.html">animation</a></li>
+                </ul>                
+            </div>
+
+            <div class="table">
+                <table>
+                    <h4>grid란 ?</h4>
+                    <p class="mb20">Flex와 같이 Container(컨테이너)와 Item(아이템)이라는 두 가지 개념으로 구분되어 있습니다.
+                        Container는 Items를 감싸는 부모 요소이며, 그 안에서 각 Item을 배치할 수 있습니다.<br></p>
+                    <colgroup>
+                        <col style="width: 30%" />
+                        <col style="width: 70%" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>속성</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>grid</th>
+                            <td>grid 속성은 그리드 레이아웃 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-area</th>
+                            <td>grid-area 속성은 영역(Area) 이름을 설정하거나, grid-row와 grid-column의 단축 속성입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-auto-columns</th>
+                            <td>grid-auto-columns 속성은 암시적인 열(Track)의 크기를 자동으로 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-auto-flow</th>
+                            <td>grid-auto-flow 속성은 자동 배치 알고리즘 방식을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-auto-rows</th>
+                            <td>grid-auto-rows 속성은 암시적인 행(Track)의 크기를 자동으로 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-column</th>
+                            <td>grid-column 속성은 컬럼 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-column-end</th>
+                            <td>grid-column-end 속성은 그리드 아이템의 열 끝 위치 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-column-gap</th>
+                            <td>grid-column-gap 속성은 열과 열 사이의 간격(Line)을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-column-start</th>
+                            <td>grid-column-start 속성은 그리드 아이템의 열 시작 위치 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-gap</th>
+                            <td>grid-gap 속성은 컬럼의 간격을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-row</th>
+                            <td>grid-row 속성은 grid-row-xxx의 단축 속성(행 시작/끝 위치)입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-row-gap</th>
+                            <td>grid-row-gap 속성은 행과 행 사이의 간격(Line)을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-row-end</th>
+                            <td>그리드 아이템의 행 끝 위치 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-row-gap</th>
+                            <td>grid-row-gap 속성은 행과 행 사이의 간격(Line)을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-row-start</th>
+                            <td>grid-row-start 속성은 그리드 아이템(Item)의 행 시작 위치 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-template</th>
+                            <td>grid-template 속성은 컬럼의 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-template-areas</th>
+                            <td>grid-template-areas 속성은 컬럼의 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-template-columns</th>
+                            <td>grid-template-columns 속성은 가로 컬럼의 크기와 위치를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-template-rows</th>
+                            <td>grid-template-rows 속성은 세로 컬럼의 크기와 위치를 설정합니다.</td>
+                        </tr>                 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- //refer -->
+    </main>
+    
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

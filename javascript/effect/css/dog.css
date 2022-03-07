@@ -1,0 +1,356 @@
+/* dog */
+.dog .tail,
+.dog .chin,
+.dog .tongue::before,
+.dog .tongue::after,
+.dog .mouth,
+.dog .nose,
+.dog .teardrop,
+.dog .eyes,
+.dog .face::before,
+.dog .face::after,
+.dog .ears::before,
+.dog .ears::after {
+    transition: 0.2s ease-in;
+}
+.dog {
+    padding-top: 50px;
+}
+.dog .head,
+.dog .body {
+    position: relative;
+    width: 115px;
+}
+.dog .head {
+    height: 115px;
+    border-radius: 50% 50% 0 0;
+    margin: 0 auto;
+}
+.dog .ears {
+    position: relative;
+    top: -14%;
+    width: 100%;
+}
+.dog .ears::before, .dog .ears::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 35px;
+    height: 70px;
+    background: #CB7A1D;
+    border-top: 11px solid #F7AA2B;
+    border-left: 7px solid #F7AA2B;
+    border-right: 7px solid #F7AA2B;
+}
+.dog .ears::before {
+    left: 0;
+    border-radius: 50% 45% 0 0;
+}
+.dog .ears::after {
+    right: 0;
+    border-radius: 45% 50% 0 0;
+}
+.dog .face {
+    position: absolute;
+    background: #F7AA2B;
+    width: 100%;
+    height: 100%;
+    border-radius: 50% 50% 0 0;
+}
+.dog .face::before, .dog .face::after {
+    content: "";
+    display: block;
+    margin: auto;
+    background: #FEFEFE;
+}
+.dog .face::before {
+    width: 15px;
+    height: 35px;
+    margin-top: 24px;
+    border-radius: 20px 20px 0 0;
+}
+.dog .face::after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    width: 60px;
+    height: 65px;
+    border-radius: 45% 45% 0 0;
+}
+.dog .eyes {
+    position: relative;
+    top: 29%;
+    text-align: center;
+}
+.dog .eyes::before, .dog .eyes::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: #451d1c;
+    margin: 0 14.5%;
+}
+.dog .teardrop {
+    position: absolute;
+    top: 125%;
+    left: 19%;
+    width: 6px;
+    height: 6px;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(45deg);
+    background: #FEFEFE;
+    visibility: hidden;
+}
+.dog .nose {
+    position: relative;
+    top: 35%;
+    width: 16px;
+    height: 8px;
+    border-radius: 35px 35px 65px 65px;
+    background: #451d1c;
+    margin: auto;
+}
+.dog .mouth {
+    position: relative;
+    top: 34.5%;
+    width: 4px;
+    height: 6px;
+    margin: 0 auto;
+    text-align: center;
+    background: #451d1c;
+}
+.dog .mouth::before, .dog .mouth::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 4px solid #451d1c;
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+.dog .mouth::before {
+    transform: translateX(-89%) rotate(45deg);
+}
+.dog .mouth::after {
+    transform: translateX(-2px) rotate(45deg);
+}
+.dog .tongue {
+    position: relative;
+    z-index: 1;
+}
+.dog .tongue::before, .dog .tongue::after {
+    content: "";
+    position: absolute;
+}
+.dog .tongue::before {
+    top: 10px;
+    left: -7px;
+    width: 18px;
+    height: 0;
+    border-radius: 50%;
+    background: #451d1c;
+    z-index: -1;
+}
+.dog .tongue::after {
+    top: 14px;
+    left: -4px;
+    width: 12px;
+    height: 0;
+    border-radius: 20px;
+    background: #F5534F;
+    z-index: 5;
+}
+.dog .chin {
+    position: relative;
+    top: 47.5%;
+    margin: 0 auto;
+    width: 12px;
+    height: 12px;
+    border-top: 10px solid #e8e7ec;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 2px;
+    z-index: 0;
+}
+.dog .body {
+    position: relative;
+    height: 139px;
+    margin: auto;
+    z-index: 0;
+}
+.dog .body::before, .dog .body::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    margin: auto;
+    background: #F7AA2B;
+}
+.dog .body::after {
+    top: -2px;
+    bottom: -1px;
+    width: 60px;
+    background: #FEFEFE;
+}
+.dog .tail {
+    position: absolute;
+    left: -60%;
+    bottom: 1px;
+    background: #F7AA2B;
+    width: 93px;
+    height: 15px;
+    transform: rotate(45deg);
+    transform-origin: 100% 50%;
+    border-radius: 25px 0 0 25px;
+    z-index: -2;
+    animation: movetail 0.1s linear infinite alternate forwards;
+}
+.dog .legs {
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    width: 120%;
+    height: 15%;
+    background: #F7AA2B;
+    border-radius: 10px 10px 0 0;
+}
+.dog .legs::before, .dog .legs::after {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    background: #CB7A1D;
+    z-index: -1;
+}
+.dog .legs::before {
+    left: -7.5%;
+    width: 115%;
+    height: 55%;
+    border-radius: 5px 5px 0 0;
+}
+.dog .legs::after {
+    left: -3.5%;
+    width: 107%;
+    height: 250%;
+    border-radius: 20px 20px 35px 35px;
+}
+
+/* dog.like */
+
+.like .dog .face::before {
+    margin-top: 10px;
+}
+.like .dog .face::after {
+    height: 85px;
+}
+.like .dog .eyes {
+    top: 13%;
+}
+.like .dog .eyes::before {
+    width: 18px;
+    height: 5px;
+    margin: 0px 12.5%;
+    transform: rotate(-37.5deg);
+    border-radius: 20px;
+}
+.like .dog .eyes::after {
+    width: 18px;
+    height: 5px;
+    margin: 0px 12.5%;
+    transform: rotate(-37.5deg);
+    border-radius: 20px;
+}
+.like .dog .eyes::after {
+    transform: rotate(37.5deg);
+}
+.like .dog .nose {
+    top: 18%;
+}
+.like .dog .mouth {
+    top: 16.5%;
+}
+.like .dog .tongue::before {
+    height: 12px;
+}
+.like .dog .tongue::after {
+    height: 24px;
+    animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
+    animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
+}
+.like .dog .chin {
+    top: 34%;
+}
+.like .dog .tail {
+    animation: movetail 0.1s linear infinite alternate forwards;
+    animation: movetail 0.1s linear infinite alternate forwards;
+}
+
+/* dog.dislike */
+.dislike .dog .ears::after {
+    transform: rotate(50deg) translate(7px, 2px);
+    
+}
+.dislike .dog .ears::before {
+    transform: rotate(-50deg) translate(-7px, 2px);
+}
+.dislike .dog .face::before,
+.dislike .dog .face::after {
+    height: 55px;
+}
+.dislike .dog .eyes {
+    top: 38%;
+}
+.dislike .dog .eyes::before,
+.dislike .dog .eyes::after {
+    width: 18px;
+    height: 5px;
+    margin: 0px 14.5%;
+    transform: rotate(-37.5deg);
+    border-radius: 20px;
+}
+.dislike .dog .eyes::after {
+    transform: rotate(37.5deg);
+}
+.dislike .dog .teardrop {
+    animation: cry 0.1s ease-in 0.25s forwards;
+    animation: cry 0.1s ease-in 0.25s forwards;
+}
+.dislike .dog .nose {
+    top: 44%;
+}
+.dislike .dog .mouth {
+    top: 42%;
+}
+.dislike .dog .chin {
+    top: 52%;
+}
+.dislike .dog .tail {
+    transform: rotate(0);
+    animation: none;
+}
+
+@keyframes movetongue {
+    100% {
+        height: 27px;
+    }
+}
+@keyframes movetail {
+    0% {
+        transform: rotate(37deg);
+    }
+    100% {
+        transform: rotate(52deg);
+    }
+}
+@keyframes cry {
+    100% {
+        visibility: visible;
+    }
+}

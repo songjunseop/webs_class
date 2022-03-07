@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test4</title>
+    <style>
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 300;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.ttf') format("truetype");
+            font-display: swap;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            width: 100%;
+            height: 109px;
+            background-color: #a1a1a1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .ir_so {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        #header .container {
+            display: inline-block;
+            width: 1200px;
+            height: 109px;
+            background-color: #f1f1f1;
+        }
+        #banner {
+            width: 100%;
+            height: 893px;
+            background-color: #b1b1b1;
+            display: flex;
+            justify-content: center;
+        }
+        #banner .container {
+            width: 1200px;
+            height: 893px;
+            background-color: #AD7B7B;
+        }
+        .con1 {
+            width: 100%;
+            height: 642;
+            background-color: #c1c1c1;
+            display: flex;
+            justify-content: center;
+        }
+        .con1 .container {
+            width: 1200px;
+            height: 642px;
+            background-color: #9ea9b9;
+        }
+        .con2 {
+            width: 100%;
+            height: 3250px;
+            background-color: #9d7777;
+            display: flex;
+            justify-content: center;    
+        }
+        .con2 .container {
+            width: 1200px;
+            height: 3250px;
+            background-color: #6a3434;
+        }
+        .con3 {
+            width: 100%;
+            height: 1076px;
+            background-color: #b99e9e;
+            display: flex;
+            justify-content: center;
+        }
+        .con3 .container {
+            width: 1200px;
+            height: 1076px;
+            background-color: #f9bcbc;
+        }        
+        .con3 .container .title {
+            font-family: 'NexonLv1Gothic';
+            font-size: 50px;
+            font-weight: 700;
+            color: #000;
+            margin: 110px -3px 110px;
+        }
+        .main {
+            display: flex;
+            justify-content: space-between;
+        }
+        .main .img1 {
+            width: 360px;
+            height: 465px;
+            background-image: url(../site/webClass/img/img_text_bg1.jpg);
+            background-size: 100%;
+        }
+        .main .article .subTitle {
+            margin: 35px 0 15px;
+            font-family: 'NexonLv1Gothic';
+            font-size: 30px;
+            font-weight: 700;
+        }
+        .main .article text {
+            font-family: 'NexonLv1Gothic';
+            font-size: 20;
+            font-weight: 300;
+            display: inline-block;
+        }
+        .main .img2 {
+            width: 360px;
+            height: 465px;
+            background-image: url(../site/webClass/img/img_text_bg2.jpg);
+            background-size: 100%;
+        }
+        .main .img3 {
+            width: 360px;
+            height: 465px;
+            background: no-repeat;
+            background-image: url(../site/webClass/img/img_text_bg3.jpg);
+        }
+        #footer {
+            width: 100%;
+            height: 399px;
+            background-color: #d1d1d1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header id="header">
+            <h1 class="ir_so">logo</h1>
+            <div class="container"></div>
+        </header>
+        <div id="banner">
+            <div class="container">
+                <h2 class="ir_so">배너 영역</h2>
+            </div>
+        </div>
+        <section id="contents">
+            <h2 class="ir_so">메인 영역</h2>
+            <div class="con1">
+                <div class="container"></div>
+            </div>
+            <div class="con2">
+                <div class="container"></div>
+            </div>
+            <div class="con3">
+                <div class="container">
+                    <h3 class="title">FIND opportunities</h3>
+                    <main class="main">
+                        <div>
+                            <div class="img1"></div>
+                            <article class="article">
+                                <h4 class="subTitle">Fintech</h4>
+                                <p class="text">Payment</p>
+                            </article>
+                        </div>
+                        <div>
+                            <div class="img2"></div>
+                            <article class="article">
+                                <h4 class="subTitle">Digital Marketing</h4>
+                                <p class="text">IMS</p>
+                            </article>
+                        </div>
+                        <div>
+                            <div class="img3"></div>
+                            <article class="article">
+                                <h4 class="subTitle">Platform</h4>
+                                <p class="text">Commerce, Magazine</p>
+                            </article>
+                        </div>
+                    </main>   
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <h2 class="ir_so">푸터 영역</h2>
+        </footer>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/cssimg.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/cssimg.png">
+    <link rel="icon" href="../assets/face/cssimg.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <div class="top"><a href="#header01">Top</a></div>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>송준섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2 id="header01"><a href="css.html">CSS <em>id/class 차이점</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li class="active"><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float</a></li>
+                <li><a href="cssRefer07.html">벤더프리픽스</a></li>
+                <li><a href="cssRefer08.html">이미지 표현 방법</a></li>
+                <li><a href="cssRefer09.html">반응형 이미지 사용방법</a></li>
+                <li><a href="cssRefer10.html">IR 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>id/class 차이점</h3>
+                <p>id 선택자와 class 선택자의 차이는 문서 안의 '복수'의 요소에 스타일을 적용하는 것인가 아니면 '유일'한 요소에 스타일을 적용하는 것인가입니다.<br>
+                <strong>id 선택자는 '유일'한 요소에 적용, class 선택자는 '복수'의 요소에 적용</strong>할 수 있습니다.<br>
+                우선순위는 id&gt;class&gt;태그 순으로 적용됩니다.</p>                     
+                <strong>id 선택자</strong>
+                <p>id 선택자는 문서 안에 있는 단 하나의 요소에 스타일을 적용하는 경우에 사용합니다.<br>
+                    선택자에 샾(#)과 id명(임의의 이름)을 붙여 식별합니다</p>                     
+                <strong>class 선택자</strong>
+                <p>class 선택자는 문서 안 복수의 요소에 스타일을 적용하는 경우에 사용합니다.<br>
+                요소명에 피리어드(.)와 class명(임의의 이름)을 붙여 구별합니다.</p>
+            </div>
+        </div>
+        <!-- //refer -->
+    </main>
+    
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

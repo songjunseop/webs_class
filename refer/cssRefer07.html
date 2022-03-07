@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/cssimg.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/cssimg.png">
+    <link rel="icon" href="../assets/face/cssimg.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <div class="top"><a href="#header01">Top</a></div>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>송준섭</strong>
+        <style>
+           .refer .table table td {
+               text-align:center;
+           }
+        </style>
+    </header>
+
+    <main id="contents">
+        <h2 id="header01"><a href="css.html">CSS <em>벤더프리픽스</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float</a></li>
+                <li class="active"><a href="cssRefer07.html">벤더프리픽스</a></li>
+                <li><a href="cssRefer08.html">이미지 표현 방법</a></li>
+                <li><a href="cssRefer09.html">반응형 이미지 사용방법</a></li>
+                <li><a href="cssRefer10.html">IR 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>벤더프리픽스(Vendor Prefix)</h3>
+                <h4>벤더프리픽스란?</h4>
+                <p>벤더 프리픽스(vendor prefix)란 주요 웹 브라우저 공급자가 새로운 실험적인 기능을 제공할 때 이전 버전의 웹 브라우저에 그 사실을 알려주기 위해 사용하는 접두사(prefix)를 의미합니다.<br>
+                    즉 아직 CSS 권고안에 포함되지 못한 기능이나, CSS 권고안에는 포함되어 있지만 아직 완벽하게 제정된 상태가 아닌 기능을 사용하고자 할 때 벤더 프리픽스를 사용하게 됩니다.<br>
+                    그렇게 하면 해당 기능이 포함되어 있지 않은 이전 버전의 웹 브라우저에서도 그 기능을 사용할 수 있게 됩니다.</p>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>브라우저</th>
+                                <th>벤더 프리픽스</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>IE or Edge</th>
+                                <td>-ms-</td>
+                            </tr>
+                            <tr>
+                                <th>Chrome</th>
+                                <td>-webkit-</td>
+                            </tr>
+                            <tr>
+                                <th>Firefox</th>
+                                <td>-moz-</td>
+                            </tr>
+                            <tr>
+                                <th>Safari</th>
+                                <td>-webkit-</td>
+                            </tr>
+                            <tr>
+                                <th>Opera</th>
+                                <td>-o-</td>
+                            </tr>
+                            <tr>
+                                <th>iOS Safari</th>
+                                <td>-webkit-</td>
+                            </tr>
+                            <tr>
+                                <th>Android Browser</th>
+                                <td>-webkit-</td>
+                            </tr>
+                            <tr>
+                                <th>Chrome for Android</th>
+                                <td>-webkit-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- //refer -->
+    </main>
+    
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

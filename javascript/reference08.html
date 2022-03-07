@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+<body>
+    <div class="top"><a href="#header">Top</a></div>
+        <header id="header">
+                <h1><a href="index.html">Javascript</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="reference01.html">기초 문법</a></li>
+                        <li><a href="reference02.html">변수</a></li>
+                        <li><a href="reference03.html">자료형</a></li>
+                        <li><a href="reference04.html">for문</a></li>
+                        <li><a href="reference05.html">연산자</a></li>
+                        <li><a href="reference06.html">조건문</a></li>
+                        <li><a href="reference07.html">반복문</a></li>
+                        <li class="active"><a href="reference08.html">함수</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="javascript05.html">문자열 객체</a></li>
+                        <li><a href="javascript06.html">배열 객체</a></li>
+                        <li><a href="javascript07.html">수학 객체</a></li>
+                        <li><a href="javascript08.html">숫자 객체</a></li>
+                        <li><a href="javascript09.html">브라우저 객체</a></li>
+                        <li><a href="javascript10.html">요소 객체</a></li>
+                        <li><a href="javascript11.html">이벤트 객체</a></li>
+                    </ul>
+                </nav>
+        </header>
+
+        <main id="main">
+            <div class="doc">
+                <h2>함수</h2>
+                <p>
+                    변수에는 데이터만 저장할 수 있고, 코드는 저장할 수 없습니다.<br>
+                    하지만 함수를 사용하면 코드를 메모리에 저장했다가 <strong>필요할 때마다 호출하여 사용</strong>할 수 있습니다.
+                </p>
+                <p>함수</p>
+                <div class="line">
+                    <ul>
+                        <li>자바스크립트 코드를 저장합니다.</li>
+                        <li>function이라는 키워드를 이용하여 선언합니다.</li>
+                        <li>출력문, 제어문 등의 코드를 저장하고 데이터를 반환합니다.</li>
+                    </ul>
+                </div>
+                
+                <h3>선언적 함수</h3>
+                <h4 class="mt20">기본 함수 정의문</h4>
+                <p><strong>함수를 사용하여 코드를 저장한 것</strong>을 '함수 정의문' 이라고 합니다.<br>
+                변수를 선언할 때 var 키워드를 사용한 것처럼 함수에서는 function 키워드를 사용해 변수를 선언합니다.</p>
+                <p>기본형</p>
+                <div class="line">
+                    function 함수명 (){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드;<br>
+                    }
+                </div>
+                <p>함수 정의문({...}) 안에 작성된 코드는 즉시 실행되지 않습니다.<br>
+                함수는 메모리에 할당되어 대기하고 있다가 함수가 호출되면 실행됩니다.</p>
+                <p>정의되어 있는 함수를 호출하는 기본형</p>
+                <div class="line">
+                    함수명();<br>
+                    또는 참조 변수();
+                </div>
+                <p>적용 예제</p>
+                <div class="code">
+<pre><code>{
+    function func(){
+        document.write("함수가 실행되었습니다.");
+    }
+    func();
+}</code></pre>
+                </div>
+                <p>"함수가 실행되었습니다."가 출력됩니다.</p>
+                <h3>익명 함수</h3>
+                <p>익명 함수는 함수명 대신 변수명에 함수 코드를 저장하는 실행 방식입니다.<br>
+                익명 함수의 코드는 변수값이므로 끝에 세미콜론(;)을 대입합니다.<br>
+                익명함수는 호출시 변수명을 함수처럼 사용하면 됩니다.</p>
+                <p>익명 함수는 변수에 함수의 코드를 저장하는 대신 함수명을 사용하지 않습니다.<br>
+                대신 변수명을 마치 함수명처럼 사용해서 함수를 호출하거나 변수값을 이동시키는데 사용할 수 있습니다.</p>
+                <p>익명 함수 기본형</p>
+                <div class="line">
+                var 변수명 = function(매개변수)<br>
+                {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
+                };</div>
+                <p>변수값을 변수에 넣은 형태이므로 함수 코드 끝에 세미콜론을 붙여줍니다.</p>
+                <p>적용예제</p>
+                <div class="code">
+<pre><code>&lt;script&gt;
+//익명 함수 선언 및 변수에 대입
+var hello = function()
+{
+    document.write("Hello World!")
+};
+
+//익명 함수 변수명으로 호출
+hello();
+&lt;/script&gt;</code></pre>
+                </div>
+                <p>"Hello World!"가 출력됩니다.</p>
+
+                <h3>매개변수 함수</h3>
+                <p>기본 함수 정의문은 함수 안에 있는 코드를 실행할 때 단순히 함수명으로 호출해서 코드를 실행했습니다. 즉, 함수를 호출할 때 값을 전달할 수 없었습니다.<br>
+                하지만 매개변수가 있는 함수 정의문은 함수를 호출할 때 <strong>전달하고자 하는 값을 입력하여 호출</strong>할 수 있습니다. 이렇게 전달된 값은 매개변수가 받아 함수 정의문에서 사용할 수 있게 됩니다.</p>
+                <p>함수를 호출할 때 값을 전달하는 기본형</p>
+                <div class="line">
+                    function 함수명(매개변수 1, 매개변수 2, ...매개변수 n){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드;<br>
+                    }<br>
+                    &nbsp;&nbsp;함수명(데이터 1, 데이터 2, ...데이터 n);
+                </div>
+                <p>함수를 호출할 때 데이터 1은 매개변수 1에 저장되고 데이터 2는 매개변수 2에 저장됩니다. 그리고 데이터 n은 매개변수 n에 저장됩니다.</p>
+                <P>적용 예제</P>
+                <div class="code">
+<pre><code>{
+    function func (str){            
+        document.write(str);        
+    }
+    func("함수가 실행되었습니다.");   
+}</code></pre>
+                </div>
+                <p>"함수가 실행되었습니다."가 출력됩니다. (str은 매개 변수)</p>
+                <h3>리턴값 함수</h3>
+                <p>return문은 <strong>함수에서 결괏값을 반환</strong>할 때 사용합니다.<br>
+                그리고 함수에서 return문이 실행되면 반복문의 break문과 비슷하게 코드가 강제로 종료됩니다.<br>
+                다시 말해 함수 정의문에 return문이 사용되면 함수를 호출했을 때 결괏값(data)을 반환합니다.</p>
+                <p>return문 기본형</p>
+                <div class="line">
+                    function 함수명(){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드1; &nbsp;&nbsp; -- 2번<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return 데이터(값); &nbsp;&nbsp; -- 3번<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드2;<br>
+                    }
+                    var 변수 = 함수명();&nbsp;&nbsp; -- 1번
+                </div>
+                <p>1번 함수 호출문 --> 2번 함수 코드 실행 --> 3번 자바스크립트 코드2를 무시하고 데이터를 반환 --> 1번 함수 호출문</p>
+                <p>기본 예제</p>
+                <div class="code">
+<pre><code>function sum(num1, num2) {
+    return num1 + num2;    
+}
+var result = sum(10, 20);
+document.write(result);</code></pre>
+                </div>
+                <div class="line">
+                    <ul>
+                        <li>함수 호출과 함께 인자값 10, 20을 전달합니다.</li>
+                        <li>수학 함수(calc())는 num1(10)과 num(20)의 데이터를 더한 값인 30을 반환합니다.</li>
+                        <li>반환된 값은 변수 result에 저장되어 화면에 출력됩니다.</li>
+                    </ul>
+                </div>
+                <p>적용 예제</p>
+                <div class="code">
+<pre><code>{
+    function func (){
+        const str = "함수가 실행되었습니다.";
+        return str;
+    }
+    document.write(func());
+}</code></pre>
+                </div>
+                <p>"함수가 실행되었습니다"가 출력됩니다.</p>
+            </div>
+        </main>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test9</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            height: 100px;
+            background-color: rgb(255, 238, 140);
+        }
+        article {
+            height: 400px;
+            background-color: rgb(255, 252, 72);
+        }
+        main {
+            height: 400px;
+            background-color: rgb(255, 210, 60);
+            display: grid;
+            grid-template: 
+            "box1 box2 box3 box4 box5"
+            "box6 box7 box8 box9 box10";
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            justify-items: center;
+            align-content: space-evenly;
+        }
+        .box1 {
+            grid-area: box1;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 145, 0);
+            border-radius: 20px;
+        }
+        .box2 {
+            grid-area: box2;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 145, 0);
+            border-radius: 20px;
+        }
+        .box3 {
+            grid-area: box3;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 145, 0);
+            border-radius: 20px;
+        }
+        .box4 {
+            grid-area: box4;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 145, 0);
+            border-radius: 20px;
+        }
+        .box5 {
+            grid-area: box5;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 145, 0);
+            border-radius: 20px;
+        }
+        .box6 {
+            grid-area: box6;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 145, 0);
+            border-radius: 20px;
+        }
+        .box7 {
+            grid-area: box7;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 145, 0);
+            border-radius: 20px;
+        }
+        .box8 {
+            grid-area: box8;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 145, 0);
+            border-radius: 20px;
+        }
+        .box9 {
+            grid-area: box9;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 145, 0);
+            border-radius: 20px;
+        }
+        .box10 {
+            grid-area: box10;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 145, 0);
+            border-radius: 20px;
+        }
+        footer {
+            height: 100px;
+            background-color: rgb(255, 166, 65);
+        }
+        @media(max-width: 1220px) {
+            .wrap {
+                width: 100%;
+            }
+            main {
+                grid-template-columns: 25% 25% 25% 25%;
+                justify-items: center;
+                align-content: space-evenly;
+            }
+            .box5 {
+                width: 0;
+                height: 0;
+            }
+            .box10 {
+                width: 0;
+                height: 0;
+            }
+        }
+        @media(max-width: 768px) {
+            main {
+                padding-top: 100px;
+                height: 500px;
+                display: grid;
+                grid-template: 
+                "box1 box2 box3"
+                "box4 box5 box6"
+                "box7 box8 box9";
+                grid-template-columns: 33.3% 33.3% 33.3%;
+                justify-items: center;
+                align-content: space-evenly;
+            }
+            .box5 {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        @media(max-width: 480px) {
+            main {
+                padding: 0 20px;
+                height: 800px;
+                display: grid;
+                grid-template: 
+                "box1 box2"
+                "box3 box4"
+                "box5 box6"
+                "box7 box8"
+                "box9 box10";
+                grid-template-columns: 50% 50%;
+            }
+            .box10 {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header></header>
+        <article></article>
+        <main>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+            <div class="box4"></div>
+            <div class="box5"></div>
+            <div class="box6"></div>
+            <div class="box7"></div>
+            <div class="box8"></div>
+            <div class="box9"></div>
+            <div class="box10"></div>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>

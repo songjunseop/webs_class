@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/htmlimg.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/htmlimg.png">
+    <link rel="icon" href="../assets/face/htmlimg.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <div class="top"><a href="#header01">Top</a></div>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>송준섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2 id="header01"><a href="html.html">HTML <em>레퍼런스 북</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="html.html">속성</a></li>
+                <li><a href="htmlRefer01.html">기초 문법</a></li>
+                <li><a href="htmlRefer02.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="htmlRefer03.html">시맨틱 태그</a></li>
+                <li><a href="htmlRefer04.html">SEO</a></li>
+                <li class="active"><a href="htmlRefer05.html">그리드 시스템</a></li>
+                <li><a href="htmlRefer06.html">와이어 프레임</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>그리드 시스템</h3>
+                <p>그리드 시스템(Grid System)에서 ‘Grid’는 격자나 바둑판 모양의 눈금을 뜻하며 일반적으로는 <strong>수직과 수평으로 면이 분할</strong>된 것을 의미합니다.<br>
+                    그리드 시스템은 디자인의 레이아웃에 규칙을 부여하는 수단입니다. 편집디자인(인쇄물)에서 시작해 현재 웹 개발 분야에도 적용하여 웹 페이지를 제작하는 기초 단계에서 그리드 시스템을 사용하면 제작을 쉽고 빠르게 진행할 수 있습니다.</p>
+                <h4>그리드 시스템의 장점</h4>
+                <p>디자인 레이아웃은 모든 측정값이 동일한 규칙을 따르면 자동으로보다 일관된 UI를 얻게 됩니다. 그리드 시스템은 균일한 요소와 간격을 사용하여 플랫폼, 환경 및 화면 크기에 일관성을 부여하고 그래픽 요소의 체계적인 배열을 도와줍니다.<br>
+                    또한 협업의 목적으로 내부의 기준을 정하는 것에 도움이 되며, 또한 반응형 디자인의 경우 해상도 대응이 쉬워지고 디자이너와 개발자 사이의 쉬운 커뮤니케이션 시스템이 됩니다.</p>
+                <h4>그리드 시스템의 기본 요소</h4>
+                <div class="line">
+                    <ul>
+                        <li>칼럼(Columns)<br>실제로 컨텐츠를 포함하는 부분은 칼럼이라고 합니다. 칼럼의 넓이는 고정된 값으로 제공되며, 1개 이상의 칼럼이 조합하여 컨텐츠의 크기를 결정합니다. 그리고 하나의 칼럼 안에는 반드시 양 옆에 여백, 즉 거터를 동반합니다.</li>
+                        <li>거터(Gutters)<br>거터는 칼럼과 칼럼사이의 공간입니다. 1개 이상의 칼럼이 조합된 컨텐츠와 컨텐츠 사이의 간격이 됩니다. 거터의 넓이 역시 고정 값으로 제공하며, 스크린의 너비에 비례하여 넓은 거터는 큰 스크린에 적합니다. 칼럼사이에 공백을 더 많이 생성하기 때문입니다.</li>
+                        <li>마진(Margins)<br>여백은 내용과 화면의 왼쪽 및 오른쪽 가장자리 사이의 공간입니다. 여백 너비의 넓이도 고정 값으로 정의되며, 여백 역시 큰 여백은 내용의 둘레에 더 많은 공백을 만들기 때문에 큰 스크린에 적합니다.</li>
+                    </ul>
+                </div>
+                <h4>그리드 시스템 예시</h4>
+                <div class="line">
+                    <img src="assets/img/gridsystem.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- //refer -->
+    </main>
+    
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

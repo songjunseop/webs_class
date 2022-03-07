@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/cssimg.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/cssimg.png">
+    <link rel="icon" href="../assets/face/cssimg.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <div class="top"><a href="#header01">Top</a></div>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>송준섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2 id="header01"><a href="css.html">CSS <em>CSS 단위</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li class="active"><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float</a></li>
+                <li><a href="cssRefer07.html">벤더프리픽스</a></li>
+                <li><a href="cssRefer08.html">이미지 표현 방법</a></li>
+                <li><a href="cssRefer09.html">반응형 이미지 사용방법</a></li>
+                <li><a href="cssRefer10.html">IR 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>CSS 단위</h3>
+                <h4>절대단위</h4>
+                <P>
+                    고정된 값을 출력하며 절대 크기가 변하지 않는다.<br>
+                    이 방법은 크기가 가변적인 웹사이트가 아닌 경우에는 유용하나, 반응형 사이트에 적용하기 위해서는 매우 복잡하다는 단점이 있다.<br>
+                    *px (픽셀) 값을 주로 사용한다.
+                </P>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td>cm (센티미터)</td>
+                            <td>mm (미리미터)</td>
+                            <td>in (인치)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>px (픽셀)</strong></td>
+                            <td>pt (포인트)</td>
+                            <td>pc (파이카)</td>
+                        </tr>
+                    </table>
+                </div>
+                <h4>상대 단위</h4>
+                <p>
+                    부모 요소나 다른 요소의 크기에 영향을 받아 상대적으로 크기가 변한다.<br>
+                    반응형 웹사이트를 작업할 때 주로 사용한다.<br>
+                    *em, rem, % 값을 주로 사용한다.
+                </p>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th><strong>em</strong></th>
+                            <td>부모 요소의 크기의 영향을 받아 크기가 변함</td>
+                        </tr>
+                        <tr>
+                            <th><strong>rem</strong></th>
+                            <td>최상위 요소인 html요소의 크기의 영향을 받아 크기가 변함</td>
+                        </tr>
+                        <tr>
+                            <th><strong>%</strong></th>
+                            <td>부모 요소의 크기의 영향을 받아 크기가변함</td>
+                        </tr>
+                        <tr>
+                            <th>vw</th>
+                            <td>viewport width의 약자 / 80vw="뷰포트 영역의 80%만큼 너비"</td>
+                        </tr>
+                        <tr>
+                            <th>vh</th>
+                            <td>viewport height의 약자 / 80vh="뷰포트 영역의 80%만큼 높이"</td>
+                        </tr>
+                        <tr>
+                            <th>vmin</th>
+                            <td>뷰포트의 최소값 / 설정한 viewport값에 따라 변함</td>
+                        </tr>
+                        <tr>
+                            <th>vmax</th>
+                            <td>뷰포트의 최대값 / 설정한 viewport값에 따라 변함</td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+        <!-- //refer -->
+    </main>
+    
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test flex</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            height: 100px;
+            background-color: rgb(94, 153, 89);
+        }
+        main {
+            display: flex;
+        }
+        .container {
+            display: flex;
+            width: 75%;
+        }
+        aside {
+            width: 35%;
+            height: 780px;
+            background-color: rgb(47, 138, 19);
+        }
+        section {
+            width: 65%;
+            height: 780px;
+            background-color: rgb(15, 196, 75);
+        }
+        article {
+            width: 25%;
+            height: 780px;
+            background-color: rgb(105, 212, 119);
+        }
+        footer {
+            height: 100px;
+            background-color: rgb(50, 114, 7);
+        }
+        @media(max-width: 1220px) {
+            .wrap {
+                width: 100%;
+            }
+            header {
+                height: 150px;
+            }
+            main {
+                flex-direction: column;
+            }
+            .container {
+                width: 100%;
+            }
+            aside {
+                width: 40%;
+                height: 600px;
+            }
+            section {
+                width: 60%;
+                height: 600px;
+            }
+            article {
+                width: 100%;
+                height: 400px;
+            }
+            footer {
+                height: 150px;
+            }
+        }
+        @media(max-width: 768px) {
+            header {
+                height: 200px;
+            }
+            .container {
+                flex-direction: column;
+            }
+            aside {
+                width: 0;
+                height: 0;
+            }
+            section {
+                width: 100%;
+            }
+            footer {
+                height: 200px;
+            }
+        }
+        @media(max-width: 480px) {
+            header {
+                height: 250px;
+            }
+            section {
+                height: 400px;
+            }
+            footer {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header></header>
+        <main>
+            <div class="container">
+                <aside></aside>
+                <section></section>
+            </div>            
+            <article></article>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>

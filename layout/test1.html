@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: rgb(180, 149, 26);
+        }
+        #container {
+            width: 1200px;
+            height: 1080px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #a1a1a1;
+        }
+        #nav {
+            width: 1200px;
+            height: 100px;
+            background-color: #794c4c;
+        }
+        #main {
+            display: flex;
+        }
+        #main .aside {
+            width: 400px;
+            height: 780px;
+            background-color: rgb(192, 69, 161);
+        }
+        #main .section .article2 {
+            width: 800px;
+            height: 390px;
+            background-color: rgb(10, 54, 112);
+        }
+        #main .section .article3 {
+            width: 800px;
+            height: 390px;
+            background-color: rgb(160, 185, 218);
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #d1d1d1;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside class="aside"></aside>
+            <section class="section">
+                <article class="article2"></article>
+                <article class="article3"></article>
+            </section>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

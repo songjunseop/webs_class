@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/cssimg.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/cssimg.png">
+    <link rel="icon" href="../assets/face/cssimg.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <div class="top"><a href="#header01">Top</a></div>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>송준섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2 id="header01"><a href="css.html">CSS <em>CSS 색상</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li class="active"><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float</a></li>
+                <li><a href="cssRefer07.html">벤더프리픽스</a></li>
+                <li><a href="cssRefer08.html">이미지 표현 방법</a></li>
+                <li><a href="cssRefer09.html">반응형 이미지 사용방법</a></li>
+                <li><a href="cssRefer10.html">IR 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>CSS 색상</h3>
+                <h4>색상 이름으로 표현</h4>
+                <p>
+                    색상의 이름을 바로 입력하여 사용이 가능합니다.
+                </p>
+                <div class="code">
+<pre><code>p {
+    color: red;
+}</code></pre>
+                </div>
+                <h4>RGB 색상값으로 표현</h4>
+                <p>
+                    RGB 색상표기법은 rgb(red, green, blue)형식으로 색상을 표현하는데, 각 요소에는 0에서 255사이의 숫자를 입력합니다.<br>
+                    여기에 투명도를 더하고 싶다면 rgba(red, green, blue, alpha)형식으로 네번째 자리에 불투명도를 표기해주면 됩니다.<br>
+                    투명도 표기법은 0~1까지 사용할 수 있고, 숫자가 적을수록 투명해 집니다.
+                </p>
+                <div class="code">
+<pre><code>p {
+    color: rgba(0, 0, 0, 0.5); //투명도 50% 검정색
+}</code></pre>
+                </div>
+                <h4>16진수 색상값으로 표현(HEX)</h4>
+                <p>
+                    RGB 순서대로 16진수로 변환하여 00~ff까지 두자리씩 표기합니다.<br>
+                    여섯자리의 색상코드 앞에는 샵(#)을 붙입니다.<br>
+                    숫자가 작을수록 어두운 색상으로 #000000은 검정색, #ffffff는 하얀색 입니다.<br>
+                    같은 숫자가 반복된다면 #000000 -> #000, #ffffff -> #fff와 같이 세자리로 표기해도 무방합니다.
+                </p>
+                <div class="code">
+<pre><code>p {
+    color: #000;
+}</code></pre>
+                </div>
+                <h4>HSL/HSLA 값으로 표현</h4>
+                <p>
+                    HSL은 Hue(색상), Saturation(채도), Lightness(명도)로 색상을 정의하는 방법입니다.<br>
+                    색상은 0부터 360까지의 색상환에 따라 결정되며 0:red, 120:green, 240:blue로 나타냅니다.<br>
+                    채도와 명도는 백분율로 나타냅니다.
+                    HSLA는 HSL방식에서 불투명도 지정 기능이 추가된 것이며 HSLA(색상,채도,명도,불투명도) 형식으로 나타냅니다.
+                </p>
+                <div class="code">
+<pre><code>&lt;p style="background-color:hsl(o,100%,80%);"&gt;채도 100%, 밝기 80%&lt;p&gt;
+</code></pre>
+                </div>
+            </div>
+        </div>
+        <!-- //refer -->
+    </main>
+    
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

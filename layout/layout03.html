@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout03</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #000;
+        }
+        #wrap {
+            width: 1200px;            
+            margin: 0 auto;
+        }
+        #header {
+            width: 1200;
+            height: 100px;
+            background-color: #222;
+        }
+        #nav {
+            width: 1200;
+            height: 100px;
+            background-color: #333;
+        }
+        #main {
+            width: 1200;
+            display: flex;
+        }
+        #main .aside {
+            width: 400px;
+            height: 780px;
+            background-color: #666;
+        }
+        #main .contents {
+            width: 800px;
+            height: 780px;
+            background-color: #777;
+        }
+        #main .contents .article1 {
+            width: 800px;
+            height: 260px;
+            background-color: #888;
+        }
+        #main .contents .article2 {
+            width: 800px;
+            height: 260px;
+            background-color: #999;
+        }
+        #main .contents .article3 {
+            width: 800px;
+            height: 260px;
+            background-color: #101010;
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside class="aside"></aside>
+            <contents class="contents">
+                <article class="article1"></article>
+                <article class="article2"></article>
+                <article class="article3"></article>
+            </contents>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

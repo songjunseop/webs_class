@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/cssimg.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/cssimg.png">
+    <link rel="icon" href="../assets/face/cssimg.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <div class="top"><a href="#header01">Top</a></div>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>송준섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2 id="header01"><a href="css.html">CSS <em>반응형 이미지 사용방법</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float</a></li>
+                <li><a href="cssRefer07.html">벤더프리픽스</a></li>
+                <li><a href="cssRefer08.html">이미지 표현 방법</a></li>
+                <li class="active"><a href="cssRefer09.html">반응형 이미지 사용방법</a></li>
+                <li><a href="cssRefer10.html">IR 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>CSS의 background-images에 반응형 이미지 사용방법</h3>
+                <p>CSS의 background-images에 반응형 이미지 사용방법은 @meadia 쿼리를 사용하여 배경 이미지 소스를 변경하면 됩니다.</p>
+                <div class="code">
+<pre><code>.img {
+    background-image: url(small.jpg);
+}
+@media (min-width: 468px),
+       (-webkit-min-device-pixel-ratio: 2), 
+       (min-resolution: 192dpi) {
+           .img {
+                background-image: url(large.jpg);
+            }
+}</code></pre>
+                </div>
+                <p>srcset / sizes 처럼 브라우저가 최상의 옵션을 선택하도록 놔두고 싶을 수 있습니다. CSS에서의 이 솔루션은 궁극적으로 image-set()함수가 될 것입니다.<br>
+                오늘날 image-set()함수에는 두 가지 문제가 있습니다. 아직 정식으로 지원되지 않습니다. 사파리에서는 많이 구현되었지만 image-set()은 8년 동안 크롬에서 접두사로 사용되었으며 파이어폭스는 전혀 지원하지 않습니다.<br>
+                사양 자체도 시대에 뒤떨어져 있습니다. 예를 들어 x 설명자만 지원합니다.(아직 w 설명자는 지원하지 않습니다.)</p>
+                <p>이 CSS 문법을 사용하면 브라우저 조건에 따라 두 이미지 중 하나만 다운로드합니다. 따라서 HTML의 반응형 이미지 문법과 동일한 성능 목표를 달성할 수 있습니다.<br>
+                이것이 도움이 된다면 앞의 &lt;picture&gt; 문법과 동등한 CSS 버전으로 생각하면 됩니다. 브라우저는 이 규칙을 따르고 일치하는 것을 표시해야 합니다.</p>
+            </div>
+        </div>
+        <!-- //refer -->
+    </main>
+    
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

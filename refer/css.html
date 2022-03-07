@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/cssimg.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/cssimg.png">
+    <link rel="icon" href="../assets/face/cssimg.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <div class="top"><a href="#header01">Top</a></div>
+
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>송준섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2 id="header01"><a href="css.html">CSS <em>레퍼런스 북</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li class="active"><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float</a></li>
+                <li><a href="cssRefer07.html">벤더프리픽스</a></li>
+                <li><a href="cssRefer08.html">이미지 표현 방법</a></li>
+                <li><a href="cssRefer09.html">반응형 이미지 사용방법</a></li>
+                <li><a href="cssRefer10.html">IR 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            
+            <div class="title">
+                <ul>
+                    <li class="active"><a href="css.html">Alphabet</a></li>
+                    <li><a href="cssSelector.html">Selector</a></li>
+                    <li><a href="cssFlex.html">flex</a></li>
+                    <li><a href="cssGrid.html">grid</a></li>
+                    <li><a href="cssTransform.html">transform</a></li>
+                    <li><a href="cssAnimation.html">animation</a></li>
+                </ul>                
+            </div>
+
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>속성</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>align-content</th>
+                            <td>align-content 속성은 콘텐츠의 상하관계 정렬 상태를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>align-items</th>
+                            <td>align-items 속성은 &lt;div&gt; 요소의 수직 방향 정렬 방식을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>align-self</th>
+                            <td>align-self 속성은 콘텐츠의 정렬 상태를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>all</th>
+                            <td>all 속성은 요소의 속성을 초기화 또는 상속을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th><a href="cssAnimation.html">animation</a></th>
+                            <td>animation 속성은 매니메이션과 관련된 속성을 일괄적으로 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>animation-delay</th>
+                            <td>animation-delay 속성은 애니메이션 지연 시간을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>animation-direction</th>
+                            <td>animation-direction 속성은 애니메이션 움직임 방향을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>animation-duration</th>
+                            <td>animation-duration 속성은 애니메이션 움직임 시간을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>animation-fill-mode</th>
+                            <td>animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>animation-iteration-count</th>
+                            <td>animation-iteration-count 속성은 애니메이션 반복 횟수 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>animation-name</th>
+                            <td>animation-name 속성은 애니메이션 keyframe 이름을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>animation-play-state</th>
+                            <td>animation-play-state 속성은 애니메이션 진행상태를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>animation-timing-function</th>
+                            <td>animation-timing-function 속성은 움직임의 속도를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>backface-visibility</th>
+                            <td>backface-visibility 속성은 요소의 뒷면을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background</th>
+                            <td>background 속성은 색상, 이미지, 원점, 크기, 반복 등 여러 배경 스타일을 한 번에 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-attachment</th>
+                            <td>background-attachment 속성은 배경 이미지의 고정 여부를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-blend-mode</th>
+                            <td>background-blend-mode 속성은 배경을 혼합했을 때의 상태를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-clip</th>
+                            <td>background-clip 속성은 백그라운드 이미지의 위치 기준점을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-color</th>
+                            <td>background-color 속성은 요소의 배경 색을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-image</th>
+                            <td>background-image 속성은 백그라운드 이미지 및 배경 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-origin</th>
+                            <td>background-origin 속성은 백그라운드 이미지의 위치 기준점을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-position</th>
+                            <td>background-position 속성은 백그라운드 이미지의 위치 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-repeat</th>
+                            <td>background-repeat 속성은 백그라운드 이미지의 반복 여부를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-size</th>
+                            <td>background-size 속성은 백그라운드 이미지의 사이즈를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border</th>
+                            <td>border 속성은 요소의 테두리를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom</th>
+                            <td>border-bottom 속성은 요소의 하단 테두리의 너비, 색상, 스타일을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-color</th>
+                            <td>border-bottom-color 속성은 요소의 하단 테두리의 색상을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-left-radius</th>
+                            <td>border-bottom-left-radius 속성은 요소의 좌측 하단 모서리를 둥글게 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-right-radius</th>
+                            <td>border-bottom-right-radius 속성은 요소의 우측 하단 모서리를 둥글게 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-style</th>
+                            <td>border-bottom-style 속성은 요소의 하단 테두리의 스타일을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-width</th>
+                            <td>border-bottom-width 속성은 요소의 하단 테두리의 영역의 너비를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-collapse</th>
+                            <td>border-collapse 속성은 테이블 cell 테두리의 겹침 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-color</th>
+                            <td>border-color 속성은 요소의 테두리 색상을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-image</th>
+                            <td>border-image 속성은 테두리 이미지 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-image-outset</th>
+                            <td>border-image-outset 속성은 테두리 이미지 간격 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-image-repeat</th>
+                            <td>border-image-repeat 속성은 테두리 이미지 반복 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-image-slice</th>
+                            <td>border-image-slice 속성은 테두리 이미지 크기 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-image-source</th>
+                            <td>border-image-source 속성은 테두리 이미지 경로 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-image-width</th>
+                            <td>border-image-width 속성은 테두리 이미지 두께 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-left</th>
+                            <td>border-left 속성은 요소의 왼쪽 테두리의 너비, 색상, 스타일을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-left-color</th>
+                            <td>border-left-color 속성은 요소의 왼쪽 테두리의 색상을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-left-style</th>
+                            <td>border-left-style 속성은 요소의 왼쪽 테두리의 스타일을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-left-width</th>
+                            <td>border-left-width 속성은 요소의 왼쪽 테두리의 너비를 지정합니다</td>
+                        </tr>
+                        <tr>
+                            <th>border-radius</th>
+                            <td>border-radius 속성은 요소 테두리 경계의 꼭짓점을 둥글게 만듭니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-right</th>
+                            <td>border-right 속성은 요소의 오른쪽 테두리의 너비, 색상, 스타일을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-right-color</th>
+                            <td>border-right-color 속성은 요소의 오른쪽 테두리의 색상을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-right-style</th>
+                            <td>border-right-style 속성은 요소의 오른쪽 테두리의 스타일을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-right-width</th>
+                            <td>border-right-width 속성은 요소의 오른쪽 테두리의 너비를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-spacing</th>
+                            <td>border-spacing 속성은 테이블의 테두리 간격을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-style</th>
+                            <td>border-style 속성은 요소 테두리 네 면의 스타일을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-top</th>
+                            <td>border-top 속성은 요소의 상단 테두리의 너비, 색상, 스타일을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-top-color</th>
+                            <td>border-top-color 속성은 요소의 상단 테두리의 색상을 지정합니다</td>
+                        </tr>
+                        <tr>
+                            <th>border-top-left-radius</th>
+                            <td>border-top-left-radius 속성은 요소의 좌측 상단 모서리를 둥글게 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-top-right-radius</th>
+                            <td>border-top-right-radius 속성은 요소의 우측 상단 모서리를 둥글게 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-top-style</th>
+                            <td>border-top-style 속성은 요소의 상단 테두리의 스타일을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-top-width</th>
+                            <td>border-top-width 속성은 요소의 상단 테두리의 너비를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-width</th>
+                            <td>border-width 속성은 박스의 테두리 영역의 너비를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>bottom</th>
+                            <td>bottom 속성은 해당 태그 위치를 하단 기준으로 어느 높이에 위치시킬건지 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>box-decoration-break</th>
+                            <td>box-decoration-break 속성은 컬럼 및 줄바꿈시 테두리와 패딩의 방식을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>box-shadow</th>
+                            <td>box-shadow 속성은 박스 요소의 그림자를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>box-sizing</th>
+                            <td>box-sizing 속성은 요소의 너비와 높이를 계산하는 방법을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>caption-side</th>
+                            <td>caption-side 속성은 caption의 위치를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>caret-color</th>
+                            <td>caret-color 속성은 input의 커서 색을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>clear</th>
+                            <td>clear 속성은 float 속성을 통해 태그를 부유시킨 이후 문서의 흐름을 제거하기 위해 쓰입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>clip</th>
+                            <td>clip 속성은 보이는 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>color</th>
+                            <td>color 속성은 요소의 글씨 및 글씨 장식의 전경색과 currentcolor의 값을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>column-count</th>
+                            <td>column-count 속성은 컬럼의 수를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>column-fill</th>
+                            <td>column-fill 속성은 열의 지정방법을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>column-gap</th>
+                            <td>column-gap 속성은 컬럼의 간격을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>column-rule </th>
+                            <td>column-rule 속성은 컬럼 라인의 가로값, 스타일, 컬러를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>column-rule-color</th>
+                            <td>column-rule-color 속성은 컬럼의 라인 색을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>column-rule-style</th>
+                            <td>column-rule-style 속성은 컬럼 라인의 스타일을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>column-rule-width</th>
+                            <td>column-rule-width 속성은 컬럼 라인의 가로값을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>column-span</th>
+                            <td>column-span 속성은 열의 속성을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>column-width</th>
+                            <td>column-width 속성은 컬럼의 가로 값을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>columns</th>
+                            <td>columns 속성은 열의 폭과 열의 수를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>content</th>
+                            <td>content 속성은 생성한 값으로 요소를 대체합니다. content 속성으로 추가한 요소는 "익명 대체 요소"입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>counter-increment</th>
+                            <td>counter-increment 속성은 콘텐츠의 순서 상태를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>counter-reset</th>
+                            <td>counter-reset 속성은 콘텐츠의 숫자를 초기화합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>cursor</th>
+                            <td>cursor 속성은 요소 위에 마우스 커서가 올라갔을 때 보여줄 모양을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>direction</th>
+                            <td>direction 속성은 문장의 방향을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>display</th>
+                            <td>display 속성은, 형식적으로는 요소의 내부와 외부 디스플레이 유형을 설정합니다.<br>
+                                외부 디스플레이 유형은 플로우 레이아웃에 요소가 참여하는 방법을 나타내고, 내부 디스플레이 유형은 자식의 레이아웃 방식을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>empty-cells</th>
+                            <td>empty-cells 속성은 테이블의 빈요소의 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>filter</th>
+                            <td>filter 속성은 그래픽 효과를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th><a href="cssFlex.html">flex</a></th>
+                            <td>flex 속성은 하나의 플렉스 아이템이 자신의 컨테이너가 차지하는 공간에 맞추기 위해 크기를 키우거나 줄이는 방법을 설정하는 속성입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>flex-basis</th>
+                            <td>flex-basis 속성은 요소의 기본 단위를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>flex-direction</th>
+                            <td>flex-direction 속성은 요소의 정렬 방향을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>flex-flow</th>
+                            <td>flex-flow 속성은 요소의 정렬 방향 flex-direction와 줄 속성 flex-wrap을 같이 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>flex-grow</th>
+                            <td>flex-grow 속성은 요소의 크기를 숫자를 통해 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>flex-shrink</th>
+                            <td>flex-shrink 속성은 요소의 크기를 숫자를 통해 줄여줍니다.</td>
+                        </tr>
+                        <tr>
+                            <th>flex-wrap</th>
+                            <td>flex-wrap 속성은 요소의 줄 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>float</th>
+                            <td>float 속성은 박스를 왼쪽 또는 오른쪽으로 이동하거나 이동하지 않음을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>font</th>
+                            <td>font 속성은 글꼴을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>font-family</th>
+                            <td>font-family 속성은 선택된 요소에 우선 순위가 지정된 font family 이름과 generic family 이름을  지정할 수 있게 해줍니다.</td>
+                        </tr>
+                        <tr>
+                            <th>font-size</th>
+                            <td>font-size 속성은 폰트의 크기(대문자 "M"의 크기)를 지정합니다. 폰트 크기를 바꾸면 em 과 ex &lt;length&gt; 단위로 계산된 다른 항목들의 크기를 바꿉니다.</td>
+                        </tr>
+                        <tr>
+                            <th>font-size-adjust</th>
+                            <td>font-size-adjust 속성은 소문자를 기준으로 폰트 크기를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>font-stretch</th>
+                            <td>font-stretch 속성은 폰트의 굵기를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>font-style</th>
+                            <td>font-style 속성은 글꼴이 해당 font-family의 일반, 기울임꼴 또는 비스듬한 면으로 스타일 지정되어야 하는지 여부를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>font-variant</th>
+                            <td>font-variant 속성은 글꼴의 변형을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>font-weight</th>
+                            <td>font-weight 속성은 폰트(font)의 가중치(weight)나 굵기(boldness)를 명시한다. 몇몇 폰트들은 normal 나 bold 일 때만 가능합니다.</td>
+                        </tr>
+                        <tr>
+                            <th><a href="cssGrid.html">grid</a></th>
+                            <td>grid 속성은 Flex와 같이 Container(컨테이너)와 Item(아이템)이라는 두 가지 개념으로 구분되어 있습니다.
+                                Container는 Items를 감싸는 부모 요소이며, 그 안에서 각 Item을 배치할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-area</th>
+                            <td>grid-area 속성은 영역(Area) 이름을 설정하거나, grid-row와 grid-column의 단축 속성 입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-auto-columns</th>
+                            <td>grid-auto-columns 속성은 암시적인 열(Track)의 크기를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-auto-flow</th>
+                            <td>grid-auto-flow 속성은 자동 배치 알고리즘 방식을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-auto-rows</th>
+                            <td>grid-auto-rows 속성은 암시적인 행(Track)의 크기를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-column</th>
+                            <td>grid-column 속성은 grid-column-xxx의 단축 속성(열 시작/끝 위치)입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-column-end</th>
+                            <td>grid-column-end 속성은 그리드 아이템의 열 끝 위치 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-column-gap</th>
+                            <td>grid-column-gap 속성은 열과 열 사이의 간격(Line)을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-column-start</th>
+                            <td>grid-column-start 속성은 그리드 아이템(Item)의 행 시작 위치 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-gap</th>
+                            <td>grid-gap 속성은 xxx-gap의 단축 속성입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-row</th>
+                            <td>grid-row 속성은 grid-row-xxx의 단축 속성(행 시작/끝 위치)입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-row-end</th>
+                            <td>grid-row-end 속성은 그리드 아이템의 행 끝 위치 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-row-gap</th>
+                            <td>grid-row-gap 속성은 행과 행 사이의 간격(Line)을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-row-start</th>
+                            <td>grid-row-start 속성은 그리드 아이템(Item)의 행 시작 위치 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-template</th>
+                            <td>grid-template 속성은 grid-template-xxx의 단축 속성입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-template-areas</th>
+                            <td>grid-template-areas 속성은 영역(Area) 이름을 참조해 템플릿 생성합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-template-columns</th>
+                            <td>grid-template-columns 속성은 명시적 열(Track)의 크기를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid-template-rows</th>
+                            <td>grid-template-rows 속성은 명시적 행(Track)의 크기를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>hanging-punctuation</th>
+                            <td>hanging-punctuation 속성은 글씨의 시작 및 끝의 위치 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>height</th>
+                            <td>height 속성은 요소의 높이를 지정합니다. 기본값은 콘텐츠 영역의 높이지만, box-sizing이 border-box라면 테두리 영역의 높이를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>hyphens</th>
+                            <td>hyphens 속성은 텍스트의 하이픈 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>isolation</th>
+                            <td>isolation 속성은 stacking context을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>justify-content</th>
+                            <td>justify-content 속성은 &lt;div&gt; 요소의 수평 방향 정렬 방식을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>left</th>
+                            <td>left 속성은 해당 태그 위치를 좌측 기준으로 어디 쯤에 위치시킬건지 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>letter-spacing</th>
+                            <td>letter-spacing 속성은 글자 사이의 간격을 조절합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>line-height</th>
+                            <td>line-height 속성은 문장과 문장 사이의 간격을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>list-style</th>
+                            <td>list-style 속성은 목록 스타일 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>list-style-image</th>
+                            <td>list-style-image 속성은 목록 마커의 이미지를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>list-style-position</th>
+                            <td>list-style-position 속성은 목록 마커의 위치 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>list-style-type</th>
+                            <td>list-style-type 속성은 목록 마커의 유형을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th><a href="margin.html">margin</a></th>
+                            <td>margin 속성은 요소의 네 방향 바깥 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>margin-bottom</th>
+                            <td>margin-bottom 속성은 요소와 하단의 다른 요소의 사이 간격을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>margin-left</th>
+                            <td>margin-left 속성은 요소와 좌측의 다른 요소의 사이 간격을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>margin-right</th>
+                            <td>margin-right 속성은 요소와 우측의 다른 요소의 사이 간격을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>margin-top</th>
+                            <td>margin-top 속성은 요소와 상단의 다른 요소의 사이 간격을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>max-height</th>
+                            <td>max-height 속성은 요소의 최대 높이를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>max-width</th>
+                            <td>max-width 속성은 요소의 쵀대 너비를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>min-height</th>
+                            <td>min-heigh 속성은 요소의 최소 높이를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>min-width</th>
+                            <td>min-width 속성은 요소의 최소 너비를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>mix-blend-mode</th>
+                            <td>mix-blend-mode 속성은 배경의 혼합 상태를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>object-fit</th>
+                            <td>object-fit 속성은 &lt;img&gt;, &lt;video&gt; 태그의 크기를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>object-position</th>
+                            <td>object-position 속성은 &lt;img&gt;, &lt;video&gt; 태그의 위치를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>opacity</th>
+                            <td>opacity 속성은 요소의 투명도를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>order</th>
+                            <td>order 속성은 flex 콘텐츠의 순서를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>outline</th>
+                            <td>outline 속성은 요소 주위에 윤곽선을 그리는 데 사용합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>outline-color</th>
+                            <td>outline-color 속성은 아웃라인의 색을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>outline-offset</th>
+                            <td>outline-offset 속성은 아웃라인의 간격을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>outline-style</th>
+                            <td>outline-style 속성은 아웃라인 스타일을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>outline-width</th>
+                            <td>outline-width 속성은 아웃라인의 두께를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>overflow</th>
+                            <td>overflow 속성은 내용이 박스보다 큰 경우 밖으로넘친 부분을 어떻게 표시할지를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>overflow-x</th>
+                            <td>overflow-x 속성은 내용이 박스보다 큰 경우 x축의 내용이 넘칠때 밖으로 넘친 부분을 어떻게 표시할지를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>overflow-y</th>
+                            <td>overflow-y 속성은 내용이 박스보다 큰 경우 y축의 내용이 넘칠때 밖으로 넘친 부분을 어떻게 표시할지를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th><a href="padding.html">padding</a></th>
+                            <td>padding 속성은 요소의 네 방향 안쪽 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>padding-bottom</th>
+                            <td>padding-bottom 속성은 하단 방향 안쪽 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>padding-left</th>
+                            <td>padding-left 속성은 좌측 방향 안쪽 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>padding-right</th>
+                            <td>padding-right 속성은 우측 방향 안쪽 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>padding-top</th>
+                            <td>padding-top 속성은 상단 방향 안쪽 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>page-break-after</th>
+                            <td>page-break-after 속성은 페이지 인쇄시 분리에 관한 설정을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>page-break-before</th>
+                            <td>page-break-before 속성은 인쇄시 페이지 분리에 관한 설정을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>page-break-inside</th>
+                            <td>page-break-inside 속성은 인쇄시 페이지 분리에 관한 설정을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>perspective</th>
+                            <td>perspective 속성은 3D를 표현할 때 원근점을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>perspective-origin</th>
+                            <td>perspective-origin 속성은 3D를 표현할 때 원근점의 방향을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>pointer-events</th>
+                            <td>pointer-events 속성은 포인터 이벤트 반응을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>position</th>
+                            <td>position 속성은 요소의 배치방법을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>quotes</th>
+                            <td>quotes 속성은 인용 부호를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>resize</th>
+                            <td>resize 속성은 요소의 사이즈를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>right</th>
+                            <td>right 속성은 해당 태그 위치를 우측 기준으로 어디 쯤에 위치시킬건지 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>tab-size</th>
+                            <td>tab-size 속성은 글씨의 간격을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>table-layout</th>
+                            <td>table-layout 속성은 표의 레이아웃 크기를 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>text-align</th>
+                            <td>text-align 속성은 텍스트의 정렬 방향을 의미합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>text-align-last</th>
+                            <td>text-align-last 속성은 문장의 마지막 텍스트 정렬 방식을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>text-decoration</th>
+                            <td>text-decoration 속성은 텍스트의 밑줄, 윗줄, 가운데줄이나 깜빡거림의 장식적인 요소를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>text-decoration-color </th>
+                            <td>text-decoration-color 속성은 글자 라인 색을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>text-decoration-line</th>
+                            <td>text-decoration-line 속성은 글자 라인 스타일을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>text-decoration-style</th>
+                            <td>text-decoration-style 속성은 글자 스타일을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>text-indent</th>
+                            <td>text-indent 속성은 문단 들여쓰기 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>text-justify</th>
+                            <td>text-justify 속성은 텍스트의 간격을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>text-overflow</th>
+                            <td>text-overflow 속성은 문자열 영역 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>text-shadow</th>
+                            <td>text-shadow 속성은 텍스트에 그림자를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>text-transform</th>
+                            <td>text-transform 속성은 텍스트를 대문자나 소문자로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>top</th>
+                            <td>top 속성은 요소의 위쪽 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th><a href="cssTransform.html"></a>transform</th>
+                            <td>transform 속성은 요소의 움직임을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>transform-origin</th>
+                            <td>transform-origin 속성은 요소의 움직임 방향을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>transform-style</th>
+                            <td>transform-style 속성은 요소의 움직임 스타일을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>transition</th>
+                            <td>transition 속성은 요소의 움직임 시간을 일괄적으로 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>transition-delay</th>
+                            <td>transition-delay 속성은 요소의 움직임 지연 시간을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>transition-duration</th>
+                            <td>transition-duration 속성은 요소의 움직임 지속 시간을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>transition-property</th>
+                            <td>transition-property 속성은 요소의 움직임 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>transition-timing-function</th>
+                            <td>transition-timing-function 속성은 요소의 움직임 기능을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>unicode-bidi</th>
+                            <td>unicode-bidi 속성은 글자의 방향 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>user-select</th>
+                            <td>user-select 속성은 요소의 텍스트를 선택할 지 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>vertical-align</th>
+                            <td>vertical-align 속성은 텍스트의 상하 정렬 방식을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>visibility</th>
+                            <td>visibility 속성은 문서의 레이아웃을 변경하지 않고 요소를 보이거나 숨깁니다. visibility로 &lt;table&gt;의 행이나 열을 숨길 수도 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <th>white-space</th>
+                            <td>white-space 속성은 스페이스와 탭, 줄바꿈, 자동줄바꿈을 어떻게 처리할지 정하는 속성입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>width</th>
+                            <td>width 속성은 요소의 너비를 설정합니다. 기본값은 콘텐츠 영역의 너비이지만, box-sizing이 border-box라면 테두리 영역의 너비를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>word-break</th>
+                            <td>word-break 속성은 텍스트가 자신의 콘텐츠 박스 밖으로 오버플로 할 때 줄을 바꿀 지 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>word-spacing</th>
+                            <td>word-spacing 속성은 단어 사이의 간격을 정의합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>word-wrap</th>
+                            <td>word-wrap 속성은 줄바꿈을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>z-index</th>
+                            <td>z-index 속성은 요소의 위치가 겹칠 경우 순서를 설정합니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- //refer -->
+    </main>
+    
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

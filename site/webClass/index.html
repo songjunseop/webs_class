@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>웹 표준 사이트 만들기</title>
+
+<!-- SEO(검색엔진최적화) -->
+
+<meta name="acthor" content="junseop">
+
+<meta name="description" content="웹 표준을 준수한 사이트입니다.">
+
+<meta name="keywords" content="웹표준, 웹접근성, 웹호환성, 사이트제작, 사이트만들기">
+
+<meta name="robots" content="all">
+
+<!-- 메타정보 -->
+
+<meta property="og:title" content="웹표준 사이트 제작">
+
+<meta property="og:url" content="https://songjunseop.github.io/webs_class/site/webCLass/index.html">
+
+<meta property="og:image" content="https://songjunseop.github.io/webs_class/site/webCLass/img/icon.png">
+
+<meta property="og:description" content="웹 표준을 준수한 사이트 튜토리얼입니다.">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="웹표준 사이트 제작">
+
+<meta name="twitter:url" content="https://songjunseop.github.io/webs_class/site/webCLass/index.html">
+
+<meta name="twitter:image" content="https://songjunseop.github.io/webs_class/site/webCLass/img/icon.png">
+
+<meta name="twitter:description" content="웹 표준을 준수한 사이트 튜토리얼입니다.">
+
+<!-- 아이콘 & 파비콘 -->
+
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+<link rel="apple-touch-icon" href="img/icon114.png">
+
+<link rel="apple-touch-icon" sizes="114x114" href="img/icon114.png">
+
+<link rel="apple-touch-icon-precomposed" href="img/icon.png">
+
+<link rel="apple-touch-icon-precomposed" sizes="167x167" href="img/icon167.png">
+
+<!-- CSS style -->
+
+<link rel="stylesheet" href="css/fonts.css">
+
+<link rel="stylesheet" href="css/reset.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
+
+</head>
+<body>
+
+    <noscript>"페이지를 보려면 자바스크립트 옵션이 활성화 되어 있어야 합니다."</noscript>
+
+    <div id="skip">
+        <a href="#contents">컨텐츠 바로가기</a>
+    </div>
+    <!-- //skip-->
+
+
+    <div id="wrap">
+        <header id="header">
+            <h1 class="logo">
+                <a href="https://songjunseop.github.io/webs_class/">WEB <em>class</em></a>
+            </h1>
+            <nav class="menu">
+                <h2 class="ir_so">메인 메뉴</h2>
+                <ul>
+                    <li><a href="#">레이아웃</a></li>
+                    <li><a href="#">메뉴 영역</a></li>
+                    <li><a href="#">헤더 영역</a></li>
+                    <li><a href="#">컨텐츠 영역</a></li>
+                    <li><a href="#">푸터 영역</a></li>
+                </ul>
+            </nav>
+            <div class="member">
+                <a href="join.html">회원가입</a>
+                <a href="login.html">로그인</a>
+            </div>
+        </header>
+        <!-- //header -->
+
+        <main id="contents">
+            <section id="banner">
+                <h3 class="ir_so">배너 영역</h3>
+                <!-- <div class="img_type slider">
+                    <div class="slider-img">
+                        <div class="desc">
+                            <span>DEVELOPER</span>
+                            <h4>NEW FRONTEND</h4>
+                            <p>당신이 만들어갈 새로운 이야기<br>당신도 할 수 있습니다.</p>
+                            <div class="btn">
+                                <a href="#" class="white">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="slider-arrow">
+                        <a href="#" class="left"><span class="ir_pm">이전이미지</span></a>
+                        <a href="#" class="right"><span class="ir_pm">다음이미지</span></a>
+                    </div>
+                    <div class="slider-dot">
+                        <a href="#" class="dot active"><span class="ir_pm">1</span></a>
+                        <a href="#" class="dot"><span class="ir_pm">2</span></a>
+                        <a href="#" class="dot"><span class="ir_pm">3</span></a>
+                        <a href="#" class="dot"><span class="ir_pm">4</span></a>
+                        <a href="#" class="play"><span class="ir_pm">자동플레이</span></a>
+                        <a href="#" class="stop"><span class="ir_pm">정지</span></a>
+                    </div>
+                </div> -->
+                
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide s1">
+                            <div class="desc">
+                                <span>DEVELOPER</span>
+                                <h4>NEW FRONTEND</h4>
+                                <p>당신이 만들어갈 새로운 이야기<br>당신도 할 수 있습니다.</p>
+                                <div class="btn">
+                                    <a href="#" class="white">자세히 보기</a>
+                                    <a href="#" class="black">사이트 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide s2">
+                            <div class="desc">
+                                <span>DEVELOPER</span>
+                                <h4>NEW FRONTEND</h4>
+                                <p>당신이 만들어갈 새로운 이야기<br>당신도 할 수 있습니다.</p>
+                                <div class="btn">
+                                    <a href="#" class="white">자세히 보기</a>
+                                    <a href="#" class="black">사이트 보기</a>
+                                </div>
+                             </div>
+                         </div>      
+                        <div class="swiper-slide s3">
+                            <div class="desc">
+                                <span>DEVELOPER</span>
+                                <h4>NEW FRONTEND</h4>
+                                <p>당신이 만들어갈 새로운 이야기<br>당신도 할 수 있습니다.</p>
+                                <div class="btn">
+                                    <a href="#" class="white">자세히 보기</a>
+                                    <a href="#" class="black">사이트 보기</a>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+            <!-- //banner -->
+
+            <h2 class="ir_so">컨텐츠 영역</h2>
+            <section class="imgText_type01 container">
+                <div class="text">
+                    <h3 class="text_title">이미지&텍스트</h3>
+                    <p class="text_desc">
+                        사이트 제작에 있어 이미지와 텍스트를<br>
+                        혼합해서 사용하는 경우가 많다.<br>
+                        기본 레이아웃은 동일하기 때문에<br>
+                        이미지나, 배치에 따라서<br> 
+                        느낌은 얼마든지 다르게 표현할 수 있다.<br>
+                        Gmarket Sans 50px<br>
+                        NEXON Lv1 Gothic 18px (153%) Regular<br>
+                    </p>
+                    <div class="text_more"> 
+                        <a href="#" class="text_more">
+                            <span>더 많은 유형 살펴보기</span>
+                            <svg class="svg" width="124" height="8" viewBox="0 0 124 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M123.356 4.35064C123.55 4.15379 123.547 3.83722 123.351 3.64356L120.143 0.487768C119.946 0.294113 119.629 0.296708 119.436 0.493564C119.242 0.69042 119.245 1.00699 119.441 1.20065L122.293 4.0058L119.488 6.85731C119.294 7.05417 119.297 7.37074 119.494 7.56439C119.69 7.75805 120.007 7.75545 120.201 7.5586L123.356 4.35064ZM1.0041 5.49998L123.004 4.49998L122.996 3.50002L0.995902 4.50002L1.0041 5.49998Z" fill="#AF3029"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="img1"></div>
+                <div class="img2"></div>
+            </section>
+            <!-- //imgtext_type01 -->
+            
+            <section class="imgText_type02">
+                <div class="left"></div>
+                <div class="right">
+                    <span class="sub">베스트 여행지 01</span>
+                    <h3 class="title">그리스 산토리니(Greece Santorini)</h3>
+                    <p class="text_desc">
+                        전 세계적으로는 은근히 아틀란티스 설과 관련지어서 유명세를 탔으며,<br>
+                        미코노스와 함께 키클라데스 제도에서 가장 유명한 관광지 중 하나이다.<br>
+                        그리스의 상징색인 청색과 흰색으로 지어진,<br>
+                        콘크리트가 만든 인공미와 기묘하게 어우러지는 자연미가 매우 인상적인 섬.
+                    </p>
+                    <a href="#" class="view">자세히 보기</a>
+                </div>
+            </section>
+            <!-- //imgtext_type02 -->
+
+            <section class="img_type01 container">
+                <h3>작고 귀여운 동물들 <em>이미지 유형01</em></h3>
+                <div class="img-wrap">
+                    <div class="left">
+                        <div class="left-cont">
+                            <h4>강아지</h4>
+                            <p>강아지는 애교가 많고 귀엽다.보통 생후 2개월의 나이에 데려오게 되는데, 처음 데려왔을 때의 귀여움은 거의 한 달도 지속되지 않는다.
+                            </p>
+                            <a href="#">자세히 보기</a>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="right-cont">
+                            <h4>고양이</h4>
+                            <p>고양이는 시크하고 잠이 많은 잠꾸러기다. 하루에 무려 16시간정도 잔다. 고양이는 자신의 영역을 생활영역과 사냥영역으로 분류하는 특성이 있다.
+                            </p>
+                            <a href="#">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- //img_type01 -->
+
+            <section class="banner_type01">
+                <div class="contanier">
+                    <h3>배너 유형(Banner type)</h3>
+                    <p>웹 배너(영어: web banner) 또는 배너 광고는 웹 상의 온라인 광고의 일종이다.<br>
+                        간단히 배너 애드(영어: banner ad)로 줄여서 말하기도 한다.<br>
+                        이러한 형태의 온라인 광고는 웹 페이지에 광고를 추가하는 것이다.</p>
+                    <a href="#">배너 유형01</a>
+                </div>
+            </section>
+            <!-- //banner_type01 -->
+
+            <section class="img_type02">
+                <div class="container">
+                    <h3>무서운 맹수들 <em>이미지 유형02</em></h3>
+                    <div class="img-wrap">
+                        <ul>
+                            <li>
+                                <span>
+                                    <em>맹수의 생김새</em>
+                                    <a href="#">자세히 보기</a>
+                                </span>                                
+                            </li>
+                            <li>
+                                <span>
+                                    <em>맹수의 종류</em>
+                                    <a href="#">자세히 보기</a>
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <em>동물의 왕</em>
+                                    <a href="#">자세히 보기</a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- //img_type02 -->
+
+        </main>
+        <!-- //contents -->
+
+        <footer id="footer" class="footer_type01">
+            <div class="container">
+                <h2 class="ir_so">푸터 바로가기 메뉴</h2>
+                <div class="footer-menu">
+                    <div>
+                        <h3>레이아웃 영역</h3>
+                        <ul>
+                            <li><a href="#">레이아웃 유형 01</a></li>
+                            <li><a href="#">레이아웃 유형 02</a></li>
+                            <li><a href="#">레이아웃 유형 03</a></li>
+                            <li><a href="#">레이아웃 유형 04</a></li>
+                            <li><a href="#">레이아웃 유형 05</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>메뉴 영역</h3>
+                        <ul>
+                            <li><a href="#">메뉴 유형 01</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>메인 영역</h3>
+                        <ul>
+                            <li><a href="#">이미지 유형 01</a></li>
+                            <li><a href="#">동영상 유형 02</a></li>
+                            <li><a href="#">슬라이드 유형 03</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>컨텐츠 영역</h3>
+                        <ul>
+                            <li><a href="#">텍스트 유형 01</a></li>
+                            <li><a href="#">이미지 유형 02</a></li>
+                            <li><a href="#">이미지 / 텍스트 유형 03</a></li>
+                            <li><a href="#">카드 유형 04</a></li>
+                            <li><a href="#">배너 유형 05</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>푸터 영역</h3>
+                        <ul>
+                            <li><a href="#">컨택트 유형 01</a></li>
+                            <li><a href="#">푸터 유형 02</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>사이트</h3>
+                        <ul>
+                            <li><a href="#">웹표준 사이트</a></li>
+                            <li><a href="#">반응형 사이트</a></li>
+                            <li><a href="#">패럴랙스 사이트</a></li>
+                            <li><a href="#">포트폴리오 사이트</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <address class="footer-rights">
+                    &copy; 2022 junseop. All rights reserved.
+                    <div class="footer-sns">
+                        <ul>
+                            <li><a href="#" class="ir_pm">페이스북</a></li>
+                            <li><a href="#" class="ir_pm">인스타그램</a></li>
+                            <li><a href="#" class="ir_pm">깃허브</a></li>
+                            <li><a href="#" class="ir_pm">드리블</a></li>
+                        </ul>
+                    </div>
+
+                </address>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            effect: 'slide',
+            autoplay: {
+            delay: 3000,
+            },
+
+            pagination: {
+                el: '.swiper-pagination',
+                clickable : true
+            },
+            
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }   
+        });
+    </script>
+</body>
+</html>

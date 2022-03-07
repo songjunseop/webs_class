@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing:content-box ;
+        }
+        body {
+            background-color: #E1F5FE;
+        }
+        .wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            width: 100%;
+            height: 100px;
+            background-color: #B3E5FC;
+        }
+        nav {
+            width: 100%;
+            height: 100px;
+            background-color: #81D4FA;
+        }
+        main {
+            display: flex;
+        }
+        .main1 {
+            width: 25%;
+            height: 780px;
+            background-color: #4FC3F7;
+        }
+        .main2 {
+            width: 75%;
+        }
+        .cont1 {
+            width: 100%;
+            height: 260px;
+            background-color: #29B6F6;
+        }
+        .cont2 {
+            width: 100%;
+            height: 260px;
+            background-color: #03A9F4;
+        }
+        .cont3 {
+            width: 100%;
+            height: 260px;
+            background-color: #039BE5;
+        }
+        footer {
+            width: 100%;
+            height: 100px;
+            background-color: #0288D1;
+        }
+
+        @media(max-width: 1220px){
+            .wrap {
+                width: 96%;
+            }
+            .main2 {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .cont2 {
+                width: 50%;
+                height: 520px;
+            }
+            .cont3 {
+                width: 50%;
+                height: 520px;
+            }
+        }
+        @media(max-width: 768px){
+            .wrap {
+                width: 100%;
+            }
+            .cont1 {
+                width: 100%;
+                height: 50%;
+            }
+            .cont2 {
+                width: 100%;
+                height: 50%;
+            }
+            .cont3 {
+                width: 0;
+                height: 0;
+            }
+        }
+        @media(max-width: 600px){
+            .wrap {
+                width: 100%;
+            }
+            main {
+                flex-direction: column;
+            }
+            .main1 {
+                width: 100%;
+                height: 200px;
+            }
+            .main2 {
+                width: 100%;
+            }
+            .cont1 {
+                width: 100%;
+                height: 430px;
+            }
+            .cont2 {
+                width: 100%;
+                height: 150px;
+            }
+            .cont3 {
+                width: 0;
+                height: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header></header>
+        <nav></nav>
+        <main>
+            <div class="main1"></div>
+            <div class="main2">
+                <div class="cont1"></div>
+                <div class="cont2"></div>
+                <div class="cont3"></div>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>
