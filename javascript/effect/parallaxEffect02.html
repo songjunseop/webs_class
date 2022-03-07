@@ -182,7 +182,6 @@
             margin-left: auto;
             margin-right: -4vw;
         }
-        #parallax__footer {}
 
         /* info */
         .scrollTop {
@@ -209,7 +208,42 @@
             list-style: none;
             line-height: 1.6;
         }
-
+        #parallax__dot {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background: rgba(0,0,0,0.4);
+            padding: 20px 10px;
+            border-radius: 30px;
+        }
+        #parallax__dot li {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            list-style: none;
+            margin: 12px 8px;
+            box-shadow: 0 0 0 2px rgba(255,255,255,0);
+            transition: box-shadow .2s ease;
+        }
+        #parallax__dot li a {
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+        #parallax__dot li.active {
+            box-shadow: 0 0 0 2px rgba(255,255,255,1);
+        }
+        #parallax__dot li.active a {
+            transform: scale(0.4);
+        }
     </style>
 </head>
 <body>
@@ -229,21 +263,21 @@
     </header>
     <!-- //header -->
 
-<!-- parallax__nav -->
-    <nav id="parallax__nav">
+<!-- parallax__dot -->
+    <nav id="parallax__dot">
         <ul>
-            <li class="active"><a href="#section1">s1</a></li>
-            <li><a href="#section2">s2</a></li>
-            <li><a href="#section3">s3</a></li>
-            <li><a href="#section4">s4</a></li>
-            <li><a href="#section5">s5</a></li>
-            <li><a href="#section6">s6</a></li>
-            <li><a href="#section7">s7</a></li>
-            <li><a href="#section8">s8</a></li>
-            <li><a href="#section9">s9</a></li>
+            <li class="active"><a href="#section1"><span>s1</span></a></li>
+            <li><a href="#section2"><span>s2</span></a></li>
+            <li><a href="#section3"><span>s3</span></a></li>
+            <li><a href="#section4"><span>s4</span></a></li>
+            <li><a href="#section5"><span>s5</span></a></li>
+            <li><a href="#section6"><span>s6</span></a></li>
+            <li><a href="#section7"><span>s7</span></a></li>
+            <li><a href="#section8"><span>s8</span></a></li>
+            <li><a href="#section9"><span>s9</span></a></li>
         </ul>
     </nav>
-    <!-- //parallax__nav -->
+    <!-- //parallax__dot -->
 
     <!-- main -->
     <main id="parallax__cont">
@@ -349,7 +383,69 @@
 
     <!-- script -->
     <script>
+        document.querySelectorAll("#parallax__dot a").forEach(el => {
+            el.addEventListener("click", e => {
+                e.preventDefault();
 
+                // window.scroll(0, 1000);
+                // window.scroll({left: 0, top: 1000});
+                // window.scroll({left: 0, top: 1000, behavior: "smooth"});
+                
+                // window.scrollTo(0, 1000);
+                // window.scrollTo({left: 0, top: 1000});
+                // window.scrollTo({left: 0, top: 1000, behavior: "smooth"});
+
+                // window.scrollBy(0, 1000);
+                // window.scrollBy({left: 0, top: 1000});
+                // window.scrollBy({left: 0, top: 1000, behavior: "smooth"});
+
+                document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+            })
+        })
+
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || document.document.scrollTop || window.scrollY;
+
+            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
+
+            // for(let i=1; i<=9; i++){
+            //     if(scrollTop >= document.getElementById("section" + i).offsetTop -2){
+            //         document.querySelectorAll("#parallax__dot li").forEach(li => {
+            //             li.classList.remove("active");
+            //         })
+            //         document.querySelector("#parallax__dot li:nth-child("+i+")").classList.add("active")
+            //     }
+            // }
+
+            document.querySelectorAll(".content__item").forEach((el, index) => {
+                if(scrollTop >= el.offsetTop -2){
+                    document.querySelectorAll("#parallax__dot ul li").forEach(li => {
+                    li.classList.remove("active")
+                    })
+                    document.querySelector("#parallax__dot ul li:nth-child("+(index+1)+")").classList.add("active")
+                }
+            })
+        })
+
+
+        // //스크롤 값 구하기
+            // window.screenX          //ie에서 작동안됨 최신 브라우저만 사용가능
+            // window.pageXOffset    //모든 브라우저에서 사용 가능
+            // document.documentElement.scrollLeft
+
+            // window.screenY
+            // window.pageYOffset
+            // document.documentElement.scrollTop
+
+            // //스크롤 값으로 이동하기
+            // window.scroll()
+            // window.scrollTo()   //절대적 위치
+            // window.scrollBy()   //현재 있는 위치 기준 상대적 위치
+
+            // element.scroll()
+            // element.scrollTo()
+            // element.scrollBy()
+            // element.scrollIntoview()
     </script>
     <!-- //script -->
 </body>
