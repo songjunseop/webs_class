@@ -973,7 +973,7 @@
         }
         .slider__inner {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             width: 2220px;
             transform: translateX(0);
         }
@@ -1039,11 +1039,11 @@
             }
             .slider__inner {
                 display: flex;
-                flex-wrap: wrap;
                 width: 2220px;
                 transform: translateX(0);
             }
         }
+        
 
         /* section__video */
         #section__video {
@@ -1271,6 +1271,7 @@
 <body>
     <!-- header -->
     <header id="header">
+        <div class="menu"><a href="javascript:void(0);">Menu</a></div>
         <ul>
             <li><a href="#section01">Briefs</a></li>
             <li><a href="#section02">Market</a></li>
@@ -1477,7 +1478,7 @@
         <div class="copy">&copy;ChargerFind.Project 2022</div>        
     </footer>
     <!-- //footer -->
-
+    
     <!--script-->
     <script>
         const sliderImg = document.querySelector(".slider__img")
@@ -1490,7 +1491,7 @@
         sliderInner.appendChild(sliderClone);
         function sliderEffect() {
             currentIndex++;
-            sliderInner.style.transition = "all 0.6s";
+            sliderInner.style.transition = "all 0.3s";
             sliderInner.style.transform = "translateX(-" + sliderWidth * currentIndex + "px)";
             //마지막 사진에 갔을 때
             if (currentIndex == sliderCount) {
@@ -1526,6 +1527,7 @@
                 }
             })
         })
+        
     </script>
     <!--script-->
 </body>
