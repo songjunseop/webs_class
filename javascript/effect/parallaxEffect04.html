@@ -56,34 +56,6 @@
             background: #fff;
             color: #000;
         }
-        #parallax__nav {
-            position: fixed;
-            right: 20px;
-            top: -200px;
-            z-index: 1000;
-            background-color: rgba(0,0,0,0.4);
-            padding: 15px 20px;
-            border-radius: 50px;
-            transition: top 0.2s ease-in-out;
-        }
-        #parallax__nav li {
-            list-style: none;
-            display: inline;
-        }
-        #parallax__nav.show {
-            top: 20px;
-        }
-        #parallax__nav li a {
-            display: inline-block;
-            padding: 5px 20px;
-            text-align: center;
-            line-height: 30px;
-        }
-        #parallax__nav li.active a {
-            background: #fff;
-            color: #000;
-            border-radius: 30px;
-        }
         #parallax__cont {
             max-width: 1600px;
             width: 98%;
@@ -213,12 +185,70 @@
 
         /* option */
         /* 한번에 나타나기 */
-        .contents > section {
+        /* .contents > section {
             opacity: 0;
             transition: all 1s;
         }
         .contents > section.show {
             opacity: 1;
+        } */
+
+        /* 개벽적으로 나타나기 */
+        .contents > section .content__item__num {
+            opacity: 0;
+            transform: translateY(200px);
+            transition: all 1s 0.1s cubic-bezier(0, 0, 0.17, 0.99);
+        }
+        .contents > section .content__item__title {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s 0.2s cubic-bezier(0, 0, 0.17, 0.99);
+        }
+        .contents > section .content__item__imgWrap {
+            opacity: 0;
+            transform: translateY(200px) rotate(50deg) skew(20deg);
+            transition: all 1s 0.4s cubic-bezier(0, 0, 0.17, 0.99);
+        }
+        .contents > section .content__item__desc {
+            opacity: 0;
+            transform: translateX(-200px);
+            transition: all 1s 0.6s cubic-bezier(0, 0, 0.17, 0.99);
+        }
+
+        .contents > section.show .content__item__num {
+            opacity: 0.07;
+            transform: translateY(0);
+        }
+        .contents > section.show .content__item__title {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .contents > section.show .content__item__imgWrap {
+            transform: translateY(0) rotate(0) skew(0);
+            opacity: 1;
+        }
+        .contents > section.show .content__item__desc {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .contents > section:nth-child(even) .content__item__title {
+            transform: translateX(100px);
+        }
+        .contents > section:nth-child(even).show .content__item__title {
+            transform: translateX(0);
+        }
+        .contents > section:nth-child(even) .content__item__title {
+            transform: translateX(100px);
+        }
+        .contents > section:nth-child(even).show .content__item__title {
+            transform: translateX(0);
+        }
+        .contents > section:nth-child(even) .content__item__desc {
+            transform: translateX(200px);
+        }
+        .contents > section:nth-child(even).show .content__item__desc {
+            transform: translateX(0);
         }
     </style>
 </head>
@@ -238,22 +268,6 @@
         </ul>
     </header>
     <!-- //header -->
-
-<!-- parallax__dot -->
-    <nav id="parallax__nav">
-        <ul>
-            <li class="active"><a href="#section1"><span>메뉴1</span></a></li>
-            <li><a href="#section2"><span>메뉴2</span></a></li>
-            <li><a href="#section3"><span>메뉴3</span></a></li>
-            <li><a href="#section4"><span>메뉴4</span></a></li>
-            <li><a href="#section5"><span>메뉴5</span></a></li>
-            <li><a href="#section6"><span>메뉴6</span></a></li>
-            <li><a href="#section7"><span>메뉴7</span></a></li>
-            <li><a href="#section8"><span>메뉴8</span></a></li>
-            <li><a href="#section9"><span>메뉴9</span></a></li>
-        </ul>
-    </nav>
-    <!-- //parallax__dot -->
 
     <!-- main -->
     <main id="parallax__cont">
@@ -376,7 +390,7 @@
             // }
 
             document.querySelectorAll(".content__item").forEach(el => {
-                if(scrollTop > el.offsetTop -600){
+                if(scrollTop > el.offsetTop - window.innerHeight/1.5){
                     el.classList.add("show");
                 }
             })
