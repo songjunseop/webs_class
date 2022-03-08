@@ -86,7 +86,7 @@
 
     <!-- main -->
     <main>
-        <section id="mouseType04">
+        <section id="mouseType05">
             <div class="cursor">
                 <!-- <ul>
                     <li>pageX : <span class="pageX">0</span>px</li>
@@ -152,17 +152,17 @@
                             <div class="view-cont">
                                 <div>
 <pre><code class="language-html">&lt;main&gt;
-    &lt;section id="mouseType04"&gt;
+    &lt;section id="mouseType05"&gt;
         &lt;div class="cursor"&gt;&lt;/div&gt;
 
         &lt;div class="mouse__wrap"&gt;
             &lt;div class="mouse__img"&gt;
                 &lt;figure&gt;
-                    &lt;img src="img/dice.jpg" alt="이미지"&gt;
+                    &lt;img src="img/tiger.jpg" alt="이미지"&gt;
                 &lt;/figure&gt;
                 &lt;figcaption&gt;
-                    &lt;p&gt;The dice is cast.&lt;/p&gt;
-                    &lt;p&gt;주사위는 던져졌다.&lt;/p&gt;
+                    &lt;p&gt;It ain't over till it's over.&lt;/p&gt;
+                    &lt;p&gt;끝날 때까지는 끝난 게 아니다.&lt;/p&gt;
                 &lt;/figcaption&gt;
             &lt;/div&gt;
         &lt;/div&gt;
@@ -170,13 +170,125 @@
 &lt;/main&gt;</code></pre>
                                 </div>
                                 <div>
-<pre><code class="language-css">
-
-</code></pre>
+<pre><code class="language-css">body::before {                      
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+    }
+    .mouse__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        /* cursor: none; */
+    }
+    .mouse__img {
+        position: relative;
+        text-align: center;
+        transform: rotateX(0deg) rotateY(0deg);
+        transform-style: preserve-3d;
+        will-change: transform;
+    }
+    .mouse__img figure {
+        width: 50vw;
+        position: relative;
+    }
+    .mouse__img figure::before {
+        content: '';
+        position: absolute;
+        left: 5%;
+        bottom: -30px;
+        width: 90%;
+        height: 40px;
+        background: url(img/tiger.jpg) center center no-repeat;
+        background-size: 100% 40px;
+        filter: blur(10px) grayscale(50%);
+        opacity: 0.6;
+        z-index: -1;
+    }
+    .mouse__img figcaption {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        font-size: 2vw;
+        white-space: nowrap;
+        line-height: 1.6;
+        background: rgba(0,0,0,0.4);
+        padding: 1vw 2vw;
+        transform: translate3d(-50%, -50%, 150px);
+    }
+    .cursor {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        border-radius: 50%;
+        z-index: 1000;
+        user-select: none;
+        pointer-events: none;
+        mix-blend-mode: difference;
+    }</code></pre>
                                 </div>
                                 <div>
 <pre><code class="language-javascript">&lt;script&gt;
+    const circle = document.querySelector(".cursor").getBoundingClientRect();
+
+    function mouseMove(e){
+        //마우스 좌표 값
+        let mousePageX = e.pageX;
+        let mousePageY = e.pageY;
+
+        //마우스 좌표 기준점을 가운데로 변경
+        let centerPageX = window.innerWidth/2 - mousePageX;
+        let centerPageY = window.innerHeight/2 - mousePageY;
+
+        //최소값은 -50 최대값은 50 설정
+        let maxPageX = Math.max(-800, Math.min(800, centerPageX));
+        let maxPageY = Math.max(-300, Math.min(300, centerPageY));
+
+        //각도 줄이는 설정
+        let anlexpageX = maxPageX * 0.12;
+        let anlexpageY = maxPageY * 0.12;
+
+        //부드럽게 설정 
+        let softPageX = 0;
+        let softPageY = 0;
+        softPageX += (anlexpageX - softPageX) * 0.4;
+        softPageY += (anlexpageY - softPageY) * 0.4;
+
+        //이미지 움직이기
+        const imgMove = document.querySelector(".mouse__img");
+        imgMove.style.transform = "perspective(600px) rotateX("+softPageY+"deg) rotateY("+ -softPageX+"deg)"
+
+        //원 크기
+        let circleWidth = mousePageX-circle.width/2;
+        let circleHeight = mousePageY-circle.height/2;
+
+        //커서
+        gsap.to(".cursor", {duration: 0.3, left: circleWidth, top: circleHeight})
+
+        //출력
+        document.querySelector(".mousePageX").textContent = mousePageX;
+        document.querySelector(".mousePageY").textContent = mousePageY;
+        document.querySelector(".centerPageX").textContent = centerPageX;
+        document.querySelector(".centerPageY").textContent = centerPageY;
+        document.querySelector(".maxPageX").textContent = maxPageX;
+        document.querySelector(".maxPageY").textContent = maxPageY;
+
+    }
     
+    document.addEventListener("mousemove", mouseMove)
 &lt;/script&gt;</code></pre>
                                 </div>
                             </div>
