@@ -399,6 +399,36 @@
     </div>
     <!-- //sample16 -->
 
+    <!-- sample17 -->
+    <div id="sample17" class="sample">
+        <h3>17. 재귀 함수</h3>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(){
+        document.write("함수가 실행되었습니다.");
+        func();
+    }
+    func();
+    //조건이 없기때문에 무한로딩에 빠짐
+
+    function func(num){
+        if(num <= 1){
+            document.write("함수가 실행되었습니다.1");
+        } else {
+            document.write("함수가 실행되었습니다.2")
+            func(num-1)
+        }
+    }
+    func(5)
+}</code></pre>
+        </div>
+        <div class="result">
+            <h4>결과보기</h4>
+            <div>함수가 실행되었습니다.2함수가 실행되었습니다.2함수가 실행되었습니다.2함수가 실행되었습니다.2함수가 실행되었습니다.1</div>
+        </div>
+    </div>
+    <!-- //sample17 -->
+
         </div>
     </main>
 
@@ -419,6 +449,7 @@
         //     }
         //     func();
         // }
+
         // //02. 익명 함수
         // {
         //     const func = function(){
@@ -426,6 +457,7 @@
         //     }
         //     func();
         // }
+
         // //03. 매개변수 함수
         // {
         //     function func (str){            //2번
@@ -433,6 +465,7 @@
         //     }
         //     func("함수가 실행되었습니다.");   //1번
         // }
+
         // //04. 리턴값 함수(리액트, 뷰-필수)
         // {
         //     function func (){
@@ -441,6 +474,7 @@
         //     }
         //     document.write(func());
         // }
+
         // //05. 화살표 함수 : 선언적 함수
         // {
         //        function func(){
@@ -452,6 +486,7 @@
         //     }
         //     func();
         // }
+
         // //06. 화살표 함수 : 익명 함수
         // {
         //     const func = function(){
@@ -464,6 +499,7 @@
         //     }
         //     func();
         // }
+
         // //07. 화살표 함수 : 매개변수 함수
         // {
         //     func = (str) => {
@@ -471,6 +507,7 @@
         //     }
         //     func("함수가 실행되었습니다.");
         // }
+
         // //08. 화살표 함수 : 리턴값 함수
         // {
         //     func = () => {
@@ -479,6 +516,7 @@
         //     }
         //     document.write(func());
         // }
+
         // //09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값
         // {
         //     const func = (str) => {
@@ -486,6 +524,7 @@
         //     }
         //     document.write(func("함수가 실행되었습니다."));
         // }
+
         // //10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략
         // {
         //     const func = str => {      //str괄호가 생략
@@ -493,18 +532,21 @@
         //     }
         //     document.write(func("함수가 실행되었습니다."));
         // }
+
         // //11. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
         // {
         //     const func = str => str;      //str괄호가 생략, 리턴과 중괄호 생략
             
         //     document.write(func("함수가 실행되었습니다."));
         // }
+
         // //12. 화살표 함수 : 선언적함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
         // {
         //     func = str => str;      //str괄호가 생략,const 생략(익명함수 -> 선언적 함수)
             
         //     document.write(func("함수가 실행되었습니다."));
         // }
+
         // //13. 내부 함수
         // {
         //     function func(){
@@ -518,6 +560,7 @@
         //     }
         //     func();
         // }
+
         // // 14. 즉시 실행 함수
         // {
         //     function func(){
@@ -533,6 +576,7 @@
         //         document.write("함수가 실행되었습니다.")
         //     })();
         // }
+
         // //15. 파라미터 함수
         // {
         //     function func(str){
@@ -545,6 +589,7 @@
         //     }
         //     func()
         // }
+
         // //16. 아규먼트 함수
         // {
         //     function func(a, b){
@@ -553,6 +598,28 @@
         //     }
         //     func("함수가 실행되었습니다", "함수가 실행되었습니다.")
         // }
+
+        // //17. 재귀함수 : 자기 스스로를 호출 함수를 반복문처럼 사용
+        {
+            // function func(){
+            //     document.write("함수가 실행되었습니다.");
+            //     func();
+            // }
+            // func();
+            // //조건이 없기때문에 무한로딩에 빠짐
+
+            // function func(num){
+            //     if(num <= 1){
+            //         document.write("함수가 실행되었습니다.1");
+            //     } else {
+            //         document.write("함수가 실행되었습니다.2")
+            //         func(num-1)
+            //     }
+            // }
+            // func(5)
+        }
+
+        //18. 콜백함수 : 내가 실행된다음 함수를 실행
     </script>
 
     <!-- script -->
