@@ -243,7 +243,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
                     <div class="bs-callout bs-callout-info">
                         ALTER TABLE 테이블명 ADD 추가할 필드명 AFTER 필드명 위치;
                     </div>
-<pre class="language-js"><code>ALTER TABLE myMember ADD youGender enum('m', 'w', 'x') default 'x' comment "남성은 m, 여성은 w" AFTER youBirth; 
+<pre class="language-js"><code>ALTER TABLE myMember ADD youGender enum('m', 'w', 'x') default 'x' comment "남성은 m, 여성은 w" AFTER youBirth;
 </code></pre>
 <pre class="language-js"><code>mysql> desc myMember;
     +------------+-------------------+------+-----+---------+----------------+
@@ -261,20 +261,108 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 </code></pre>
                     <h3 id="intro6-2" class="page-header">필드 수정하기</h3>
                     <div class="bs-callout bs-callout-info">
-
+                        ALTER TABLE 테이블명 MODIFY 수정할 필드명
                     </div>
-<pre class="language-js"><code>
-
+<pre class="language-js"><code>mysql> ALTER TABLE myMember2 MODIFY youName int(20);
+</code></pre>
+<pre class="language-js"><code>+------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youName    | int(20)          | YES  |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+    2 rows in set (0.00 sec)
 </code></pre>
                     <h3 id="intro6-3" class="page-header">필드 삭제하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        ALTER TABLE 테이블명 DROP 삭제할 필드명
+                    </div>
+<pre class="language-js"><code>ALTER TABLE myMember2 DROP youGender;
+</code></pre>
+                </div>
+                <!-- //box -->
+
+                <!-- box -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">테이블 데이터</h2>
+                    <h3 id="intro7-1" class="page-header">데이터 입력하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        INSERT INTO 테이블 이름(필드명) VALUES(데이터)
+                    </div>
+<pre class="language-js"><code>INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES('webs@naver.com', 'webs', '1234', '00-04-05', '33', '0327');
+</code></pre>
+                    <h3 id="intro7-2" class="page-header">데이터 불러오기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT 대상 FROM 테이블 명; (검색기능)
+                    </div>
+<pre class="language-js"><code>SELECT * FROM myMember;
+    +------------+----------------------+-------------+---------+----------+--------+---------+
+    | myMemberID | youEmail             | youName     | youPass | youBirth | youAge | regTime |
+    +------------+----------------------+-------------+---------+----------+--------+---------+
+    |          1 | webs@naver.com       | webs        | 1234    | 00-04-05 | 33     |     327 |
+    |          2 | sbxjs6999@naver.com  | gwni        | 1234    | 00-04-05 | 26     |     327 |
+    |          3 | ohwehoh@naver.com    | yeonwoo     | 1234    | 950780   | 99     |     355 |
+    |          4 | jungsik321@naver.com | gentlemanjs | 1234    | 930209   | 31     |     327 |
+    |          5 | illie@naver.com      | webs        | 1234    | 00-04-05 | 100    |     327 |
+    |          6 | baby@naver.com       | baby        | 1234    | 00-04-05 | 33     |    6623 |
+    |          7 | qhd1994@naver.com    | heebong     | 1234    | 94-07-28 | 29     |     327 |
+    |          8 | placidcy@gmail.com   | placidcy    | 1234    | 00-03-12 | 33     |     327 |
+    |          9 | web@naver.com        | webs        | 1234    | 00-01-02 | 22     |     327 |
+    |         10 | jsjh442@naver.com    | jiseon      | 1234    | 98-04-23 | 25     |     327 |
+    |         11 | one@naver.com        | ones        | 0001    | 00-01-01 | 11     |    1111 |
+    +------------+----------------------+-------------+---------+----------+--------+---------+
+    11 rows in set (0.00 sec)
+</code></pre>
+                    <h4>myMemberID가 6번인 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE myMemberID = 6;
+    +------------+----------------+---------+---------+----------+--------+---------+
+    | myMemberID | youEmail       | youName | youPass | youBirth | youAge | regTime |
+    +------------+----------------+---------+---------+----------+--------+---------+
+    |          6 | baby@naver.com | baby    | 1234    | 00-04-05 | 33     |    6623 |
+    +------------+----------------+---------+---------+----------+--------+---------+
+    1 row in set (0.00 sec)
+</code></pre>
+                    <h4>이메일 중에 네이버 텍스트를 포함하는 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youEmail LIKE '%naver%';
+    +------------+----------------------+-------------+---------+----------+--------+---------+
+    | myMemberID | youEmail             | youName     | youPass | youBirth | youAge | regTime |
+    +------------+----------------------+-------------+---------+----------+--------+---------+
+    |          1 | webs@naver.com       | webs        | 1234    | 00-04-05 | 33     |     327 |
+    |          2 | sbxjs6999@naver.com  | gwni        | 1234    | 00-04-05 | 26     |     327 |
+    |          3 | ohwehoh@naver.com    | yeonwoo     | 1234    | 950780   | 99     |     355 |
+    |          4 | jungsik321@naver.com | gentlemanjs | 1234    | 930209   | 31     |     327 |
+    |          5 | illie@naver.com      | webs        | 1234    | 00-04-05 | 100    |     327 |
+    |          6 | baby@naver.com       | baby        | 1234    | 00-04-05 | 33     |    6623 |
+    |          7 | qhd1994@naver.com    | heebong     | 1234    | 94-07-28 | 29     |     327 |
+    |          9 | web@naver.com        | webs        | 1234    | 00-01-02 | 22     |     327 |
+    |         10 | jsjh442@naver.com    | jiseon      | 1234    | 98-04-23 | 25     |     327 |
+    |         11 | one@naver.com        | ones        | 0001    | 00-01-01 | 11     |    1111 |
+    +------------+----------------------+-------------+---------+----------+--------+---------+
+    10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM myMember WHERE youEmail LIKE 'naver%';
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM myMember WHERE youEmail LIKE '%naver';
+Empty set (0.00 sec)
+</code></pre>                    
+                    <h3 id="intro7-3" class="page-header">데이터 수정하기</h3>
                     <div class="bs-callout bs-callout-info">
 
                     </div>
 <pre class="language-js"><code>
 
 </code></pre>
+                    <h3 id="intro7-4" class="page-header">데이터 삭제하기</h3>
+                    <div class="bs-callout bs-callout-info">
+
+                    </div>
+<pre class="language-js"><code>
+    INSERT INTO myData(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES('apdlvmf8044@gmail.com', '송준섭', '1234', '1993-11-20', '30', '1234');
+</code></pre>
                 </div>
                 <!-- //box -->
+
             </div>
             <div class="col-md-3">
                 <div class="bs-sidebar hidden-print" role="complementary">
@@ -303,6 +391,14 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
                                 <li><a href="#intro6-1">필드 추가하기</a></li>
                                 <li><a href="#intro6-2">필드 수정하기</a></li>
                                 <li><a href="#intro6-3">필드 삭제하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro7">테이블 데이터</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro7-1">데이터 입력하기</a></li>
+                                <li><a href="#intro7-2">데이터 불러오기</a></li>
+                                <li><a href="#intro7-3">데이터 수정하기</a></li>
+                                <li><a href="#intro7-4">데이터 삭제하기</a></li>
                             </ul>
                         </li>
                     </ul>

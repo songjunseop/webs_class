@@ -381,7 +381,7 @@
                 <figure class="content__item__imgWrap reveal">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">인생에 뜻을 세우는데 있어 늦은 때라곤 없다.</p>
+                <p class="content__item__desc reveal">인생에 뜻을 세우는데 있어 늦은 때라곤 없다.</p>
             </section>
             <!-- //section9 -->
         </div>
@@ -400,11 +400,11 @@
         //만약에 .reveal 클래스가 있으면 글씨를 span으로 감싸주고 글씨를 다시 넣어줘야 함
         let desc = document.querySelectorAll(".content__item__desc")
         desc.forEach(el => {
-            let revealc = el.innerText;
+            let reveal = el.innerText;
             if(el.classList.contains("reveal") == true){
                 
-                revealc = "<span>" + revealc + "</span>"
-                el.innerHTML = revealc
+                reveal = "<span>" + reveal + "</span>"
+                el.innerHTML = reveal
             }
         })
         
