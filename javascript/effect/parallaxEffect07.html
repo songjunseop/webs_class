@@ -205,6 +205,10 @@
         .reveal.show::before {
             animation: reveal 1s;
         }
+        .reveal.reveal-RTL.show::before {
+            animation: reveal-RTL 1s;
+        }
+        
         
         @keyframes opacity {
             0%   {opacity: 0;}
@@ -218,6 +222,12 @@
             80%  {width: 100%; left: 0;}
             100% {width: 0;    left: 100%;}
         }
+        @keyframes reveal-RTL {
+            0%   {width: 0;    right: 0;}
+            50%  {width: 100%; right: 0;}
+            80%  {width: 100%; right: 0;}
+            100% {width: 0;    right: 100%;}
+        }   
     </style>
 </head>
 <body>
@@ -256,7 +266,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal"><span>서두르지 말되 멈추지 말라.</span></p>
+                <p class="content__item__desc reveal reveal-RTL"><span>서두르지 말되 멈추지 말라.</span></p>
             </section>
             <!-- //section2 -->
 
