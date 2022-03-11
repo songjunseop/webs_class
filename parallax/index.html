@@ -68,6 +68,22 @@
             white-space: nowrap;
             font-weight: 500;
         }
+
+        /* section2__bg */
+        #section2 {}
+        .section2__bg {
+            width: 100%;
+            height: 100vh;
+            background: #000;
+        }
+        .section2__text1 {
+            font-size: 4vw;
+            color: #fff;
+            white-space: nowrap;
+        }
+        .section2__img1 {
+            width: 50vw;
+        }
     </style>
 </head>
 <body>
@@ -75,12 +91,18 @@
 
 
     <div id="contents">
-        <section id="section1">
+        <section id="section1"
+            data-8500 = "display: block"
+            data-8501 = "display: none"
+        >
             <div class="section1__bg">
+                <!-- data는 scrolltop 값과 동일 -->
                 <img class="fixed" src="img/time.jpg" alt="이미지"
-                    data-0    = "width: 70%; height: 17vh;"
+                    data-0    = "width: 70%;  height: 17vh;"
                     data-1000 = "width: 100%; height: 17vh;"
                     data-2000 = "width: 100%; height: 50vh;"
+                    data-7000 = "width: 100%; height: 50vh;"
+                    data-8000 = "width: 100%; height: 0vh;"
                 >
             </div>
             <div class="section1__text1 fixed"
@@ -90,19 +112,48 @@
                 data-4000 = "transform: translate(-50%, -50%) scale(1); top: -10%"
             >안녕하세요!</div>
             <div class="section1__text2 fixed"
-                data-3000 = "transform: translate(-50%, -50%) scale(1); top: 100%"
-                data-4000 = "transform: translate(-50%, -50%) scale(1); top: 50%"
-                data-5000 = "transform: translate(-50%, -50%) scale(1); top: 50%;"
+                data-3000 = "transform: translate(-50%, -50%)  scale(1); top: 100%"
+                data-4000 = "transform: translate(-50%, -50%)  scale(1); top: 50%"
+                data-5000 = "transform: translate(-50%, -50%)  scale(1); top: 50%;"
                 data-6000 = "transform: translate(-200%, -50%) scale(1); top: 50%;"
             >포트폴리오 사이트</div>
             <div class="section1__text3 fixed"
-                data-6000 = "transform: translate(100%, -50%) scale(1); top: 50%;"
-                data-7000 = "transform: translate(-50%, -50%) scale(1); top: 50%;"
-            >지금부터 시작합니다!</div>
+                data-5000 = "transform: translate(100%, -50%)  scale(1); top: 50%;"
+                data-6000 = "transform: translate(-50%, -50%)  scale(1); top: 50%;"
+                data-7000 = "transform: translate(-50%, -50%)  scale(1); top: 50%;"
+                data-8000 = "transform: translate(-200%, -50%) scale(1); top: 50%;"
+            >
+                <!-- 
+                data-5000 = "transform: translate(-50%, -50%)  scale(1); top: 50%; left: 50%"
+                data-6000 = "transform: translate(-50%, -50%)  scale(1); top: 50%; left: 50%"
+                data-7000 = "transform: translate(-50%, -50%)  scale(1); top: 50%; left: 50%"
+                data-8000 = "transform: translate(-50%, -50%)  scale(1); top: 50%; left: -10%"
+                -->
+            지금부터 시작합니다!</div>
         </section>
         <!-- //section1 -->
 
-        <section id="section2"></section><!-- //section2 -->
+        <section id="section2"
+            data-8700 = "display: none"
+            data-9001 = "display: block"
+        >
+            <div class="section2__bg fixed"
+                data-9000 = "width: 0%; height: 0vh; border-radius: 500px"
+                data-10000 = "width: 100%; height: 100vh; border-radius: 0px"
+            ></div>
+            <div class="section2__text1 fixed"
+                data-8500 = "transform: translate(-50%, -50%) scale(0.8); top: 50%"
+                data-10000 = "transform: translate(-50%, -50%) scale(0.9); top: 50%"
+                data-10500 = "transform: translate(-50%, -50%) scale(1); top: 10%" 
+            >I've Been Working In On Sites</div>
+            <div class="section2__img1 fixed"
+                data-10000 = "transform: translate(-50%, -50%) scale(1); top: -10%"
+            >
+                <img src="img/mackbook.png" alt="mackbook">
+            </div>
+        </section>
+        <!-- //section2 -->
+
         <section id="section3"></section><!-- //section3 -->
         <section id="section4"></section><!-- //section4 -->
         <section id="section5"></section><!-- //section5 -->
