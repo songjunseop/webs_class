@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NexonLv1Gothic';
+        }
+        body {
+            height: 20000px;
+        }
+        .scrollTop {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            line-height: 33px;
+        }
+
+        /* common */
+        .fixed {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+            object-fit: cover;
+        }
+
+        #contents {}
+        #section1 {}
+        /* section1__bg */
+        .section1__bg img{
+            width: 60%;
+            height: 17vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="scrollTop">0</div>
+
+
+    <div id="contents">
+        <section id="section1">
+            <div class="section1__bg">
+                <img class="fixed" src="img/time.jpg" alt="이미지">
+            </div>
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2"></section><!-- //section2 -->
+        <section id="section3"></section><!-- //section3 -->
+        <section id="section4"></section><!-- //section4 -->
+        <section id="section5"></section><!-- //section5 -->
+        <section id="section6"></section><!-- //section6 -->
+    </div>
+
+
+    <script>
+        function scroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+            document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
+            
+            document.querySelector(".section1__bg img").style.width = scrollTop + "px"
+
+            requestAnimationFrame(scroll)
+        }
+        scroll();
+    </script>
+</body>
+</html>
