@@ -9,13 +9,11 @@
 <body>
     <script>
         function func(){
-        let a = 0, sum = 0;
-        while( a < 10 ){
-            a++;
-            if(a % 2 == 1) continue;
-            sum += a;
+        let i, j = 0;
+        for( i=0; i<5; i++){
+            j += i;
         }
-        document.write(sum);
+        document.write(i);
     }
     func();
     </script>
