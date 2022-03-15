@@ -47,7 +47,7 @@ figcaption {
     box-sizing: border-box;
 }
 
-/* 시멘틱 태그 초기화 */
+/* 시멘틱 태그 블록화 */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;

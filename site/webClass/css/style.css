@@ -780,7 +780,7 @@ position: absolute;
 }
 .member-form {
     max-width: 665px;
-    bottom: 1px solid #dedede;
+    border: 1px solid #dedede;
     background: #fff;
     margin: 0 auto;
     padding: 50px;
