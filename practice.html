@@ -1,21 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>댓글</title>
+    <?php
+        include "../include/style.php";
+    ?>
+    <!-- //style -->
 </head>
 <body>
-    <script>
-        function func(){
-        let i, j = 0;
-        for( i=0; i<5; i++){
-            j += i;
-        }
-        document.write(i);
-    }
-    func();
-    </script>
+<?php
+        include "../include/header.php";
+    ?>
+    <!-- //header -->
+
+    <main id="contents">
+        <h2 class="ir_so">컨텐츠 영역</h2>
+        <section id="card-type" class="secion center">
+            <h2>무서운 맹수들</h2>
+            <h3>인간의 기준에서 사납고 위험한 동물을 의미합니다.<br>
+                Gmarket Sans Light 22px 150% #67778A </h3>
+            <div class="card-inner">
+                <article class="card">
+                    <div class="img1"></div>
+                    <div class="descBox">
+                        <h4>호랑이</h4>
+                        <p>아시아에 서식하는 식육목 고양이과의 포유류. 현존하는 모든 고양이과 동물들 중 가장 큰 동물입니다. 또한 IUCN 멸종 위기 등급 EN인 멸종 위기 종이기도 합니다.</p>
+                        <a href="#">더 자세히 보기<svg width="52" height="8" viewBox="0 0 52 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M51.3536 4.35355C51.5488 4.15829 51.5488 3.84171 51.3536 3.64645L48.1716 0.464466C47.9763 0.269204 47.6597 0.269204 47.4645 0.464466C47.2692 0.659728 47.2692 0.976311 47.4645 1.17157L50.2929 4L47.4645 6.82843C47.2692 7.02369 47.2692 7.34027 47.4645 7.53553C47.6597 7.7308 47.9763 7.7308 48.1716 7.53553L51.3536 4.35355ZM0 4.5H51V3.5H0V4.5Z" fill="#5B5B5B"/>
+                                </svg></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="img2"></div>
+                    <div class="descBox">
+                        <h4>표범</h4>
+                        <p>아시아와 아프리카에 서식하고 있는 대표적인 고양이과 맹수입니다. 고양이과 맹수들이 대개 그렇듯 야행성으로 낮에는 쉬고 밤에 활동합니다.</p>
+                        <a href="#">더 자세히 보기<svg width="52" height="8" viewBox="0 0 52 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M51.3536 4.35355C51.5488 4.15829 51.5488 3.84171 51.3536 3.64645L48.1716 0.464466C47.9763 0.269204 47.6597 0.269204 47.4645 0.464466C47.2692 0.659728 47.2692 0.976311 47.4645 1.17157L50.2929 4L47.4645 6.82843C47.2692 7.02369 47.2692 7.34027 47.4645 7.53553C47.6597 7.7308 47.9763 7.7308 48.1716 7.53553L51.3536 4.35355ZM0 4.5H51V3.5H0V4.5Z" fill="#5B5B5B"/>
+                                </svg></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="img3"></div>
+                    <div class="descBox">
+                        <h4>사자</h4>
+                        <p>사자는 아프리카와 인도에 서식하는 식육목 고양잇과 포유류입니다. 강인한 사냥 능력으로 오랫동안 '백수의 왕'으로 불리우며 왕의 상징으로 여겨지는 등 인기를 누려온 동물입니다.</p>
+                        <a href="#">더 자세히 보기<svg width="52" height="8" viewBox="0 0 52 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M51.3536 4.35355C51.5488 4.15829 51.5488 3.84171 51.3536 3.64645L48.1716 0.464466C47.9763 0.269204 47.6597 0.269204 47.4645 0.464466C47.2692 0.659728 47.2692 0.976311 47.4645 1.17157L50.2929 4L47.4645 6.82843C47.2692 7.02369 47.2692 7.34027 47.4645 7.53553C47.6597 7.7308 47.9763 7.7308 48.1716 7.53553L51.3536 4.35355ZM0 4.5H51V3.5H0V4.5Z" fill="#5B5B5B"/>
+                                </svg></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="comment-type section center">
+            <h3 class="setcion__title">강의 신청하기</h3>
+            <p class="setcion__desc">강의 신청하기는 누구나 댓글을 달 수 있습니다. 회원가입 하지 않아도 신청 가능합니다.</p>
+            <div class="comment__inner"></div>
+        </section>
+    </main>
+    <!-- //main -->
+
+    <?php
+        include "../include/footer.php";
+    ?>
+    <!-- //footer -->
 </body>
 </html>
