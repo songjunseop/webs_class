@@ -451,6 +451,30 @@
     </div>
     <!-- //sample18 -->
 
+    <!-- sample18 -->
+    <div id="sample18" class="sample">
+        <h3>18. 콜백함수 : 콜백함수 : 반복문</h3>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(){
+        document.write("함수가 실행되었습니다.");
+    }
+
+    function callback(num){
+        for(let i=1; i<=5; i++){
+            num(i);
+        }
+    }
+    callback(func);
+}</code></pre>
+        </div>
+        <div class="result">
+            <h4>결과보기</h4>
+            <div>함수가 실행되었습니다.함수가 실행되었습니다.함수가 실행되었습니다.함수가 실행되었습니다.함수가 실행되었습니다.</div>
+        </div>
+    </div>
+    <!-- //sample18 -->
+
         </div>
     </main>
 
@@ -656,16 +680,16 @@
 
         // // 콜백함수 : 반복문
         // {
-        //     function func(){
-        //         document.write("함수가 실행되었습니다.");
-        //     }
+            // function func(){
+            //     document.write("함수가 실행되었습니다.");
+            // }
 
-        //     function callback(num){
-        //         for(let i=1; i<=5; i++){
-        //             num(i);
-        //         }
-        //     }
-        //     callback(func);
+            // function callback(num){
+            //     for(let i=1; i<=5; i++){
+            //         num(i);
+            //     }
+            // }
+            // callback(func);
         // }
 
         // // 콜백함수 : 동기 / 비동기
