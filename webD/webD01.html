@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            width: 960px;
+            margin: 0 auto;
+        }
+        /* #header {
+            width: 100%;
+            display: flex;
+            height: 100px;
+            padding: 20px 0 0;
+            align-items: center;
+        }
+        #header .logo {
+            width: 37%;
+            position: relative;
+        }
+        #header .logo span {
+            width: 75px;
+            height: 75px;
+            background-image: url(img/logo.png);
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+            background-repeat: no-repeat;
+            top: -50px;
+            left: 10px;
+        }
+        #header ul {
+            display: flex;
+            width: 63%;
+            justify-content: space-between;
+        }
+        #header li {
+            display: inline;
+        }
+        #header li a {
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 700;
+            color: #000;
+        } */
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        #header {height: 100px;}
+        #header h1 {float: left; padding-top: 5px;}
+        #header h1 img {width: 130px;}
+        #header .nav {float: right; z-index: 100; position: relative; margin-top: 20px;}
+        #header .nav li {position: relative; float: left; width: 120px; text-align: center;}
+        #header .nav li a {display: block; padding: 20px 15px; background: #ccc; white-space: nowrap;}
+        #header .nav li a:hover {background: #ddd;}
+        #header .nav li ul.submenu {display: none; position: absolute; left: 0; top: 59px; background: #ddd;}
+        #header .nav li ul.submenu li a {padding: 10px;}
+        #header .nav li ul.submenu li a:hover {background: #999;}
+        .clearfix::before, .clearfix::after {display: block; content: ''; clear: both;}
+        .banner {
+            width: 100%;
+            height: 400px;
+            background-image: url(img/banner1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+        }
+        .section02 {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .notice {position: relative; padding: 30px;}
+        .notice ul li {float: left; margin-right: 20px;}
+        .notice ul li a {font-size: 24px; color: #999; font-weight: bold;}
+        .notice ul li.active a {color: #000;}
+        .notice ul li ul {position: absolute; left: 30px; top: 70px;}
+        .notice ul li ul li {width: 95%; padding: 5px 0;}
+        .notice ul li ul li a {float: left; width: 60%; font-size: 16px; color: #333;
+            overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: normal;}
+        .notice ul li ul li span {float: right; width: 20%;}
+        .notice .more {position: absolute; right: -90px; top: 35px;}
+        .article02 {
+            width: 49%;
+        }
+        .article02 .banner02 {
+            width: 100%;
+            height: 210px;
+            background-image: url(img/banner02.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .section03 {
+            width: 100%;
+        }
+        .section03 h3 {
+            margin-bottom: 20px;
+        }
+        .section03 .img__box {
+            display: flex;
+            justify-content: space-between;
+        }
+        .section03 .img__box .img01 {
+            width: 24%;
+            height: 230px;
+            background-image: url(img/img1.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+        .section03 .img__box .img02 {
+            width: 24%;
+            background-image: url(img/img2.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+        .section03 .img__box .img03 {
+            width: 24%;
+            background-image: url(img/img3.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+        .section03 .img__box .img04 {
+            width: 24%;
+            background-image: url(img/img4.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+        .desc__box {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .desc__box p {
+            width: 24%;
+            font-weight: 700;
+            color: rgba(0,0,0,0.6);
+        }
+        #footer {
+            margin-top: 40px;
+            border-top: 1px solid #ccc;
+            color: #666;
+            padding-top: 20px;
+            height: 150px;
+        }
+        #footer p {
+            padding-bottom: 10px;
+        }
+        #footer p:last-child {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header id="header" class="clearfix">
+            <h1><a href="#"><img src="img/logo.png" alt="롯데월드"></a></h1>
+            <nav class="nav">
+                <ul class="clearfix">
+                    <li><a href="#">즐길거리</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">요금/우대혜택</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">참여프로그램</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이용가이드</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">소통서비스</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+
+        <main id="main">
+            <section class="section01">
+                <div class="banner"></div>
+            </section>
+            <section class="section02">
+                <article class="notice">
+                    <ul class="clearfix">
+                        <li class="active"><a href="#">롯데월드 소식</a>
+                            <ul>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">뉴스&middot;공지</a>
+                            <ul>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#" class="more">더보기 +</a>
+                </article>
+                <article class="article02">
+                    <a href="#"><div class="banner02"></div></a>
+                </article>
+            </section>
+            <section class="section03">
+                <h3>특별한 경험</h3>
+                <div class="img__box">
+                    <div class="img01"></div>
+                    <div class="img02"></div>
+                    <div class="img03"></div>
+                    <div class="img04"></div>
+                </div>
+                <div class="desc__box">
+                    <p>연간회원안내</p>
+                    <p>프리미엄투어</p>
+                    <p>공연참여 프로그램</p>
+                    <p>단체프로그램</p>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <p>서울특별시 송파구 올림픽로 240 호텔롯데 롯데월드 | 대표자:박동기</p>
+            <p>사업자등록번호:219-85-00014 | 통신판매업신고번호:송파 제5513호 | 전화:1661-2000</p>
+            <p>COPYRIGHT 2018LOTTEWORLD.ALL RIGHTS RESERVED.</p>
+        </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="script/script.js"></script>
+</body>
+</html>
