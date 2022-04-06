@@ -168,12 +168,109 @@
                             <div class="view-cont">
                                 <div>
 <pre><code class="language-html">//sliderEffect07
-    
+    &lt;section id="slideType07"&gt;
+        &lt;div class="slider__wrap"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="slider__inner"&gt;
+                    &lt;div class="slider s1"&gt;&lt;img src="img/slide06.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                    &lt;div class="slider s2"&gt;&lt;img src="img/slide07.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                    &lt;div class="slider s3"&gt;&lt;img src="img/slide08.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                    &lt;div class="slider s4"&gt;&lt;img src="img/slide09.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                    &lt;div class="slider s5"&gt;&lt;img src="img/slide10.jpg" alt="이미지5"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__btn"&gt;
+                &lt;a href="#" class="prev"&gt;prev&lt;/a&gt;
+                &lt;a href="#" class="next"&gt;next&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__dot"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;    
 </code></pre>
                                 </div>
                                 <div>
 <pre><code class="language-css">/* slider */
-    
+    .slider__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .slider__img {               /* 화면 보이는 구간 */
+        width: 800px;
+        height: 480px;
+        position: relative;
+        overflow: hidden;
+    }
+    .slider__inner {            /* 이미지 움직이는 영역 */
+        display: flex;
+        position: relative;
+        width: 10000px;          /* 이미지 총 길이 */
+        left: -800px;
+    }
+    .slider__inner.transition {
+        transition: all 600ms;
+    }
+    .slider {
+        width: 800px;
+        position: relative;
+    }
+    .slider::before {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        background: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 3px 10px 5px;
+    }
+    .slider.s1::before {content: '이미지1';}
+    .slider.s2::before {content: '이미지2';}
+    .slider.s3::before {content: '이미지3';}
+    .slider.s4::before {content: '이미지4';}
+    .slider.s5::before {content: '이미지5';}
+
+    .slider__btn a {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        width: 50px;
+        height: 50px;
+        background: rgba(0,0,0,0.4);
+        text-align: center;
+        line-height: 50px;
+        transition: all 0.2s;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+    }
+    .slider__btn a.prev {
+        left: 0;
+    }
+    .slider__btn a.next {
+        right: 0;
+    }
+    .slider__btn a:hover {
+        background: rgb(241, 96, 86);
+    }
+    .slider__dot {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+    }
+    .slider__dot .dot {
+        width: 20px;
+        height: 20px;
+        background: rgba(0,0,0,0.4);
+        display: inline-block;
+        border-radius: 50%;
+        transition: all 0.3s;
+        margin: 3px;
+    }
+    .slider__dot .dot.active {
+        background: rgba(255,255,255,0.9);
+    }
 </code></pre>
                                 </div>
                                 <div>
