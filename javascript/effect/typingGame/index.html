@@ -47,7 +47,7 @@
             font-weight: 300;
             min-height: 300px;
             text-align: justify;
-            /* word-break: break-all; */
+            word-break: break-all;
         }
         .typing__info {
             display: flex;
@@ -147,7 +147,7 @@
                         <span>0</span>
                     </li>
                 </ul>
-                <button>Try Again</button>
+                <button class="again">Try Again</button>
             </div>
         </div>
     </div>
@@ -186,15 +186,26 @@
         const typingText = document.querySelector(".typing__text p");
         const inputField = document.querySelector(".input__field");
         const typingMistake = document.querySelector(".mistake span");
+        const typingTime = document.querySelector(".time span b");
+        const typingWpm = document.querySelector(".wpm span"); //1분동안 친 단어
+        const typingCpm = document.querySelector(".cpm span"); //1분동안 친 글자수
+        const typingAgain = document.querySelector(".again")
 
         // 타이핑한 글자수에 대한 인덱스
         let charIndex = 0;
         // 오타
         let mistakes = 0;
+        // 타이머
+        let timer;
+        let maxTime = 60;
+        let timeLeft = maxTime;
+        let isTyping = 0;
 
         // paragraphs를 랜덤하게 불러온 다음 각각의 글자를 쪼개서 span으로 감쌈
         function randomParagraphs(){
             let randIndex = Math.floor(Math.random() * paragraphs.length)
+            typingText.innerHTML = "";
+
             paragraphs[randIndex].split("").forEach(span => {
                 let spanTag = `<span>${span}</span>`;
                 typingText.innerHTML +=spanTag;
@@ -208,37 +219,74 @@
         function initTyping(){
             const characters = typingText.querySelectorAll("span");
             let typedChar = inputField.value.split("")[charIndex];
-
-
-            if(typedChar == null){
-                charIndex--;
-                // 틀렷을때(incorrect가 있을때)만 mistakes--;
-                if(characters[charIndex].classList.contains("incorrect")){
-                    mistakes--;
+            
+            if(charIndex < characters.length-1 && timeLeft > 0){
+                if(!isTyping){
+                    timer = setInterval(initTimer, 1000);
+                    isTyping = true;
                 }
-                characters[charIndex].classList.remove("correct", "incorrect");
-            } else {
-                if(characters[charIndex].innerText === typedChar){
-                    // 맞았을 때
-                    characters[charIndex].classList.add("correct");
+
+                if(typedChar == null){
+                    charIndex--;
+                    // 틀렷을때(incorrect가 있을때)만 mistakes--;
+                    if(characters[charIndex].classList.contains("incorrect")){
+                        mistakes--;
+                    }
+                    characters[charIndex].classList.remove("correct", "incorrect");
                 } else {
-                    // 틀렸을 때 오타 추가, .incorrect
-                    mistakes++;
-                    characters[charIndex].classList.add("incorrect");
+                    if(characters[charIndex].innerText === typedChar){
+                        // 맞았을 때
+                        characters[charIndex].classList.add("correct");
+                    } else {
+                        // 틀렸을 때 오타 추가, .incorrect
+                        mistakes++;
+                        characters[charIndex].classList.add("incorrect");
+                    }
+                    charIndex++;
                 }
-                charIndex++;
+
+                // 다음 타이핑해야할 글자 아래 깜빡임
+                characters.forEach(span => span.classList.remove("active"));
+                characters[charIndex].classList.add("active");
+                typingMistake.innerText = mistakes;
+
+                // 전체 글자수 : charIndex 
+                let wpm = Math.round((((charIndex - mistakes)/5) / (maxTime - timeLeft)) * 60);
+                wpm = wpm < 0 || !wpm || wpm == Infinity ? 0 : wpm
+                typingWpm.innerText = wpm;
+                typingCpm.innerText = charIndex - mistakes;
+
+            
+                } else {
+                    clearInterval(timer);
+                    inputField.value = "";
+                }
             }
 
-            // 다음 타이핑해야할 글자 아래 깜빡임
-            characters.forEach(span => span.classList.remove("active"));
-            characters[charIndex].classList.add("active");
+        function initTimer(){
+            // 지나간 시간이 0보다 크면()
+            if(timeLeft > 0){
+                timeLeft--;
+                typingTime.innerText = timeLeft;
+            } else {
+                clearInterval(timer)
+            }
+        }
+        function resetGame(){
+            randomParagraphs();
+            clearInterval(timer);
+            inputField.value = "";
+            timeLeft = maxTime;
+            isTyping = charIndex = mistakes = 0;
             typingMistake.innerText = mistakes;
-
+            typingWpm.innerText = 0;
+            typingCpm.innerText = 0;
         }
 
         randomParagraphs();
 
         inputField.addEventListener("input", initTyping);
+        typingAgain.addEventListener("click", resetGame)
     </script>
 </body>
 </html>
