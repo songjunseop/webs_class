@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+        body {
+            background: url(../img/slide14.jpg);
+        }
+        .wrap__card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: rgba(138, 43, 226, 0.3);
+        }
+        .card__inner {
+            width: 700px;
+            height: 700px;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 30px;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
+            width: 100%;
+            height: 100%;
+        }
+        .cards li {
+            width: calc(100% / 4 - 20px);
+            height: calc(100% / 4 - 20px);
+            perspective: 1000px;    /*원근법*/
+            transform-style: preserve-3d;   /*3d쓴다고 선언*/
+            position: relative;
+        }
+        .cards li .view {
+            position: absolute;
+            background: linear-gradient(yellow 0%, rgb(89, 0, 255) 100%);
+            padding: 10%;
+            transition: transform 0.25s linear;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            user-select: none;
+            pointer-events: none;
+        }
+        
+        .cards li .view.front {
+            z-index: 10;
+            transform: rotateY(0deg);
+        }
+        .cards li .view.back {
+            transform: rotateY(180deg);
+        }
+        .cards li.flip .view.front {
+            transform: rotateY(180deg)
+        }
+        .cards li.flip .view.back {
+            transform: rotateY(0deg);
+        }
+        .cards li.shake {
+            animation: shake 0.35s ease-in-out;
+        }
+        @keyframes shake {
+            0%   {transform: translateX(0);}
+            20%  {transform: translateX(-13px);}
+            40%  {transform: translateX(13px);}
+            60%  {transform: translateX(-8px);}
+            80%  {transform: translateX(8px);}
+            100% {transform: translateX(0);}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap__card">
+        <div class="card__inner">
+            <ul class="cards">
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg07.png" alt="뒷면07">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg05.png" alt="뒷면05">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg06.png" alt="뒷면06">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg08.png" alt="뒷면08">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg02.png" alt="뒷면02">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg08.png" alt="뒷면08">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg01.png" alt="뒷면01">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg03.png" alt="뒷면03">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg07.png" alt="뒷면07">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg06.png" alt="뒷면06">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg01.png" alt="뒷면01">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg05.png" alt="뒷면05">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg02.png" alt="뒷면02">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg04.png" alt="뒷면04">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg03.png" alt="뒷면03">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="img/cardimg04.png" alt="뒷면04">
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 01. HTML / CSS 디자인 구성
+        // 02. 클릭한 카드 뒤집기
+        // 03. 두개의 뒤집은 카드 확인하기
+        // 04. 클릭한 카드 두개의 이미지 가져오기
+        // 05. 두개의 카드 이미지 비교
+        // 06. 틀린 이미지 애니메이션 효과 주기
+        // 07. 빨리 클릭하면 버그 발생 처리하기
+
+        const cards = document.querySelectorAll(".cards li");         // 카드들 선택자
+
+        let cardOne, cardTwo;
+        let disableDeck = false;
+
+        function flipCard(e){
+            let clickedCard = e.target;                              // 클릭한 카드 선택자
+            if(clickedCard !== cardOne && !disableDeck){
+                clickedCard.classList.add("flip");
+
+                // 첫번째 카드와 두번째 카드의 데이터 저장
+                if(!cardOne){                                            // 첫번째 카드에 데이터가 없으면
+                    return cardOne = clickedCard;                        // 클릭한 카드의 데이터를 cardOne에 저장
+                }
+                cardTwo = clickedCard;                                   // 첫번째 카드에 데이터가 있으면 클릭한 카드의 데이터를 cardTwo에 저장
+                disableDeck = true;                                      // 빨리눌러서 애니메이션이 진행중일때 클릭이 안되게 막아놓음
+
+                let cardOneImg = cardOne.querySelector(".back img").src;     // 처음 클릭한 카드의 이미지 가져오기 뒤에 .src는 데이터를 문자열로 가져옴
+                let cardTwoImg = cardTwo.querySelector(".back img").src;     // 그다음 클릭한 카드의 이미지 가져오기
+
+                // console.log(cardOneImg, cardTwoImg);
+                matchCards(cardOneImg, cardTwoImg)
+            }
+        }
+
+        function matchCards(img1, img2){
+            if(img1 == img2){
+                cardOne.removeEventListener("click", flipCard);
+                cardTwo.removeEventListener("click", flipCard);
+                cardOne = cardTwo = "";                                 // 카드 초기화
+                disableDeck = false;                                    // 빨리눌러서 애니메이션이 진행중일때 클릭이 안되게 막아놓음
+            } else {
+
+                setTimeout(() => {
+                    cardOne.classList.add("shake");
+                    cardTwo.classList.add("shake");
+                }, 400)
+    
+                setTimeout(() => {
+                    cardOne.classList.remove("shake", "flip");
+                    cardTwo.classList.remove("shake", "flip");
+                    cardOne = cardTwo = "";
+                    disableDeck = false;                                // 빨리눌러서 애니메이션이 진행중일때 클릭이 안되게 막아놓음
+                }, 1200)
+            }
+
+        }
+
+        cards.forEach(card => {
+            card.addEventListener("click", flipCard);
+        })
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
