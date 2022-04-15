@@ -5,16 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>댓글</title>
-    <?php
-        include "../include/style.php";
-    ?>
+    
     <!-- //style -->
 </head>
 <body>
 <script>
-    const arrNum = [[100, 200], [300, 400]];
-    const result = arrNum.reduce((p, c) => p.concat(c));
-    document.write(result);
+    function func(){
+        let i, j = 0;
+        for(i = 0; i <= 8; i++){
+            j += i;
+        }
+        document.write(j + i)
+    }
+func()
 </script>
 </body>
 </html>

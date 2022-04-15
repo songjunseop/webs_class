@@ -261,7 +261,20 @@
         </div>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    document.querySelector(".sample02_R1").innerHTML = Math.random();
+    document.querySelector(".sample02_B1").addEventListener("click", () => {
+        document.querySelector(".sample02_R1").innerHTML = Math.random();
+    });
 
+    document.querySelector(".sample02_R2").innerHTML = Math.floor(Math.random() * 10);
+    document.querySelector(".sample02_B2").addEventListener("click", () => {
+        document.querySelector(".sample02_R2").innerHTML = Math.floor(Math.random() * 10);
+    });
+
+    document.querySelector(".sample02_R3").innerHTML = Math.floor(Math.random() * 10 + 10);
+    document.querySelector(".sample02_B3").addEventListener("click", () => {
+        document.querySelector(".sample02_R3").innerHTML = Math.floor(Math.random() * 10 + 10);
+    });
 }</code></pre>
         </div>
     </div>
@@ -316,11 +329,54 @@
         </div>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    document.querySelector(".sample03_R1").innerHTML = Math.max(1, 3, 5);
 
+    document.querySelector(".sample03_R2").innerHTML = Math.max(-1, -3, -5);
+
+    document.querySelector(".sample03_R3").innerHTML = Math.min(1, 3, 5);
+
+    document.querySelector(".sample03_R4").innerHTML = Math.min(-1, -3, -5);
 }</code></pre>
         </div>
     </div>
     <!-- //sample3 -->
+
+    <!-- sample4 -->
+    <div id="sample04" class="sample">
+        <h3>04. 수학 메서드 : Math.abs() : 절대값 값을 반환 : 반환(숫자)</h3>
+        <div class="table">
+            <table>
+                <colgroup>
+                    <col style="width: 4%">
+                    <col style="width: 22%">
+                    <col style="width: 37%">
+                    <col style="width: 37%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>기본값</th>
+                        <th>속성</th>
+                        <th>결괏값</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="sample04_N1"></td>
+                        <td class="sample04_Q1"></td>
+                        <td class="sample04_M1"></td>
+                        <td class="sample04_R1"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    document.querySelector(".sample04_R1").innerHTML = Math.abs(1, 3, 5);
+}</code></pre>
+        </div>
+    </div>
+    <!-- //sample4 -->
     
 
         </div>
@@ -480,10 +536,10 @@
     //{4}
     //04. 수학 메서드 : Math.abs() : 절대값 값을 반환 : 반환(숫자)
     {
-        // document.querySelector(".sample04_N1").innerHTML = 1;
-        // document.querySelector(".sample04_Q1").innerHTML = "1, 3, 5";
-        // document.querySelector(".sample04_M1").innerHTML = "Math.abs()";
-        // document.querySelector(".sample04_R1").innerHTML = Math.abs(1, 3, 5);
+        document.querySelector(".sample04_N1").innerHTML = 1;
+        document.querySelector(".sample04_Q1").innerHTML = "1, 3, 5";
+        document.querySelector(".sample04_M1").innerHTML = "Math.abs()";
+        document.querySelector(".sample04_R1").innerHTML = Math.abs(1, 3, 5);
     }
     </script>
 </body>

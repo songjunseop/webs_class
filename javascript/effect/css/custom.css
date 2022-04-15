@@ -142,6 +142,15 @@ body::before {
 .title p {
     font-size: 16px;
 }
+@media(max-width: 960px){
+    
+    .title h1 {
+        font-size: 18px;
+    }
+    .title p {
+        font-size: 14px;
+    }
+}
 .number {
     position: absolute;
     right: 20px;
