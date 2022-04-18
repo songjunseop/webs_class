@@ -10,14 +10,17 @@
 </head>
 <body>
 <script>
+    // 다음 문제의 정답을 찾으시오.
     function func(){
-        let i, j = 0;
-        for(i = 0; i <= 8; i++){
-            j += i;
+            function funA(){
+                document.wirte("함수가 실행되었습니다.A")
+            }
+            function funB(){
+                document.write("함수가 실행되었습니다.B")
+            }
+            funB();
         }
-        document.write(j + i)
-    }
-func()
+        func();
 </script>
 </body>
 </html>
