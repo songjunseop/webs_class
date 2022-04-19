@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://webfontworld.github.io/fontlab/LABDigital.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'LAB디지털';
+        }
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            cursor: none;
+        }
+        header {
+            background: rgb(120, 67, 182);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+        }
+        header h1 {
+            font-size: 20px;
+            padding: 5px;
+            color: #fff;
+            text-transform: uppercase;
+            
+        }
+        header #clock {
+            color: #fff;
+            font-size: 18px;
+        }
+        .hoverBtn1 {
+        }
+        .btn {
+            position: absolute;
+            text-align: center;
+        }
+        .btn a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(140deg, #ED99FB 30%, #C1BBFC 50%, rgba(255,255,255,.6) 70%);
+            transition: all 0.3s;
+        }
+        .btn a img {
+            width: 30px;
+            padding-top: 10px;
+        }
+        .btn a span {
+            position: absolute;
+            left: 50%; bottom: -20px;
+            transform: translateX(-50%);
+            background: rgb(49, 248, 204);
+            padding: 0 10px;
+            white-space: nowrap;
+        }
+        .btn:hover a {
+            background: rgb(49, 248, 204);
+        }
+        .btn1 {
+            left: 100px;
+            top: 100px;
+        }
+        .btn2 {
+            left: 200px;
+            top: 100px;
+        }
+        .btn3 {
+            left: 330px;
+            top: 100px;
+        }
+        .musicBox {
+            position: absolute;
+            right: -500px;
+            top: 100px;
+            width: 380px;
+            height: 587px;
+            transition: all 0.4s;
+        }
+        .musicBox.show {
+            right: 10px;
+        }
+        .memoryBox {
+            position: absolute;
+            bottom: -100%;
+            left: calc(50% - 425px);
+            width: 850px;
+            height: 800px;
+            transition: all 0.4s;
+        }
+        .memoryBox.show {
+            bottom: calc(50% - 400px);
+        }
+        .typingBox {
+            position: absolute;
+            top: -100%;
+            left: calc(50% - 475px);
+            width: 950px;
+            height: 610px;
+            transition: all 0.4s;
+        }
+        .typingBox.show {
+            top: calc(50% - 305px);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+        .cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 100;
+            width: 50px;
+            user-select: none;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>Game Site</h1>
+        <span id="clock"></span>
+    </header>
+    <div class="cursor">
+        <img src="img/cursor.svg" alt="">
+    </div>
+    <main>
+        <div class="btn btn1">
+            <a href="#">
+                <img src="img/icon01.svg" alt="">
+                <span>Music</span>
+            </a>
+        </div>
+        <div class="btn btn2">
+            <a href="#">
+                <img src="img/icon02.svg" alt="">
+                <span>Momory Game</span>
+            </a>
+        </div>
+        <div class="btn btn3">
+            <a href="#">
+                <img src="img/icon03.svg" alt="">
+                <span>Typing Game</span>
+            </a>
+        </div>
+    </main>
+    <div class="musicBox">
+        <iframe class="musicBoxIframe" src="../javascript/effect/musicPlayer/index.html" frameborder="0"></iframe>
+    </div>
+    <div class="memoryBox">
+        <iframe class="memoryBoxIframe" src="../javascript/effect/memoryGame/index.html" frameborder="0"></iframe>
+    </div>
+    <div class="typingBox">
+        <iframe class="typingBoxIframe"src="../javascript/effect/typingGame/index.html" frameborder="0"></iframe>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(".btn1").draggable();
+        $(".btn2").draggable();
+        $(".btn3").draggable();
+        $(".btn1").click(function(){
+            $(".musicBox").toggleClass("show")
+        });
+        $(".btn2").click(function(){
+            $(".memoryBox").toggleClass("show")
+        })
+        $(".btn3").click(function(){
+            $(".typingBox").toggleClass("show")
+        })
+
+        // 마우스 움직이기
+        window.addEventListener("mousemove", (e) => {
+            document.querySelector(".cursor").style.left = e.clientX - 25 + "px";
+            document.querySelector(".cursor").style.top = e.clientY - 25 + "px";
+            let x = e.clientX - 25 + "px";
+            let y = e.clientY - 25 + "px";
+            document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y;
+        })
+
+        // 현재 시간
+        function printTime() {
+
+            var clock = document.getElementById("clock");            // 출력할 장소 선택
+
+            var now = new Date();                                                  // 현재시간
+
+            var nowTime = (now.getMonth()+1) + "월" + now.getDate() + "일" + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+
+            clock.innerHTML = nowTime;           // 현재시간을 출력
+
+            setTimeout("printTime()",1000);         // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
+
+            }
+
+            window.onload = function() {                         // 페이지가 로딩되면 실행
+
+            printTime();
+        }
+    </script>
+</body>
+</html>

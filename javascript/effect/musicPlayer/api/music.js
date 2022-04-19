@@ -88,36 +88,6 @@
                 artist : "IVE (아이브)",
                 img : "music15",
                 audio : "music15" 
-            },
-            {
-                name : "16. 다정히 내 이름을 부르면",
-                artist : "경서예지, 전건호",
-                img : "music16",
-                audio : "music16" 
-            },
-            {
-                name : "17. SMILEY (Feat. BIBI)",
-                artist : "YENA (최예나)",
-                img : "music17",
-                audio : "music17" 
-            },
-            {
-                name : "18. 존재만으로",
-                artist : "원슈타인",
-                img : "music18",
-                audio : "music18" 
-            },
-            {
-                name : "19. 신호등",
-                artist : "이무진",
-                img : "music19",
-                audio : "music19" 
-            },
-            {
-                name : "20. STAY",
-                artist : "The Kid LAROI, Justin Bieber",
-                img : "music20",
-                audio : "music20" 
-            },
+            }
 
         ]
