@@ -1,0 +1,20 @@
+<svg xml:space="preserve" style="enable-background:new 0 0 70 68;" viewBox="0 0 70 68" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Layer_1" version="1.1">
+<style type="text/css">
+	.st0{fill:#1D142B;}
+	.st1{fill:#8362B8;}
+	.st2{fill:#805EB6;}
+	.st3{fill:#6E4BA5;}
+	.st4{fill:#2F2046;}
+	.st5{fill:#442F66;}
+	.st6{fill:#EBDAFD;}
+</style>
+<polygon points="0,0 0,64 2,64 2,66 4,66 4,68 70,68 70,66 70,64 70,59 70,58 70,0" class="st0"></polygon>
+<polygon points="62,0 8,0 8,36 10,36 10,38 60,38 60,36 62,36" class="st1"></polygon>
+<polygon points="60,2 10,2 10,34 12,34 12,36 58,36 58,34 60,34" class="st2"></polygon>
+<polygon points="58,4 12,4 12,32 14,32 14,34 56,34 56,32 58,32" class="st3"></polygon>
+<polygon points="60,48 60,46 52,46 52,66 58,66 60,66 62,66 62,48" class="st4"></polygon>
+<polygon points="50,46 50,44 14,44 14,46 12,46 12,68 52,68 52,46" class="st5"></polygon>
+<rect height="22" width="36" class="st6" y="46" x="14"></rect>
+<rect height="16" width="12" class="st5" y="48" x="18"></rect>
+<rect height="12" width="8" class="st1" y="50" x="20"></rect>
+</svg>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+
+    <link href="https://webfontworld.github.io/NexonMaplestory/NexonMaplestory.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'NexonMaplestory';
+        }
+
+        body {
+            background: #007bff;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+        button {
+            border: 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:active {
+            opacity: 0.6;
+        }
+
+        .start__btn,
+        .info__box,
+        .card__wrap,
+        .result__box {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
+                        0 6px 10px 0 rgba(0,0,0,0.17);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        .start__btn.active,
+        .info__box.active,
+        .card__wrap.active,
+        .result__box.active {
+            opacity: 1;
+            z-index: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+
+        .start__btn button {
+            background: #fff;
+            padding: .8rem 3rem;
+            border-radius: 5px;
+            font-size: 1.3em;
+        }
+
+        .info__box {
+            width: 500px;
+            background: #fff;
+            padding: .8rem 3rem;
+            border-radius: 5px;
+            font-size: 1.3rem;
+        }
+        .info__box .title {
+            border-top: 1px solid #ccc;
+            padding: 0.8rem 2rem;
+            font-size: 1.4em;
+            text-align: center;
+        }
+        .info__box .list ol {
+            padding: 1.3rem 3rem;
+        }
+        .info__box .buttons {
+            border-top: 1px solid #ccc;
+            padding: .8rem 2rem;
+            text-align: center;
+        }
+        .info__box .buttons button {
+            background: #007bff;   
+            color: #fff;
+            padding: 0.4rem 2rem;
+            border-radius: 5px;
+            font-size: 1em;
+            border: 1px solid #007bff;
+        }
+        .info__box .buttons button:first-child {
+            background: #fff;
+            border: 1px solid #007bff;
+            color: #007bff;
+        }
+
+        .card__wrap {
+            width: 500px;
+            height: 600px;
+            background: #fff;
+        }
+        .card__wrap li {
+            list-style: none;
+        }
+        .card__inner {
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
+            width: 100%;
+            height: 100%;
+        }
+        .cards li {
+            width: calc(100% / 4 - 20px);
+            height: calc(100% / 4 - 20px);
+            perspective: 1000px;    /*원근법*/
+            transform-style: preserve-3d;   /*3d쓴다고 선언*/
+            position: relative;
+        }
+        .cards li .view {
+            position: absolute;
+            background: linear-gradient(yellow 0%, rgb(89, 0, 255) 100%);
+            padding: 10%;
+            transition: transform 0.25s linear;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            user-select: none;
+            pointer-events: none;
+        }
+        
+        .cards li .view.front {
+            z-index: 10;
+            transform: rotateY(0deg);
+        }
+        .cards li .view.back {
+            transform: rotateY(180deg);
+        }
+        .cards li.flip .view.front {
+            transform: rotateY(180deg)
+        }
+        .cards li.flip .view.back {
+            transform: rotateY(0deg);
+        }
+        .cards li.shake {
+            animation: shake 0.35s ease-in-out;
+        }
+        @keyframes shake {
+            0%   {transform: translateX(0);}
+            20%  {transform: translateX(-13px);}
+            40%  {transform: translateX(13px);}
+            60%  {transform: translateX(-8px);}
+            80%  {transform: translateX(8px);}
+            100% {transform: translateX(0);}
+        }
+    
+        .result__box {
+            width: 500px;
+            background: #fff;
+            border-radius: 5px;
+            font-size: 1.3em;
+            z-index: 100;
+        }
+        .result__box .title {
+            border-bottom: 1px solid #ccc;
+            padding: .6rem 2rem;
+            text-align: center;
+            font-size: 1.4em
+        }
+        .result__box .score {
+            text-align: center;
+            padding: 2rem;
+            height: 300px;
+        }
+        .result__box .buttons {
+            border-top: 1px solid #ccc;
+            padding: .8rem 2rem;
+            text-align: center;
+        }
+        .result__box .buttons button {
+            background: #007BFF;
+            color: #fff;
+            padding: .4rem 2rem;
+            border-radius: 5px;
+            font-size: 1em;
+            border: 1px solid #007BFF;
+            margin: 0 0.2em;
+            display: inline-block;
+        }
+        .result__box .buttons button:first-child {
+            background: #fff;
+            border: 1px solid #007BFF;
+            color: #007BFF
+        }
+        .comment {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            height: inherit;
+            width: inherit;
+        }
+        .comment > h6 {
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 시작버튼 -->
+    <div class="start__btn active">
+        <button>Start</button>
+    </div>
+
+    <!-- 규칙 박스 -->
+    <div class="info__box">
+        <div class="title">메모리 게임을 하기 위한 규칙</div>
+        <div class="list">
+            <ol>
+                <li>당신에게는 기회가 <em>10번</em> 있습니다.</li>
+                <li>기회를 1번을 소진하면, 점수가 10점 깎입니다.</li>
+                <li>시도를 10번하면 게임오버 됩니다.</li>
+                <li>적은 기회로 맞출수록 점수가 높아집니다.</li>
+                <li>1등 상품은 코딩 숙제입니다.</li>
+            </ol>
+        </div>
+        <div class="buttons">
+            <button id="stop">그만하기</button>
+            <button class="start">도전하기</button>
+        </div>
+    </div>
+
+    <!-- 카드박스 -->
+    <div class="card__wrap">
+        <div class="card__inner">
+            <div class="scoreResult">현재 기회 : <span>10</span>번</div>
+            <ul class="cards">
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg07.png" alt="뒷면07">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg05.png" alt="뒷면05">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg06.png" alt="뒷면06">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg08.png" alt="뒷면08">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg02.png" alt="뒷면02">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg08.png" alt="뒷면08">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg01.png" alt="뒷면01">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg03.png" alt="뒷면03">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg07.png" alt="뒷면07">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg06.png" alt="뒷면06">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg01.png" alt="뒷면01">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg05.png" alt="뒷면05">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg02.png" alt="뒷면02">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg04.png" alt="뒷면04">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg03.png" alt="뒷면03">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="assets/img/cardimg.png" alt="앞면">
+                    </div>
+                    <div class="view back">
+                        <img src="assets/img/cardimg04.png" alt="뒷면04">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 결과 박스 -->
+    <div class="result__box">
+        <div class="title">게임이 끝났습니다.</div>
+        <div class="score">
+            당신의 점수는 몇 <span>00</span>점 입니다.
+        </div>
+        <div class="comment"><h6></h6></div>
+        <div class="buttons">
+            <button class="stop">그만하기</button>
+            <button class="restart">다시 도전하기</button>
+        </div>
+    </div>
+
+    <script>
+        const startBtn = document.querySelector(".start__btn");
+        const infoBox = document.querySelector(".info__box");
+        const resultBox = document.querySelector(".result__box");
+        const cardWrap = document.querySelector(".card__wrap");
+        const cards = document.querySelectorAll(".cards li");
+        const infoBoxStart = infoBox.querySelector(".start");
+        const resultBoxRestart = resultBox.querySelector(".restart");
+        const stopBtn = document.querySelector(".buttons #stop");
+
+        let score = 10;
+        let scoreResult = 10;
+
+        let cardOne, cardTwo;
+        let disableDeck = false;
+        let matchedCard = 0;
+        let sound = [
+            "assets/audio/match2.mp3",
+            "assets/audio/match.mp3",
+            "assets/audio/up.mp3",
+        ]
+        let soundMatch = new Audio(sound[0]);
+        let soundNoMatch = new Audio(sound[1]);
+        let soundSuccess = new Audio(sound[2]);
+        // 시작 버튼
+        startBtn.onclick = () => {
+            infoBox.classList.add("active");
+            startBtn.classList.remove("active");
+        }
+        // 게임시작 버튼
+        infoBoxStart.onclick = () => {
+            cardWrap.classList.add("active");
+            setTimeout(() => {
+                infoBox.classList.remove("active");
+                shuffledCard();
+            }, 1000)
+        }
+        // 게임 다시 시작 버튼
+        resultBoxRestart.onclick = () => {
+            resultBox.classList.remove("active");
+            cardWrap.classList.add("active");
+            shuffledCard();
+        }
+        //카드 클릭
+        cards.forEach(card => {
+            //card.classList.add("flip")
+            card.addEventListener("click", flipCard);
+        });
+        function flipCard(e){
+            let clickedCard = e.target;
+            if(clickedCard !== cardOne && !disableDeck){
+                clickedCard.classList.add("flip");
+                if(!cardOne){
+                    return cardOne = clickedCard;
+                }
+                cardTwo = clickedCard;
+                disableDeck = true;
+                let cardOneImg = cardOne.querySelector(".back img").src;
+                let cardTwoImg = cardTwo.querySelector(".back img").src;
+                matchCards(cardOneImg, cardTwoImg);
+            }
+        }
+        //카드 확인하기
+        function matchCards(img1, img2){
+            if(img1 == img2){
+                // score = score + 5;
+                matchedCard++;
+                document.querySelector(".scoreResult > span").innerText = score;
+                //완성했을 때
+                if(matchedCard == 8){
+                    document.querySelector(".score span").innerText = score * 10;
+                    if(score == 10 || score == 9){
+                        document.querySelector(".comment > h6").innerText = "정말 천재군요!"
+                    } else if(score == 8 || score == 7){
+                        document.querySelector(".comment > h6").innerText = "조금 아쉽군요.."
+                    } else if(score == 6 || score == 5){
+                        document.querySelector(".comment > h6").innerText = "더욱 노력하셔야 겠군요."
+                    } else if(score == 4 || score == 3){
+                        document.querySelector(".comment > h6").innerText = "정말 바보군요!"
+                    } else if(score == 2 || score == 1){
+                        document.querySelector(".comment > h6").innerText = "사람이 아니군요!"
+                    }
+                    setTimeout(() => {
+                        cardWrap.classList.remove("active");
+                        resultBox.classList.add("active");
+                    }, 1000)
+                    
+                }
+                cardOne.removeEventListener("click", flipCard);
+                cardTwo.removeEventListener("click", flipCard);
+                cardOne = cardTwo = "";
+                disableDeck = false;
+                soundMatch.play();
+            } else if(score > 0){
+                score--;
+                document.querySelector(".scoreResult > span").innerText = score;
+                setTimeout(() => {
+                    cardOne.classList.add("shake");
+                    cardTwo.classList.add("shake");
+                }, 400);
+                setTimeout(() => {
+                    cardOne.classList.remove("shake", "flip");
+                    cardTwo.classList.remove("shake", "flip");
+                    cardOne = cardTwo = "";
+                    disableDeck = false;
+                }, 1200);
+                soundNoMatch.play();
+            } else if(score === 0){
+                cardWrap.classList.remove("active");
+                resultBox.classList.add("active");
+            }
+        }
+
+        
+            function shuffledCard(){
+            cardOne, cardTwo = "";
+            matchedCard = 0;
+            score = 10;
+            let arr = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
+            // let result = arr.sort(() => Math.random() > 0.5 ? 1 : -1);
+            cards.forEach((card, index) => {
+                card.addEventListener("click", flipCard);
+                card.classList.remove("flip");
+                setTimeout(() => {
+                    card.classList.add("flip");
+                    disableDeck = true;
+                }, 200 * index);
+                setTimeout(() => {
+                    card.classList.remove("flip");
+                    disableDeck = false;
+                }, 4000);
+                let imgTag = card.querySelector(".back img");
+                imgTag.src = `assets/img/cardimg0${arr[index]}.png`;
+            })
+        }
+
+        document.querySelector(".stop").addEventListener("click", () => {
+            infoBox.classList.add("active");
+            cardWrap.classList.remove("active");
+            resultBox.classList.remove("active");
+        })
+    </script>
+</body>
+</html>
