@@ -105,7 +105,7 @@
 
         .card__wrap {
             width: 500px;
-            height: 600px;
+            height: 500px;
             background: #fff;
         }
         .card__wrap li {
@@ -133,7 +133,7 @@
         }
         .cards li .view {
             position: absolute;
-            background: linear-gradient(yellow 0%, rgb(89, 0, 255) 100%);
+            background: linear-gradient(rgb(255, 255, 181) 0%, rgb(206, 180, 255) 100%);
             padding: 10%;
             transition: transform 0.25s linear;
             backface-visibility: hidden;
@@ -215,6 +215,14 @@
         .comment > h6 {
             text-align: center;
             font-size: 30px;
+        }
+        .scoreResult {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 0;
+            left: 0;
+            margin-top: 3px;
         }
     </style>
 </head>
@@ -510,7 +518,7 @@
             cardOne, cardTwo = "";
             matchedCard = 0;
             score = 10;
-            // let arr = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
+            let arr = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
             let result = arr.sort(() => Math.random() > 0.5 ? 1 : -1);
             cards.forEach((card, index) => {
                 card.addEventListener("click", flipCard);
