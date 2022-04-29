@@ -432,10 +432,12 @@
         // 게임시작 버튼
         infoBoxStart.onclick = () => {
             cardWrap.classList.add("active");
+            disableDeck = false;
             setTimeout(() => {
                 infoBox.classList.remove("active");
                 shuffledCard();
             }, 1000)
+            disableDeck = true;
         }
         // 게임 다시 시작 버튼
         resultBoxRestart.onclick = () => {

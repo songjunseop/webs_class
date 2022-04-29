@@ -90,6 +90,10 @@
             right: 100px;
             top: 100px;
         }
+        .btn5 {
+            left: 450px;
+            top: 100px;
+        }
         .btn4 a span {
             position: absolute;
             left: 50%; bottom: -20px;
@@ -152,6 +156,17 @@
         .typingBox.show {
             top: calc(50% - 305px);
         }
+        .tetrisBox {
+            position: absolute;
+            top: calc(50% - 300px);
+            left: -600px;
+            width: 600px;
+            height: 600px;
+            transition: all 0.4s;
+        }
+        .tetrisBox.show {
+            left: calc(50% - 300px);
+        }
 
         iframe {
             width: 100%;
@@ -210,7 +225,7 @@
         </div>
         <div class="btn btn5">
             <a href="#">
-                <img src="assets/img/icon04.svg" alt="">
+                <img src="assets/img/tetris.png" alt="">
                 <span>Tetris Game</span>
             </a>
         </div>
@@ -245,25 +260,51 @@
         </div>
         <iframe class="typingBoxIframe"src="../javascript/effect/typingGame/index.html" frameborder="0"></iframe>
     </div>
+    <div class="tetrisBox">
+        <div class="close__btn"><svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4C1 2.34315 2.34315 1 4 1H19C20.6569 1 22 2.34315 22 4V19C22 20.6569 20.6569 22 19 22H4C2.34315 22 1 20.6569 1 19V4Z" stroke="white" stroke-opacity="0.1"/>
+            <path d="M1.5 4.5C1.5 2.84315 2.84315 1.5 4.5 1.5H18.5C20.1569 1.5 21.5 2.84315 21.5 4.5V18.5C21.5 20.1569 20.1569 21.5 18.5 21.5H4.5C2.84315 21.5 1.5 20.1569 1.5 18.5V4.5Z" fill="black" fill-opacity="0.15"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.396 5.95201C16.5761 5.77196 16.868 5.77196 17.048 5.95201V5.95201C17.2281 6.13205 17.2281 6.42396 17.048 6.60401L6.60401 17.048C6.42396 17.2281 6.13205 17.2281 5.95201 17.048V17.048C5.77196 16.868 5.77196 16.5761 5.95201 16.396L16.396 5.95201Z" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.95201 5.95201C6.13205 5.77196 6.42396 5.77196 6.60401 5.95201L17.048 16.396C17.2281 16.5761 17.2281 16.868 17.048 17.048V17.048C16.868 17.2281 16.5761 17.2281 16.396 17.048L5.95201 6.60401C5.77196 6.42396 5.77196 6.13205 5.95201 5.95201V5.95201Z" fill="white"/>
+            </svg>
+        </div>
+        <iframe class="tetrisBoxIframe"src="tetrisGame/index.html" frameborder="0"></iframe>
+    </div>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
+        // 드래그
         $(".btn1").draggable();
         $(".btn2").draggable();
         $(".btn3").draggable();
         $(".btn4").draggable();
+        $(".btn5").draggable();
+
+        // irfame
         $(".btn1").click(function(){
+            
             $(".musicBox").toggleClass("show")
             $(".memoryBox").removeClass("show")
             $(".typingBox").removeClass("show")
+            $(".tetrisBox").removeClass("show")
         });
         $(".btn2").click(function(){
             $(".memoryBox").toggleClass("show")
             $(".musicBox").removeClass("show")
             $(".typingBox").removeClass("show")
+            $(".tetrisBox").removeClass("show")
         })
         $(".btn3").click(function(){
             $(".typingBox").toggleClass("show")
+            $(".musicBox").removeClass("show")
+            $(".memoryBox").removeClass("show")
+            $(".tetrisBox").removeClass("show")
+        })
+        $(".btn5").click(function(){
+            $(".tetrisBox").toggleClass("show")
+            $(".typingBox").removeClass("show")
             $(".musicBox").removeClass("show")
             $(".memoryBox").removeClass("show")
         })
@@ -302,8 +343,12 @@
         document.querySelectorAll(".close__btn").forEach(el => {
             el.addEventListener("click", () => {
                 document.querySelector(".typingBox").classList.remove("show")
+
                 document.querySelector(".musicBox").classList.remove("show")
+
                 document.querySelector(".memoryBox").classList.remove("show")
+
+                document.querySelector(".tetrisBox").classList.remove("show")
             })
             
         })
