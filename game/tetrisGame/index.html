@@ -239,9 +239,8 @@
             <ol>
                 <li>방향키로 조작합니다.</li>
                 <li>위 방향키를 누르면 블록의 모양이 바뀝니다.</li>
-                <li>space bar   를 누르면 블록이 빨리 내려갑니다.</li>
-                <li>10점마다 속도가 빨라집니다.</li>
-                <li>속도는 최대 2번 빨라집니다.</li>
+                <li>space bar를 누르면 블록이 빨리 내려갑니다.</li>
+                <li>10초마다 속도가 빨라집니다.</li>
             </ol>
         </div>
         <div class="buttons">
@@ -269,7 +268,7 @@
             <ul></ul>
         </div>
     </div>
-    <audio id="song" src="audio/Jeremy_Black.mp3" loop="loop"></audio>
+    <audio id="song" src="../assets/audio/tetris.mp3" loop="loop"></audio>
 
     <script>
         const startBtn = document.querySelector(".start__btn");
@@ -343,6 +342,10 @@
             left: 3,
         }
 
+        setInterval(() => {
+                gameDuration -= 10;
+            }, 10000)
+
         // 시작 버튼
         startBtn.onclick = () => {
             infoBox.classList.add("active");
@@ -354,12 +357,13 @@
             tetrisWrap.classList.add("active");
             infoBox.classList.remove("active");
             init()
-            tetrisSong.play();
+            
         }
         
 
         // 시작하기
         function init(){
+            tetrisSong.play();
             gameMovingItem = {...movingItem};
 
             //console.log(gameMovingItem)
@@ -457,20 +461,13 @@
 
         //새로운 블록 만들기
         function generateNewBlock(){
-
+            
             clearInterval(gameInterval);
             gameInterval = setInterval(() => {
                 moveBlock("top", 1)
             }, gameDuration);
-
-            if(gameScore === 10){
-                gameDuration -= 50
-            } if(gameScore === 20){
-                gameDuration -= 100
-            } if(gameScore === 30) {
-                gameDuration -= 150
-            }
-
+            
+            
             const blockArray = Object.entries(blocks);
             const randomIndex = Math.floor(Math.random() * blockArray.length);
             movingItem.type = blockArray[randomIndex][0];
