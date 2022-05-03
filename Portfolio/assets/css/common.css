@@ -1,0 +1,34 @@
+/* common */
+:root {
+    --white : #fff;
+    --black : #000;
+
+    --main_blue : #0049CF;
+    --main_bg : #F9F9FF;
+    --main_border : #DCE1EC;
+
+    --main_font : "KorolevCompressedW04-Heavy";
+    --sub_font : 'Korolev';
+
+    --main_korfont : 'ChosunNm';
+    --sub_korfont : 'SCoreDream';
+
+    --main_color : #00265A;
+    --sub_color : #006DF9;
+}
+body {
+    background-color: var(--main_bg);
+}
+
+section {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 1300px;
+    /* border-left: 1px solid var(--main_border);
+    border-right: 1px solid var(--main_border); */
+    margin: 0 auto;
+}
+/* //common */

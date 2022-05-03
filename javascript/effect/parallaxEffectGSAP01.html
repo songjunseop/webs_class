@@ -17,13 +17,14 @@
             text-decoration: none;
         }
         body {
-            background-color: #222;
             color: #fff;
             font-family: "NexonLv1Gothic";
             font-weight: 300;
         }
         #parallax__title {
             padding: 20px;
+            position: relative;
+            z-index: 1000;
         }
         #parallax__title h1 {
             font-size: 30px;
@@ -55,34 +56,6 @@
         #parallax__title li.active a {
             background: #fff;
             color: #000;
-        }
-        #parallax__nav {
-            position: fixed;
-            right: 20px;
-            top: -200px;
-            z-index: 1000;
-            background-color: rgba(0,0,0,0.4);
-            padding: 15px 20px;
-            border-radius: 50px;
-            transition: top 0.2s ease-in-out;
-        }
-        #parallax__nav li {
-            list-style: none;
-            display: inline;
-        }
-        #parallax__nav.show {
-            top: 20px;
-        }
-        #parallax__nav li a {
-            display: inline-block;
-            padding: 5px 20px;
-            text-align: center;
-            line-height: 30px;
-        }
-        #parallax__nav li.active a {
-            background: #fff;
-            color: #000;
-            border-radius: 30px;
         }
         #parallax__cont {
             max-width: 1600px;
@@ -124,7 +97,6 @@
         .content__item__imgWrap {
             width: 100%;
             padding-bottom: 56.25%;
-            background: #000;
             position: relative;
             overflow: hidden;
         }
@@ -184,71 +156,40 @@
             margin-left: auto;
             margin-right: -4vw;
         }
-
-        /* info */
-        .scrollTop {
+        #gradient {
             position: fixed;
-            left: 20px;
-            bottom: 20px;
-            z-index: 1000;
-            background: rgba(0,0,0,0.4);
-            color: #fff;
-            padding: 10px 30px;
-            border-radius: 50px;
-        }
-        .scrollInfo {
-            position: fixed;
-            left: 20px;
-            bottom: 70px;
-            z-index: 1000;
-            background: rgba(0,0,0,0.4);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-        .scrollInfo li {
-            list-style: none;
-            line-height: 1.6;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(to top, #a8caba, #5d4157);
+            
         }
     </style>
 </head>
 <body>
     <!-- header -->
     <header id="parallax__title">
-        <h1><a href="parallaxEffect.html">JavaScript Parallax Effect03</a></h1>
-        <p>패럴랙스 스크롤링 효과 - 숨김 메뉴</p>
+        <h1><a href="parallaxEffect.html">GSAP Parallax Effect01</a></h1>
+        <p>패럴랙스 스크롤링 효과 - 배경색 변경하기</p>
         <ul>
-            <li><a href="parallaxEffect01.html">1</a></li>
-            <li><a href="parallaxEffect02.html">2</a></li>
-            <li class="active"><a href="parallaxEffect03.html">3</a></li>
-            <li><a href="parallaxEffect04.html">4</a></li>
-            <li><a href="parallaxEffect05.html">5</a></li>
-            <li><a href="parallaxEffect06.html">6</a></li>
-            <li><a href="parallaxEffect07.html">7</a></li>
-            <li><a href="parallaxEffect08.html">8</a></li>
-            <li><a href="parallaxEffect09.html">9</a></li>
+            <li class="active"><a href="parallaxEffectGSAP01.html">1</a></li>
+            <li><a href="parallaxEffectGSAP02.html">2</a></li>
+            <li><a href="parallaxEffectGSAP03.html">3</a></li>
+            <li><a href="parallaxEffectGSAP04.html">4</a></li>
+            <li><a href="parallaxEffectGSAP05.html">5</a></li>
+            <li><a href="parallaxEffectGSAP06.html">6</a></li>
+            <li><a href="parallaxEffectGSAP07.html">7</a></li>
+            <li><a href="parallaxEffectGSAP08.html">8</a></li>
+            <li><a href="parallaxEffectGSAP09.html">9</a></li>
         </ul>
     </header>
     <!-- //header -->
 
-<!-- parallax__nav -->
-    <nav id="parallax__nav">
-        <ul>
-            <li class="active"><a href="#section1"><span>메뉴1</span></a></li>
-            <li><a href="#section2"><span>메뉴2</span></a></li>
-            <li><a href="#section3"><span>메뉴3</span></a></li>
-            <li><a href="#section4"><span>메뉴4</span></a></li>
-            <li><a href="#section5"><span>메뉴5</span></a></li>
-            <li><a href="#section6"><span>메뉴6</span></a></li>
-            <li><a href="#section7"><span>메뉴7</span></a></li>
-            <li><a href="#section8"><span>메뉴8</span></a></li>
-            <li><a href="#section9"><span>메뉴9</span></a></li>
-        </ul>
-    </nav>
-    <!-- //parallax__nav -->
 
     <!-- main -->
     <main id="parallax__cont">
+        <div id="gradient"></div>
         <div class="contents">
             <section id="section1" class="content__item">
                 <span class="content__item__num">01</span>
@@ -343,74 +284,24 @@
     </main>
     <!-- //main -->
 
-    <!-- info -->
-    <div class="scrollTop">
-        scrollTop : <span>0</span>px
-    </div>
-    <!-- //info -->
-
     <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <script>
-        window.addEventListener("scroll", () => {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-
-            // //스크롤 값이 0보다 크면 show 클래스를 추가 #parallax__nav
-            // if(scrollTop > 0){
-            //     document.querySelector("#parallax__nav").classList.add("show")
-            // } else {
-            //     document.querySelector("#parallax__nav").classList.remove("show")
-            // }
-
-            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
-
-            document.querySelectorAll(".content__item").forEach((el, index) => {
-                if(scrollTop >= el.offsetTop -2){
-                    document.querySelectorAll("#parallax__nav ul li").forEach(li => {
-                    li.classList.remove("active")
-                    })
-                    document.querySelector("#parallax__nav ul li:nth-child("+(index+1)+")").classList.add("active")
-                }
-            })
-        })        
-
-        let nowScroll = true;       //내가 스크롤링을 하고있다는걸 감지
-        let lastScroll = 0;
-
-        function scrollProgress(){
-            nowScroll = true;
-
-            setInterval(() => {                 //시간차를 이용해서 이전위치와 현재 위치를 비교
-                if(nowScroll){
-                    nowScroll = false;
-                    hasScroll();
-                }
-            }, 300);
-
-            console.log(nowScroll)
-        }
-
-        function hasScroll(){
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-            if(scrollTop < lastScroll){
-                document.querySelector("#parallax__nav").classList.add("show")
-            } else {
-                document.querySelector("#parallax__nav").classList.remove("show")
-            }
-
-            lastScroll = scrollTop;
-
-            console.log("lastScroll : " + lastScroll)
-        }
-
-        window.addEventListener("scroll", scrollProgress)
-
-        document.querySelectorAll("#parallax__nav li a").forEach(li => {
-            li.addEventListener("click", (e) => {
-                e.preventDefault();
-                document.querySelector(li.getAttribute("href")).scrollIntoView({
-                    behavior:"smooth"
+        const gradient = ScrollTrigger.create({
+            // trigger: "#parallax__cont",
+            start: "top top",
+            end: "bottom bottom",
+            markers: true,
+            onUpdate: (self) => {
+                const startColor = gsap.utils.interpolate(["#fff", "#000"], self.progress);
+                const endColor = gsap.utils.interpolate(["#a8caba", "#5d4157"], self.progress);
+                gsap.to("#gradient", {
+                    durateion: 1,
+                    ease: "power2.out",
+                    backgroundImage: `linear-gradient(to top, ${startColor} , ${endColor})`
                 })
-            })
+            }
         })
     </script>
     <!-- //script -->

@@ -17,13 +17,15 @@
             text-decoration: none;
         }
         body {
-            background-color: #222;
             color: #fff;
             font-family: "NexonLv1Gothic";
             font-weight: 300;
+            background: #222;
         }
         #parallax__title {
             padding: 20px;
+            position: relative;
+            z-index: 1000;
         }
         #parallax__title h1 {
             font-size: 30px;
@@ -55,34 +57,6 @@
         #parallax__title li.active a {
             background: #fff;
             color: #000;
-        }
-        #parallax__nav {
-            position: fixed;
-            right: 20px;
-            top: -200px;
-            z-index: 1000;
-            background-color: rgba(0,0,0,0.4);
-            padding: 15px 20px;
-            border-radius: 50px;
-            transition: top 0.2s ease-in-out;
-        }
-        #parallax__nav li {
-            list-style: none;
-            display: inline;
-        }
-        #parallax__nav.show {
-            top: 20px;
-        }
-        #parallax__nav li a {
-            display: inline-block;
-            padding: 5px 20px;
-            text-align: center;
-            line-height: 30px;
-        }
-        #parallax__nav li.active a {
-            background: #fff;
-            color: #000;
-            border-radius: 30px;
         }
         #parallax__cont {
             max-width: 1600px;
@@ -124,9 +98,9 @@
         .content__item__imgWrap {
             width: 100%;
             padding-bottom: 56.25%;
-            background: #000;
             position: relative;
             overflow: hidden;
+            background: #222;
         }
         .content__item__img {
             position: absolute;
@@ -184,68 +158,28 @@
             margin-left: auto;
             margin-right: -4vw;
         }
-
-        /* info */
-        .scrollTop {
-            position: fixed;
-            left: 20px;
-            bottom: 20px;
-            z-index: 1000;
-            background: rgba(0,0,0,0.4);
-            color: #fff;
-            padding: 10px 30px;
-            border-radius: 50px;
-        }
-        .scrollInfo {
-            position: fixed;
-            left: 20px;
-            bottom: 70px;
-            z-index: 1000;
-            background: rgba(0,0,0,0.4);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-        .scrollInfo li {
-            list-style: none;
-            line-height: 1.6;
-        }
+        
     </style>
 </head>
 <body>
     <!-- header -->
     <header id="parallax__title">
-        <h1><a href="parallaxEffect.html">JavaScript Parallax Effect03</a></h1>
-        <p>패럴랙스 스크롤링 효과 - 숨김 메뉴</p>
+        <h1><a href="parallaxEffect.html">GSAP Parallax Effect02</a></h1>
+        <p>패럴랙스 스크롤링 효과 - 나타나기</p>
         <ul>
-            <li><a href="parallaxEffect01.html">1</a></li>
-            <li><a href="parallaxEffect02.html">2</a></li>
-            <li class="active"><a href="parallaxEffect03.html">3</a></li>
-            <li><a href="parallaxEffect04.html">4</a></li>
-            <li><a href="parallaxEffect05.html">5</a></li>
-            <li><a href="parallaxEffect06.html">6</a></li>
-            <li><a href="parallaxEffect07.html">7</a></li>
-            <li><a href="parallaxEffect08.html">8</a></li>
-            <li><a href="parallaxEffect09.html">9</a></li>
+            <li><a href="parallaxEffectGSAP01.html">1</a></li>
+            <li class="active"><a href="parallaxEffectGSAP02.html">2</a></li>
+            <li><a href="parallaxEffectGSAP03.html">3</a></li>
+            <li><a href="parallaxEffectGSAP04.html">4</a></li>
+            <li><a href="parallaxEffectGSAP05.html">5</a></li>
+            <li><a href="parallaxEffectGSAP06.html">6</a></li>
+            <li><a href="parallaxEffectGSAP07.html">7</a></li>
+            <li><a href="parallaxEffectGSAP08.html">8</a></li>
+            <li><a href="parallaxEffectGSAP09.html">9</a></li>
         </ul>
     </header>
     <!-- //header -->
 
-<!-- parallax__nav -->
-    <nav id="parallax__nav">
-        <ul>
-            <li class="active"><a href="#section1"><span>메뉴1</span></a></li>
-            <li><a href="#section2"><span>메뉴2</span></a></li>
-            <li><a href="#section3"><span>메뉴3</span></a></li>
-            <li><a href="#section4"><span>메뉴4</span></a></li>
-            <li><a href="#section5"><span>메뉴5</span></a></li>
-            <li><a href="#section6"><span>메뉴6</span></a></li>
-            <li><a href="#section7"><span>메뉴7</span></a></li>
-            <li><a href="#section8"><span>메뉴8</span></a></li>
-            <li><a href="#section9"><span>메뉴9</span></a></li>
-        </ul>
-    </nav>
-    <!-- //parallax__nav -->
 
     <!-- main -->
     <main id="parallax__cont">
@@ -343,73 +277,131 @@
     </main>
     <!-- //main -->
 
-    <!-- info -->
-    <div class="scrollTop">
-        scrollTop : <span>0</span>px
-    </div>
-    <!-- //info -->
-
     <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <script>
-        window.addEventListener("scroll", () => {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-
-            // //스크롤 값이 0보다 크면 show 클래스를 추가 #parallax__nav
-            // if(scrollTop > 0){
-            //     document.querySelector("#parallax__nav").classList.add("show")
-            // } else {
-            //     document.querySelector("#parallax__nav").classList.remove("show")
-            // }
-
-            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
-
-            document.querySelectorAll(".content__item").forEach((el, index) => {
-                if(scrollTop >= el.offsetTop -2){
-                    document.querySelectorAll("#parallax__nav ul li").forEach(li => {
-                    li.classList.remove("active")
-                    })
-                    document.querySelector("#parallax__nav ul li:nth-child("+(index+1)+")").classList.add("active")
+        // gsap => forEach()문 사용하는 방법
+        gsap.utils.toArray(".content__item__imgWrap").forEach(element => {
+            ScrollTrigger.create({
+                trigger: element,
+                start: "top 100%",
+                end: "bottom 0%",
+                markers: true,
+                onEnter: function(){
+                    // fromTo => to의 반대, 애니메이션을 뒤에서 앞으로 실행함
+                    gsap.fromTo(
+                        element, {
+                            y: 200, 
+                            autoAlpha: 0
+                        },
+                        {
+                            duration: 1.25, 
+                            y:0,
+                            autoAlpha: 1,
+                            ease: "power4.out",
+                            overwrite: "auto"
+                        }
+                    )
+                },
+                onLeave: function(){
+                    gsap.fromTo(
+                        element, {
+                            autoAlpha: 1,
+                        }, 
+                        {
+                            autoAlpha: 0,
+                            overwrite: "auto"
+                        }
+                    )
+                },
+                onEnterBack: function(){
+                    gsap.fromTo(
+                        element, {
+                            y: -100,
+                            autoAlpha: 0,
+                        }, 
+                        {
+                            duration: 1.25, 
+                            y:0,
+                            autoAlpha: 1,
+                            ease: "power4.out",
+                            overwrite: "auto"
+                        }
+                    )
+                },
+                onLeaveBack: function(){
+                    gsap.fromTo(
+                        element, {
+                            autoAlpha: 1,
+                        }, 
+                        {
+                            autoAlpha: 0,
+                            overwrite: "auto"
+                        }
+                    )
                 }
             })
-        })        
-
-        let nowScroll = true;       //내가 스크롤링을 하고있다는걸 감지
-        let lastScroll = 0;
-
-        function scrollProgress(){
-            nowScroll = true;
-
-            setInterval(() => {                 //시간차를 이용해서 이전위치와 현재 위치를 비교
-                if(nowScroll){
-                    nowScroll = false;
-                    hasScroll();
+        })
+        gsap.utils.toArray(".content__item__desc").forEach(element => {
+            ScrollTrigger.create({
+                trigger: element,
+                start: "20% 100%",
+                end: "20% 0%",
+                markers: true,
+                onEnter: function(){
+                    // fromTo => to의 반대, 애니메이션을 뒤에서 앞으로 실행함
+                    gsap.fromTo(
+                        element, {
+                            y: 200, 
+                            autoAlpha: 0
+                        },
+                        {
+                            duration: 1.25, 
+                            y:0,
+                            autoAlpha: 1,
+                            ease: "power4.out",
+                            overwrite: "auto"
+                        }
+                    )
+                },
+                onLeave: function(){
+                    gsap.fromTo(
+                        element, {
+                            autoAlpha: 1,
+                        }, 
+                        {
+                            autoAlpha: 0,
+                            overwrite: "auto"
+                        }
+                    )
+                },
+                onEnterBack: function(){
+                    gsap.fromTo(
+                        element, {
+                            y: -100,
+                            autoAlpha: 0,
+                        }, 
+                        {
+                            duration: 1.25, 
+                            y:0,
+                            autoAlpha: 1,
+                            ease: "power4.out",
+                            overwrite: "auto"
+                        }
+                    )
+                },
+                onLeaveBack: function(){
+                    gsap.fromTo(
+                        element, {
+                            autoAlpha: 1,
+                        }, 
+                        {
+                            autoAlpha: 0,
+                            overwrite: "auto"
+                        }
+                    )
                 }
-            }, 300);
-
-            console.log(nowScroll)
-        }
-
-        function hasScroll(){
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-            if(scrollTop < lastScroll){
-                document.querySelector("#parallax__nav").classList.add("show")
-            } else {
-                document.querySelector("#parallax__nav").classList.remove("show")
-            }
-
-            lastScroll = scrollTop;
-
-            console.log("lastScroll : " + lastScroll)
-        }
-
-        window.addEventListener("scroll", scrollProgress)
-
-        document.querySelectorAll("#parallax__nav li a").forEach(li => {
-            li.addEventListener("click", (e) => {
-                e.preventDefault();
-                document.querySelector(li.getAttribute("href")).scrollIntoView({
-                    behavior:"smooth"
-                })
             })
         })
     </script>
