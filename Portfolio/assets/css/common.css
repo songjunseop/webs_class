@@ -16,6 +16,7 @@
   --main_color: #00265a;
   --sub_color: #006df9;
   --tex_color: #00398a;
+  --desc_color: #07285a;
 }
 body {
   background-color: var(--main_bg);
