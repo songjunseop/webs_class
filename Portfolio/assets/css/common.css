@@ -38,4 +38,9 @@ section {
     width: 96%;
   }
 }
+@media (max-width: 501px) {
+  .container {
+    width: 100%;
+  }
+}
 /* //common */
