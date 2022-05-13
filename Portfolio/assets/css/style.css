@@ -870,17 +870,21 @@
   text-align: center;
 } */
 .code__view {
-  position: absolute;
-  right: 1.56vw;
-  bottom: 1.56vw;
   font-size: 1vw;
   color: var(--white);
-  width: 13%;
-  height: 13%;
   font-family: "NexonLv1Gothic";
+  display: block;
+  text-align: center;
+  line-height: 500%;
+}
+.view__circle {
+  height: 17.693%;
+  width: 15%;
+  position: absolute;
+  bottom: 1.56vw;
+  right: 1.56vw;
   border: 0.6vw solid #ffe112;
   border-radius: 50%;
-  text-align: center;
 }
 
 /* left */
