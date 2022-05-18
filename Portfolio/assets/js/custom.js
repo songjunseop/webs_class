@@ -18,14 +18,14 @@ gsap.to("#nav", {
   duration: 2,
   ease: "power4.out",
   height: 95 + "%",
-  delay: 3,
+  delay: 2,
   opacity: 1,
 });
 
 if (window.screen.width <= 1000) {
   gsap.to("#nav", {
     width: 96 + "%",
-    duration: 2,
+    duration: 1.5,
     ease: "power4.out",
     delay: 3,
   });
@@ -34,7 +34,7 @@ if (window.screen.width <= 1000) {
 gsap.to(".circle", {
   duration: 2,
   ease: "power4.out",
-  delay: 3,
+  delay: 1.5,
   // width: 100 + "vw",
   // height: 100 + "vw",
   scale: 1,
@@ -43,7 +43,7 @@ gsap.to(".circle", {
 gsap.to(".section__box__left", {
   duration: 3,
   ease: "power4.out",
-  delay: 1,
+  delay: 0.5,
   height: 100 + "%",
 });
 
@@ -64,7 +64,7 @@ gsap.to(".banner__desc", {
 
 gsap.to(".section__box__right", {
   ease: "power4.out",
-  delay: 1,
+  delay: 0.5,
   duration: 3,
   height: 100 + "%",
   opacity: 1,
@@ -72,29 +72,29 @@ gsap.to(".section__box__right", {
 
 gsap.to(".section__box__right h4:nth-child(1)", {
   ease: "power4.out",
-  delay: 4,
-  duration: 1,
+  delay: 3,
+  duration: 2,
   y: 0,
   opacity: 1,
 });
 gsap.to(".section__box__right h4:nth-child(2)", {
   ease: "power4.out",
-  delay: 4.5,
-  duration: 1,
+  delay: 3.5,
+  duration: 2,
   y: 0,
   opacity: 1,
 });
 gsap.to(".section__box__right h4:nth-child(3)", {
   ease: "power4.out",
-  delay: 5,
-  duration: 1,
+  delay: 4,
+  duration: 2,
   y: 0,
   opacity: 1,
 });
 gsap.to(".section__box__right h4:nth-child(4)", {
   ease: "power4.out",
-  delay: 5.5,
-  duration: 1,
+  delay: 4.5,
+  duration: 2,
   y: 0,
   opacity: 1,
 });
