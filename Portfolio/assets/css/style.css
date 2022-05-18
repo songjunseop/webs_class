@@ -28,13 +28,14 @@
 #nav {
   position: fixed;
   z-index: 9999;
-  height: 95%;
+  height: 0%;
   /* display: none; */
+  opacity: 0;
 }
 .nav__bar {
   width: 80px;
   height: 100%;
-  min-height: 400px;
+
   background-color: var(--main_blue);
   position: absolute;
   left: 1.5rem;
@@ -49,8 +50,6 @@
   z-index: 2;
   width: 30px;
   height: 30px;
-}
-.menu__line span {
 }
 .menu__line .menu__line__01 {
   position: absolute;
@@ -175,7 +174,7 @@
 }
 @media (max-width: 1000px) {
   #nav {
-    width: 96%;
+    width: 0%;
     top: -1rem;
     height: 80px;
   }
@@ -244,6 +243,8 @@
   border-left: 1px solid var(--main_border);
   border-right: 1px solid var(--main_border);
   width: 50%;
+  height: 0%;
+  /* opacity: 0; */
 }
 .section__box .section__box__left .section__box__left01 {
   height: 55%;
@@ -251,6 +252,7 @@
 .section__box .section__box__left .section__box__left02 {
   border-top: 1px solid var(--main_border);
   height: 45%;
+  width: 0%;
 }
 .section__box .section__box__left .section__box__left02 .banner__desc {
   font-family: var(--main_korfont);
@@ -259,6 +261,8 @@
   font-size: 1vw;
   color: var(--sub_color);
   margin: 20px 0 0 20px;
+  opacity: 0;
+  transform: translateY(100px);
 }
 .circle {
   position: absolute;
@@ -267,8 +271,7 @@
   width: 100vw;
   height: 100vh;
   z-index: -10;
-}
-.circle span {
+  transform: scale(0);
 }
 @media (max-width: 1000px) {
   .section__box .section__box__left .section__box__left02 .banner__desc {
