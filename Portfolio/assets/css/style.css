@@ -294,18 +294,20 @@
 .section__box .section__box__right {
   width: 50%;
   border-right: 1px solid var(--main_border);
-  border-bottom: 1px solid var(--main_border);
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   padding-top: 70px;
+  height: 0%;
 }
 .section__box .section__box__right h4 {
   font-size: 12vw;
   font-family: var(--main_font);
   line-height: 0.85;
   color: var(--main_color);
+  transform: translateY(200px);
+  opacity: 0;
 }
 .section__box .section__box__right h4:nth-child(1) {
   margin-left: -35%;
@@ -388,6 +390,7 @@
   width: 50%;
   border-right: 1px solid var(--main_border);
   border-bottom: 1px solid var(--main_border);
+  border-top: 1px solid var(--main_border);
 }
 .about_title__box {
   height: 9vw;

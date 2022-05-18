@@ -61,3 +61,40 @@ gsap.to(".banner__desc", {
   y: 0,
   opacity: 1,
 });
+
+gsap.to(".section__box__right", {
+  ease: "power4.out",
+  delay: 1,
+  duration: 3,
+  height: 100 + "%",
+  opacity: 1,
+});
+
+gsap.to(".section__box__right h4:nth-child(1)", {
+  ease: "power4.out",
+  delay: 4,
+  duration: 1,
+  y: 0,
+  opacity: 1,
+});
+gsap.to(".section__box__right h4:nth-child(2)", {
+  ease: "power4.out",
+  delay: 4.5,
+  duration: 1,
+  y: 0,
+  opacity: 1,
+});
+gsap.to(".section__box__right h4:nth-child(3)", {
+  ease: "power4.out",
+  delay: 5,
+  duration: 1,
+  y: 0,
+  opacity: 1,
+});
+gsap.to(".section__box__right h4:nth-child(4)", {
+  ease: "power4.out",
+  delay: 5.5,
+  duration: 1,
+  y: 0,
+  opacity: 1,
+});
