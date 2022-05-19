@@ -305,10 +305,14 @@
   font-family: var(--main_font);
   line-height: 0.85;
   color: var(--main_color);
-  transform: translateY(200px);
+  /* transform: translateY(200px); */
   opacity: 0;
 }
+.section__box .section__box__right h4 span span {
+  display: inline-block;
+}
 .section__box .section__box__right h4:nth-child(1) {
+  margin-top: 70px;
   margin-left: -35%;
 }
 .section__box .section__box__right h4:nth-child(2) {
@@ -316,13 +320,14 @@
 }
 .section__box .section__box__right h4:nth-child(3) {
   margin-left: 32%;
+  white-space: nowrap;
 }
 .section__box .section__box__right h4:nth-child(4) {
   margin-left: -6.5%;
   white-space: nowrap;
   position: relative;
 }
-.section__box .section__box__right h4 em {
+.section__box .section__box__right h4 span span em {
   color: var(--sub_color);
 }
 
