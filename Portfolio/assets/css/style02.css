@@ -1412,6 +1412,8 @@
   padding: 1.8vw 0 1.8vw;
   border-top: 1px solid var(--main_border);
   border-bottom: 1px solid var(--main_border);
+  display: flex;
+  overflow: hidden;
 }
 .rail__white p {
   font-family: var(--main_font);
@@ -1419,7 +1421,8 @@
   font-size: 12vw;
   white-space: nowrap;
   line-height: 1;
-  overflow: hidden;
+  transform: translateX(-50%);
+  /* overflow: hidden; */
 }
 .rail__white p em {
   color: var(--desc_color);
