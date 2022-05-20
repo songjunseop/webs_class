@@ -1503,9 +1503,11 @@
   border-radius: 0;
   transition: 0.3s;
   font-family: var(--sub_korfont);
+  font-size: 1vw;
 }
 .btn__primary:hover {
   color: #fff;
+  background: #6558dd;
 }
 .btn__primary:active {
   box-shadow: inset 0.2rem 0.2rem 1rem #5b0eeb,
