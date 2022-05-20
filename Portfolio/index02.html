@@ -9,7 +9,7 @@
     <!-- css -->
     <link rel="stylesheet" href="assets/fonts/font.css" />
     <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/style01.css" />
+    <link rel="stylesheet" href="assets/css/style02.css" />
     <link rel="stylesheet" href="assets/css/common.css  " />
     <link rel="stylesheet" href="assets/css/locomotive.css  " />
 
@@ -68,9 +68,9 @@
     <!-- //header -->
 
     <!-- main -->
-    <main id="main">
+    <main id="main" data-scroll-container>
       <!-- banner__section -->
-      <section id="banner">
+      <section id="banner" data-scroll-section>
         <span class="circle">
           <svg
             width="120%"
@@ -87,7 +87,8 @@
           </svg>
         </span>
         <h3 class="ir_so">banner 영역</h3>
-        <div class="container">
+        <div class="container" data-scroll data-scroll-speed="-4">
+          
           <div class="section__box">
             <div class="section__box__left">
               <div class="section__box__left01"></div>
@@ -99,7 +100,7 @@
                 </p>
               </div>
             </div>
-            <div class="section__box__right">
+            <!-- <div class="section__box__right">
               <h4 class="banner__title">
                 <span><span>W</span></span
                 ><span><span>L</span></span
@@ -149,6 +150,18 @@
                 ><span><span>2</span></span
                 ><span><span>2</span></span>
               </h4>
+            </div> -->
+            <div class="section__box__right">
+              <h4 class="banner__title">
+                WELCOME
+              </h4>
+              <h4 class="banner__title">
+                TO <em>MY</em>
+              <h4 class="banner__title">
+                <em>PORTFOLIO</em>
+              </h4>
+              <h4 class="banner__title">
+                SINCE 2022
             </div>
           </div>
         </div>
@@ -156,15 +169,20 @@
       <!-- //banner__section -->
 
       <!-- about__section -->
-      <section id="about">
+      <section id="about" data-scroll-section>
         <h3 class="ir_so">about 영역</h3>
-        <div class="container">
-          <div class="about__box">
+        <div class="about__box">
+          <div class="container">
             <div class="about__left"></div>
             <div class="about__right"></div>
           </div>
-          <div class="about_title__box">
-            <div class="about_title"><h3>ABOUT ME</h3></div>
+        </div>
+        <div class="about__box">
+          <div class="container">
+            <div class="about_title__box">
+              
+              <div class="about_title"><h3>ABOUT ME</h3></div>
+            </div>
           </div>
         </div>
         <article class="about__area">
@@ -172,7 +190,7 @@
             <div class="about__flex__box">
               <div class="about__desc">
                 <h4>INTRO</h4>
-                <p>
+                <p data-scroll data-scroll-speed="-0.3">
                   안녕하세요! 프론트엔드 개발자를 꿈꾸고 있는 송준섭 이라고
                   합니다. 저는 항상 현장직으로 일을 하다가 어느덧 서른살이
                   되었습니다. 어느날 일을 하다가 생에 처음으로 공부를 해보고
@@ -184,7 +202,7 @@
                   노력하겠습니다!
                 </p>
               </div>
-              <div class="about__img"></div>
+              <div class="about__img" data-scroll data-scroll-speed="-0.3"></div>
             </div>
           </div>
         </article>
@@ -219,12 +237,12 @@
                 <p>
                   HTML5 : 웹표준과 웹접근성을 준수한 마크업사용가능합니다. HTML5
                   시멘틱 태그를 용도에 맞게 사용하며 크로스 브라우징에 대해
-                  이해하고 있습니다. <a href="#">공부자료</a>
+                  이해하고 있습니다. <a href="../refer/html.html">공부자료</a>
                 </p>
                 <p>
                   JAVASCRIPT : 사이트에 자주 사용되는 탭메뉴 혹은 레이어팝업과
                   같은것들을 스크립트를 사용하여 구현가능합니다.
-                  <a href="#">공부자료</a>
+                  <a href="../javascript/index.html">공부자료</a>
                 </p>
                 <p>
                   NODE.JS : 웹표준과 웹접근성을 준수한 마크업사용가능합니다.
@@ -236,18 +254,19 @@
                 <p>
                   CSS : IR기법이나 이미지 스프라이트 등과 같은 기능으로 웹표준을
                   준수할 수 있습니다. CSS만을 이용하여 간단한 애니메이션을 만들
-                  수 있습니다. <a href="#">공부자료</a>
+                  수 있습니다. <a href="../refer/css.html">공부자료</a>
                 </p>
                 <p>
-                  REACT : 컴퍼넌트를 생성하여 싱글페이지를 출력시킬 수
-                  있습니다.<br />
-                  <a href="#">공부자료</a>
+                  REACT : 컴퍼넌트를 생성하여 싱글페이지를 출력시킬 수 있습니다.
+                  ajax를 이해하고 있습니다. <a href="">공부자료</a>
                 </p>
                 <p>
                   PHP : 좋아요 버튼, 댓글기능, 게시판, 로그인, 회원가입 기능 등
                   간단히 홈페이지에서 가능한 기능을 넣을 수 있으며 MYADMIN을
                   통해 데이터를 추가, 삭제 및 수정할 수 있습니다.
-                  <a href="#">공부자료</a>
+                  <a href="http://jun8044.dothome.co.kr/php/pages/main.php"
+                    >공부자료</a
+                  >
                 </p>
               </div>
             </div>
@@ -257,10 +276,10 @@
       <!-- //about__section -->
 
       <!-- works__section -->
-      <section id="works">
+      <section id="works" data-scroll-section>
         <h3 class="ir_so">works 영역</h3>
         <div class="rail__blue">
-          <p>PORTFOLIO <em>WORKS</em> PORTFOLIO <em>WORKS</em></p>
+          <p>PORTFOLIO <em>WORKS</em> PORTFOLIO <em>WORKS</em> PORTFOLIO <em>WORKS</em></p>
         </div>
         <article class="works__cont">
           <h4 class="works__title">1.<em>WEBSTANDARD</em></h4>
@@ -275,13 +294,31 @@
               >
             </p>
             <div class="works__layout">
-              <span class="works__icon01"></span>
-              <span class="works__icon02"></span>
-              <span class="works__icon03"></span>
+              <span
+                class="works__icon01"
+                data-scroll
+                data-scroll-speed="-0.5"
+              ></span>
+              <span
+                class="works__icon02"
+                data-scroll
+                data-scroll-speed="-0.5"
+              ></span>
+              <span
+                class="works__icon03"
+                data-scroll
+                data-scroll-speed="-0.5"
+              ></span>
               <span class="works__circle"></span>
-              <span class="works__mockup mockup01"></span>
+              <span
+                class="works__mockup mockup01"
+                data-scroll
+                data-scroll-speed="-1"
+              ></span>
               <div class="view__circle">
-                <a href="#" class="code__view">코드보기</a>
+                <a href="../webstandard/index.html" class="code__view"
+                  >코드보기</a
+                >
               </div>
             </div>
           </div>
@@ -301,14 +338,38 @@
               >
             </p>
             <div class="works__layout">
-              <span class="works__icon01"></span>
-              <span class="works__icon02"></span>
-              <span class="works__icon04"></span>
-              <span class="works__icon05"></span>
+              <span
+                class="works__icon01"
+                data-scroll
+                data-scroll-speed="-0.5"
+              ></span>
+              <span
+                class="works__icon02"
+                data-scroll
+                data-scroll-speed="-0.5"
+              ></span>
+              <span
+                class="works__icon04"
+                data-scroll
+                data-scroll-speed="-0.5"
+              ></span>
+              <span
+                class="works__icon05"
+                data-scroll
+                data-scroll-speed="-0.5"
+              ></span>
               <span class="works__circle"></span>
-              <span class="works__mockup mockup02"></span>
+              <span
+                class="works__mockup mockup02"
+                data-scroll
+                data-scroll-speed="-1"
+              ></span>
               <div class="view__circle">
-                <a href="#" class="code__view">코드보기</a>
+                <a
+                  href="https://github.com/songjunseop/php/tree/master/php"
+                  class="code__view"
+                  >코드보기</a
+                >
               </div>
             </div>
           </div>
@@ -325,14 +386,38 @@
               >
             </p>
             <div class="works__layout">
-              <span class="works__icon01"></span>
-              <span class="works__icon02"></span>
-              <span class="works__icon04"></span>
-              <span class="works__icon05"></span>
+              <span
+                class="works__icon01"
+                data-scroll
+                data-scroll-speed="-0.5"
+              ></span>
+              <span
+                class="works__icon02"
+                data-scroll
+                data-scroll-speed="-0.5"
+              ></span>
+              <span
+                class="works__icon04"
+                data-scroll
+                data-scroll-speed="-0.5"
+              ></span>
+              <span
+                class="works__icon05"
+                data-scroll
+                data-scroll-speed="-0.5"
+              ></span>
               <span class="works__circle"></span>
-              <span class="works__mockup mockup03"></span>
+              <span
+                class="works__mockup mockup03"
+                data-scroll
+                data-scroll-speed="-1"
+              ></span>
               <div class="view__circle">
-                <a href="#" class="code__view">코드보기</a>
+                <a
+                  href="https://github.com/songjunseop/php/tree/master/project01"
+                  class="code__view"
+                  >코드보기</a
+                >
               </div>
             </div>
           </div>
@@ -352,14 +437,18 @@
               >
             </p>
             <div class="works__layout">
-              <span class="works__icon06"></span>
-              <span class="works__icon07"></span>
-              <span class="works__icon08"></span>
-              <span class="works__icon09"></span>
+              <span class="works__icon06" data-scroll data-scroll-speed="-0.5"></span>
+              <span class="works__icon07" data-scroll data-scroll-speed="-0.5"></span>
+              <span class="works__icon08" data-scroll data-scroll-speed="-0.5"></span>
+              <span class="works__icon09" data-scroll data-scroll-speed="-0.5"></span>
               <span class="works__circle"></span>
-              <span class="works__mockup mockup04"></span>
+              <span class="works__mockup mockup04" data-scroll data-scroll-speed="-1"></span>
               <div class="view__circle">
-                <a href="#" class="code__view">코드보기</a>
+                <a
+                  href="https://github.com/songjunseop/web_class_react01/tree/master/src"
+                  class="code__view"
+                  >코드보기</a
+                >
               </div>
             </div>
           </div>
@@ -368,7 +457,7 @@
       <!-- //works__section -->
 
       <!-- refer__section -->
-      <section id="refer">
+      <section id="refer" data-scroll-section>
         <h3 class="ir_so">reference 영역</h3>
         <div class="container">
           <div class="animation__title">
@@ -381,22 +470,27 @@
           <div class="nextbtn"></div>
         </div>
         <div class="rail__blue">
-          <a href="#"
+          <a href="../javascript/effect/parallaxEffect.html"
             ><img src="assets/image/Ellipse01.png" alt="img01" /><em
               >ParallaxEffect</em
             ></a
           >
-          <a href="#"
+          <a href="../javascript/effect/mouseEffect.html"
             ><img src="assets/image/Ellipse02.png" alt="img02" /><em
               >MouseEffect</em
             ></a
           >
-          <a href="#"
+          <a href="../javascript/effect/searchEffect.html"
             ><img src="assets/image/Ellipse03.png" alt="img03" /><em
               >SearchEffect</em
             ></a
           >
-          <a href="#"
+          <a href="../javascript/effect/quizEffect.html"
+            ><img src="assets/image/Ellipse04.png" alt="img04" /><em
+              >QuizEffect</em
+            ></a
+          >
+          <a href="../javascript/effect/sliderEffect.html"
             ><img src="assets/image/Ellipse04.png" alt="img04" /><em
               >QuizEffect</em
             ></a
@@ -412,7 +506,7 @@
           <!-- article01 -->
           <article class="refer__cont">
             <div class="refer__cont__left">
-              <img src="assets/image/referimg01.png" alt="이미지01" />
+              <img src="assets/image/referimg01.png" alt="이미지01" data-scroll data-scroll-speed="-1" />
             </div>
             <div class="refer__cont__right">
               <div class="refer__cont__right01">
@@ -432,7 +526,11 @@
                     >#javascript &nbsp; #effect &nbsp; #MOUSE</span
                   >
                 </p>
-                <a href="javascript:;" class="btn__primary">Code View</a>
+                <a
+                  href="../javascript/effect/mouseEffect05.html"
+                  class="btn__primary"
+                  ><em>Code View</em></a
+                >
               </div>
             </div>
           </article>
@@ -441,7 +539,7 @@
           <!-- article02 -->
           <article class="refer__cont">
             <div class="refer__cont__left">
-              <img src="assets/image/referimg02.png" alt="이미지02" />
+              <img src="assets/image/referimg02.png" alt="이미지02" data-scroll data-scroll-speed="-1" />
             </div>
             <div class="refer__cont__right">
               <div class="refer__cont__right01">
@@ -460,7 +558,11 @@
                     >#javascript &nbsp; #effect &nbsp; #parallax</span
                   >
                 </p>
-                <a href="#" class="btn__primary"><em>Code View</em></a>
+                <a
+                  href="../javascript/effect/parallaxEffect05.html"
+                  class="btn__primary"
+                  ><em>Code View</em></a
+                >
               </div>
             </div>
           </article>
@@ -469,7 +571,7 @@
           <!-- article03 -->
           <article class="refer__cont">
             <div class="refer__cont__left">
-              <img src="assets/image/referimg03.png" alt="이미지03" />
+              <img src="assets/image/referimg03.png" alt="이미지03" data-scroll data-scroll-speed="-1" />
             </div>
             <div class="refer__cont__right">
               <div class="refer__cont__right01">
@@ -501,7 +603,7 @@
           <!-- article04 -->
           <article class="refer__cont">
             <div class="refer__cont__left">
-              <img src="assets/image/referimg04.png" alt="이미지04" />
+              <img src="assets/image/referimg04.png" alt="이미지04" data-scroll data-scroll-speed="-1" />
             </div>
             <div class="refer__cont__right">
               <div class="refer__cont__right01">
@@ -519,7 +621,11 @@
                     >#javascript &nbsp; #effect &nbsp; #quiz</span
                   >
                 </p>
-                <a href="#" class="btn__primary"><em>Code View</em></a>
+                <a
+                  href="../javascript/effect/quizEffect01.html"
+                  class="btn__primary"
+                  ><em>Code View</em></a
+                >
               </div>
             </div>
           </article>
@@ -528,7 +634,7 @@
           <!-- article05 -->
           <article class="refer__cont right">
             <div class="refer__cont__left">
-              <img src="assets/image/referimg05.png" alt="이미지05" />
+              <img src="assets/image/referimg05.png" alt="이미지05" data-scroll data-scroll-speed="-1" />
             </div>
             <div class="refer__cont__right">
               <div class="refer__cont__right01">
@@ -546,7 +652,11 @@
                     >#javascript &nbsp; #game &nbsp; #music player</span
                   >
                 </p>
-                <a href="#" class="btn__primary"><em>Code View</em></a>
+                <a
+                  href="../javascript/effect/musicPlayer/index.html"
+                  class="btn__primary"
+                  ><em>Code View</em></a
+                >
               </div>
             </div>
           </article>
@@ -555,7 +665,7 @@
           <!-- article06 -->
           <article class="refer__cont right">
             <div class="refer__cont__left">
-              <img src="assets/image/referimg06.png" alt="이미지06" />
+              <img src="assets/image/referimg06.png" alt="이미지06" data-scroll data-scroll-speed="-1" />
             </div>
             <div class="refer__cont__right">
               <div class="refer__cont__right01">
@@ -573,7 +683,11 @@
                     >#javascript &nbsp; #game &nbsp; #typing game</span
                   >
                 </p>
-                <a href="#" class="btn__primary"><em>Code View</em></a>
+                <a
+                  href="../javascript/effect/typingGame/index.html"
+                  class="btn__primary"
+                  ><em>Code View</em></a
+                >
               </div>
             </div>
           </article>
@@ -582,7 +696,7 @@
           <!-- article07 -->
           <article class="refer__cont right">
             <div class="refer__cont__left">
-              <img src="assets/image/referimg07.png" alt="이미지07" />
+              <img src="assets/image/referimg07.png" alt="이미지07" data-scroll data-scroll-speed="-1" />
             </div>
             <div class="refer__cont__right">
               <div class="refer__cont__right01">
@@ -600,7 +714,11 @@
                     >#javascript &nbsp; #game &nbsp; #Memory Game</span
                   >
                 </p>
-                <a href="#" class="btn__primary"><em>Code View</em></a>
+                <a
+                  href="../javascript/effect/memoryGame/index.html"
+                  class="btn__primary"
+                  ><em>Code View</em></a
+                >
               </div>
             </div>
           </article>
@@ -609,7 +727,7 @@
           <!-- article08 -->
           <article class="refer__cont right">
             <div class="refer__cont__left">
-              <img src="assets/image/referimg08.png" alt="이미지08" />
+              <img src="assets/image/referimg08.png" alt="이미지08" data-scroll data-scroll-speed="-1" />
             </div>
             <div class="refer__cont__right">
               <div class="refer__cont__right01">
@@ -628,7 +746,9 @@
                     >#javascript &nbsp; #game &nbsp; #Tetris Game</span
                   >
                 </p>
-                <a href="#" class="btn__primary"><em>Code View</em></a>
+                <a href="../game/tetrisGame/index.html" class="btn__primary"
+                  ><em>Code View</em></a
+                >
               </div>
             </div>
           </article>
@@ -667,7 +787,8 @@
           </div>
         </div>
         <div class="footer__right">
-          <form action="#" name="message" method="post">
+          <form id="contact-form" name="message" method="post">
+            <input type="hidden" name="contact_number" />
             <fieldset>
               <legend class="ir_so">메세지 입력폼</legend>
               <div class="message__box">
@@ -675,26 +796,26 @@
                   <label for="Name">Name</label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
+                    id="user_name"
+                    name="user_name"
                     placeholder="이름을 입력해 주세요."
                   />
                 </div>
                 <div class="overlap">
                   <label for="Email">E-mail</label>
                   <input
-                    type="text"
-                    id="email"
-                    name="email"
+                    type="email"
+                    id="user_email"
+                    name="user_email"
                     placeholder="이메일을 입력해 주세요."
                   />
                 </div>
                 <div class="overlap">
                   <label for="Phone">Phone</label>
                   <input
-                    type="text"
-                    id="phone"
-                    name="phone"
+                    type="number"
+                    id="user_phone"
+                    name="user_phone"
                     placeholder="전화번호를 입력해 주세요."
                   />
                 </div>
@@ -707,7 +828,12 @@
                     placeholder="메세지를 입력해 주세요."
                   ></textarea>
                 </div>
-                <button id="submitBtn" class="submit" type="submit">
+                <button
+                  id="submitBtn"
+                  class="submit"
+                  type="submit"
+                  value="Send"
+                >
                   SUBMIT
                 </button>
               </div>
@@ -717,5 +843,25 @@
       </div>
     </footer>
     <!-- //footer -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/skrollr.min.js"></script>
+    <script src="assets/js/locomotive.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/banner.js"></script>
+    <script src="assets/js/about.js"></script>
+    <script src="assets/js/works.js"></script>
+    <script>
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]"),
+        smooth: true,
+      });
+    </script>
   </body>
 </html>

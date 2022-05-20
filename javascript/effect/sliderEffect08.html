@@ -1,240 +1,264 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>슬라이드 이펙트</title>
-        
+
     <style>
-        @import url(css/NexonLv1Gothic.css);
-        @import url(css/custom.css);
-        @import url(css/railscasts.min.css);
+      @import url(css/NexonLv1Gothic.css);
+      @import url(css/custom.css);
+      @import url(css/railscasts.min.css);
 
-        /* slider */
-        .slider__wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .slider__img {               /* 화면 보이는 구간 */
-            width: 800px;
-            height: 480px;
-            position: relative;
-            /* overflow: hidden; */
-        }
-        .slider__inner {            /* 이미지 움직이는 영역 */
-            display: flex;
-            position: relative;
-            width: 10000px;          /* 이미지 총 길이 */
-            left: -800px;
-        }
-        .slider__inner.transition {
-            transition: all 600ms;
-        }
-        .slider {
-            width: 800px;
-            position: relative;
-        }
-        .slider::before {
-            position: absolute;
-            left: 5px;
-            top: 5px;
-            background: rgba(0,0,0,0.4);
-            color: #fff;
-            padding: 3px 10px 5px;
-        }
-        .slider.s1::before {content: '이미지1';}
-        .slider.s2::before {content: '이미지2';}
-        .slider.s3::before {content: '이미지3';}
-        .slider.s4::before {content: '이미지4';}
-        .slider.s5::before {content: '이미지5';}
+      /* slider */
+      .slider__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .slider__img {
+        /* 화면 보이는 구간 */
+        width: 800px;
+        height: 480px;
+        position: relative;
+        overflow: hidden;
+      }
+      .slider__inner {
+        /* 이미지 움직이는 영역 */
+        display: flex;
+        position: relative;
+        width: 10000px; /* 이미지 총 길이 */
+        left: -800px;
+      }
+      .slider__inner.transition {
+        transition: all 600ms;
+      }
+      .slider {
+        width: 800px;
+        position: relative;
+      }
+      .slider::before {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        padding: 3px 10px 5px;
+      }
+      .slider.s1::before {
+        content: "이미지1";
+      }
+      .slider.s2::before {
+        content: "이미지2";
+      }
+      .slider.s3::before {
+        content: "이미지3";
+      }
+      .slider.s4::before {
+        content: "이미지4";
+      }
+      .slider.s5::before {
+        content: "이미지5";
+      }
 
-        .slider__btn a {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-            width: 50px;
-            height: 50px;
-            background: rgba(0,0,0,0.4);
-            text-align: center;
-            line-height: 50px;
-            transition: all 0.2s;
-            display: block;
-            color: #fff;
-            text-decoration: none;
-        }
-        .slider__btn a.prev {
-            left: 0;
-        }
-        .slider__btn a.next {
-            right: 0;
-        }
-        .slider__btn a:hover {
-            background: rgb(241, 96, 86);
-        }
-        .slider__dot {
-            position: absolute;
-            left: 50%;
-            bottom: 20px;
-            transform: translateX(-50%);
-        }
-        .slider__dot .dot {
-            width: 20px;
-            height: 20px;
-            background: rgba(0,0,0,0.4);
-            display: inline-block;
-            border-radius: 50%;
-            transition: all 0.3s;
-            margin: 3px;
-        }
-        .slider__dot .dot.active {
-            background: rgba(255,255,255,0.9);
-        }
-        .slider__dot .play {
-            width: 20px;
-            height: 20px;
-            /* background: #000; */
-            display: inline-block;
-            vertical-align: 9px;
-            margin: 3px;
-            text-indent: -99999px;
-            border-radius: 50%;
-            position: relative;
-            display: none;
-        }
-        .slider__dot .play.show {
-            display: inline-block;
-        }
-        .slider__dot .play::after {
-            content: '';
-            border-style: solid;
-            border-width: 10px 0 10px 18px;
-            border-color: transparent transparent transparent #fff;
-            position: absolute;
-            left: 1px;
-            top: 0px;
-        }
-        .slider__dot .stop {
-            width: 20px;
-            height: 20px;
-            /* background: #000; */
-            display: inline-block;
-            vertical-align: 9px;
-            margin: 3px;
-            text-indent: -99999px;
-            border-radius: 50%;
-            position: relative;
-            display: none;
-        }
-        .slider__dot .stop.show {
-            display: inline-block;
-        }
-        .slider__dot .stop::after {
-            content: '';
-            border-style: solid;
-            border-width: 10px 3px 10px 3px;
-            border-color: #fff;
-            position: absolute;
-            left: 2px;
-            top: 0;
-        }
-        .slider__dot .stop::before {
-            content: '';
-            border-style: solid;
-            border-width: 10px 3px 10px 3px;
-            border-color: #fff;
-            position: absolute;
-            left: 12px;
-            top: 0;
-        }
-    </style>    
-</head>
-<body class="img06">
-    
+      .slider__btn a {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        width: 50px;
+        height: 50px;
+        background: rgba(0, 0, 0, 0.4);
+        text-align: center;
+        line-height: 50px;
+        transition: all 0.2s;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+      }
+      .slider__btn a.prev {
+        left: 0;
+      }
+      .slider__btn a.next {
+        right: 0;
+      }
+      .slider__btn a:hover {
+        background: rgb(241, 96, 86);
+      }
+      .slider__dot {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+      }
+      .slider__dot .dot {
+        width: 20px;
+        height: 20px;
+        background: rgba(0, 0, 0, 0.4);
+        display: inline-block;
+        border-radius: 50%;
+        transition: all 0.3s;
+        margin: 3px;
+      }
+      .slider__dot .dot.active {
+        background: rgba(255, 255, 255, 0.9);
+      }
+      .slider__dot .play {
+        width: 20px;
+        height: 20px;
+        /* background: #000; */
+        display: inline-block;
+        vertical-align: 9px;
+        margin: 3px;
+        text-indent: -99999px;
+        border-radius: 50%;
+        position: relative;
+        display: none;
+      }
+      .slider__dot .play.show {
+        display: inline-block;
+      }
+      .slider__dot .play::after {
+        content: "";
+        border-style: solid;
+        border-width: 10px 0 10px 18px;
+        border-color: transparent transparent transparent #fff;
+        position: absolute;
+        left: 1px;
+        top: 0px;
+      }
+      .slider__dot .stop {
+        width: 20px;
+        height: 20px;
+        /* background: #000; */
+        display: inline-block;
+        vertical-align: 9px;
+        margin: 3px;
+        text-indent: -99999px;
+        border-radius: 50%;
+        position: relative;
+        display: none;
+      }
+      .slider__dot .stop.show {
+        display: inline-block;
+      }
+      .slider__dot .stop::after {
+        content: "";
+        border-style: solid;
+        border-width: 10px 3px 10px 3px;
+        border-color: #fff;
+        position: absolute;
+        left: 2px;
+        top: 0;
+      }
+      .slider__dot .stop::before {
+        content: "";
+        border-style: solid;
+        border-width: 10px 3px 10px 3px;
+        border-color: #fff;
+        position: absolute;
+        left: 12px;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body class="img06">
     <!-- main -->
     <main>
-        <section id="slideType08">
-            <div class="slider__wrap">
-                <div class="slider__img">
-                    <div class="slider__inner">
-                        <div class="slider s1"><img src="img/slide06.jpg" alt="이미지1"></div>
-                        <div class="slider s2"><img src="img/slide07.jpg" alt="이미지2"></div>
-                        <div class="slider s3"><img src="img/slide08.jpg" alt="이미지3"></div>
-                        <div class="slider s4"><img src="img/slide09.jpg" alt="이미지4"></div>
-                        <div class="slider s5"><img src="img/slide10.jpg" alt="이미지5"></div>
-                    </div>
-                </div>
-                <div class="slider__btn">
-                    <a href="#" class="prev">prev</a>
-                    <a href="#" class="next">next</a>
-                </div>
-                <div class="slider__dot">
-                    <!-- <a href="#" class="dot active"></a>
+      <section id="slideType08">
+        <div class="slider__wrap">
+          <div class="slider__img">
+            <div class="slider__inner">
+              <div class="slider s1">
+                <img src="img/slide06.jpg" alt="이미지1" />
+              </div>
+              <div class="slider s2">
+                <img src="img/slide07.jpg" alt="이미지2" />
+              </div>
+              <div class="slider s3">
+                <img src="img/slide08.jpg" alt="이미지3" />
+              </div>
+              <div class="slider s4">
+                <img src="img/slide09.jpg" alt="이미지4" />
+              </div>
+              <div class="slider s5">
+                <img src="img/slide10.jpg" alt="이미지5" />
+              </div>
+            </div>
+          </div>
+          <div class="slider__btn">
+            <a href="#" class="prev">prev</a>
+            <a href="#" class="next">next</a>
+          </div>
+          <div class="slider__dot">
+            <!-- <a href="#" class="dot active"></a>
                     <a href="#" class="dot"></a>
                     <a href="#" class="dot"></a>
                     <a href="#" class="dot"></a>
                     <a href="#" class="dot"></a> -->
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- //main -->
 
     <!-- info -->
     <div class="info">
-        <div class="title">
-            <h1><a href="sliderEffect.html">JavaScript Slider Effect08</a></h1>
-            <p>이미지 슬라이드 - 무한, 버튼 추가, 닷 버튼 추가, 자동 플레이, 시작 버튼, 정지 버튼</p>
-        </div>
-    
-        <div class="number">
-            <ul>
-                <li><a href="sliderEffect01.html">1</a></li>
-                <li><a href="sliderEffect02.html">2</a></li>
-                <li><a href="sliderEffect03.html">3</a></li>
-                <li><a href="sliderEffect04.html">4</a></li>
-                <li><a href="sliderEffect05.html">5</a></li>
-                <li><a href="sliderEffect06.html">6</a></li>
-                <li><a href="sliderEffect07.html">7</a></li>
-                <li class="active"><a href="sliderEffect08.html">8</a></li>
-            </ul>
-        </div>
-    
-        <div class="source">
-            <button class="source-btn">소스보기</button>
-            <div id="modal">
-                <div class="modal-wrap">
-                    <div class="modal-cont">
-                        <div class="code-view">
-                            <div class="view-header" aria-hidden="true">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="view-title">
-                                <ul>
-                                    <li class="active"><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li><a href="#">JavaScript</a></li>
-                                </ul>
-                            </div>
-                            <div class="view-cont">
-                                <div>
-<pre><code class="language-html">//sliderEffect08
-    
-</code></pre>
-                                </div>
-                                <div>
-<pre><code class="language-css">/* slider */
+      <div class="title">
+        <h1><a href="sliderEffect.html">JavaScript Slider Effect08</a></h1>
+        <p>
+          이미지 슬라이드 - 무한, 버튼 추가, 닷 버튼 추가, 자동 플레이, 시작
+          버튼, 정지 버튼
+        </p>
+      </div>
+
+      <div class="number">
+        <ul>
+          <li><a href="sliderEffect01.html">1</a></li>
+          <li><a href="sliderEffect02.html">2</a></li>
+          <li><a href="sliderEffect03.html">3</a></li>
+          <li><a href="sliderEffect04.html">4</a></li>
+          <li><a href="sliderEffect05.html">5</a></li>
+          <li><a href="sliderEffect06.html">6</a></li>
+          <li><a href="sliderEffect07.html">7</a></li>
+          <li class="active"><a href="sliderEffect08.html">8</a></li>
+        </ul>
+      </div>
+
+      <div class="source">
+        <button class="source-btn">소스보기</button>
+        <div id="modal">
+          <div class="modal-wrap">
+            <div class="modal-cont">
+              <div class="code-view">
+                <div class="view-header" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="view-title">
+                  <ul>
+                    <li class="active"><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                  </ul>
+                </div>
+                <div class="view-cont">
+                  <div>
+                    <pre><code class="language-html">//sliderEffect08
     
 </code></pre>
-                                </div>
-                                <div>
-<pre><code class="language-javascript">//slider08
+                  </div>
+                  <div>
+                    <pre><code class="language-css">/* slider */
+    
+</code></pre>
+                  </div>
+                  <div>
+                    <pre><code class="language-javascript">//slider08
     const sliderWrap = document.querySelector(".slider__wrap");
         const sliderImg = document.querySelector(".slider__img");        //이미지 보이는 영역
         const sliderInner = document.querySelector(".slider__inner");    //이미지 움직이는 영역
@@ -352,146 +376,143 @@
         })
     
 </code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="modal-close">닫기</button>
+                  </div>
                 </div>
+              </div>
             </div>
+            <button class="modal-close">닫기</button>
+          </div>
         </div>
+      </div>
     </div>
-    
+
     <!-- //info -->
 
-    
     <!-- script -->
     <script src="js/gsap.min.js"></script>
     <script src="js/highlight.min.js"></script>
     <script src="js/custom.js"></script>
     <script>
-        highlight();
-        modal();
-        tabMenu();
+      highlight();
+      modal();
+      tabMenu();
 
-        //slider08
-        const sliderWrap = document.querySelector(".slider__wrap");
-        const sliderImg = document.querySelector(".slider__img");        //이미지 보이는 영역
-        const sliderInner = document.querySelector(".slider__inner");    //이미지 움직이는 영역
-        const slider = document.querySelectorAll(".slider");             //5개의 이미지 저장
-        const sliderBtn = document.querySelector(".slider__btn");
-        const sliderBtnPrev = document.querySelector(".prev");
-        const sliderBtnNext = document.querySelector(".next");
-        const sliderDot = document.querySelector(".slider__dot");
-        
-        let currentIndex = 0;                               
-        let sliderWidth = sliderImg.offsetWidth;            //이미지 가로값
-        let sliderLength = slider.length;                   //이미지 갯수
-        let sliderFirst = slider[0];                        //첫번째 이미지
-        let sliderLast = slider[sliderLength - 1];          //마지막 이미지
-        let cloneFirst = sliderFirst.cloneNode(true);       //첫번째 이미지 복사
-        let cloneLast = sliderLast.cloneNode(true);         //마지막이미지 복사
-        let posInitial = "";
-        let dotIndex = "";
-        let sliderTimer = "";
-        let interval = 1000;
+      //slider08
+      const sliderWrap = document.querySelector(".slider__wrap");
+      const sliderImg = document.querySelector(".slider__img"); //이미지 보이는 영역
+      const sliderInner = document.querySelector(".slider__inner"); //이미지 움직이는 영역
+      const slider = document.querySelectorAll(".slider"); //5개의 이미지 저장
+      const sliderBtn = document.querySelector(".slider__btn");
+      const sliderBtnPrev = document.querySelector(".prev");
+      const sliderBtnNext = document.querySelector(".next");
+      const sliderDot = document.querySelector(".slider__dot");
 
-        //이미지 복사 appendTo / prependTo  :  append / prepend
-        sliderInner.appendChild(cloneFirst);
-        sliderInner.insertBefore(cloneLast, sliderFirst);
-        
-        // 이미지 움직이기
-        function gotoSlider(index){
-            sliderInner.classList.add("transition");
+      let currentIndex = 0;
+      let sliderWidth = sliderImg.offsetWidth; //이미지 가로값
+      let sliderLength = slider.length; //이미지 갯수
+      let sliderFirst = slider[0]; //첫번째 이미지
+      let sliderLast = slider[sliderLength - 1]; //마지막 이미지
+      let cloneFirst = sliderFirst.cloneNode(true); //첫번째 이미지 복사
+      let cloneLast = sliderLast.cloneNode(true); //마지막이미지 복사
+      let posInitial = "";
+      let dotIndex = "";
+      let sliderTimer = "";
+      let interval = 1000;
 
-            sliderInner.style.left = -sliderWidth * (index + 1) + "px";
+      //이미지 복사 appendTo / prependTo  :  append / prepend
+      sliderInner.appendChild(cloneFirst);
+      sliderInner.insertBefore(cloneLast, sliderFirst);
 
-            console.log(sliderInner)
-            currentIndex = index;
+      // 이미지 움직이기
+      function gotoSlider(index) {
+        sliderInner.classList.add("transition");
 
-            // 두번째 이미지   : left = -1600px
-            // 세번째 이미지   : left = -2400px
-            // 네번째 이미지   : left = -3200px
-            // 다섯번째 이미지 : left = -4000px
-        };
+        sliderInner.style.left = -sliderWidth * (index + 1) + "px";
 
-        // 닷 메뉴
-        function dotInit(){
-            for(let i=0; i<sliderLength; i++){
-                dotIndex += "<a href='#' class='dot'></a>";
-            }
-            dotIndex += "<a href='#' class='play'>play</a>";
-            dotIndex += "<a href='#' class='stop show'>stop</a>";
-            sliderDot.innerHTML = dotIndex;
-            sliderDot.firstElementChild.classList.add("active");
+        console.log(sliderInner);
+        currentIndex = index;
+
+        // 두번째 이미지   : left = -1600px
+        // 세번째 이미지   : left = -2400px
+        // 네번째 이미지   : left = -3200px
+        // 다섯번째 이미지 : left = -4000px
+      }
+
+      // 닷 메뉴
+      function dotInit() {
+        for (let i = 0; i < sliderLength; i++) {
+          dotIndex += "<a href='#' class='dot'></a>";
         }
-        dotInit();
+        dotIndex += "<a href='#' class='play'>play</a>";
+        dotIndex += "<a href='#' class='stop show'>stop</a>";
+        sliderDot.innerHTML = dotIndex;
+        sliderDot.firstElementChild.classList.add("active");
+      }
+      dotInit();
 
-        // 오토 플레이
-        function autoPlay(){
-            sliderTimer = setInterval(() => {
-                // const intervalNum = currentIndex + 1;
-                gotoSlider(currentIndex + 1);
-            }, interval);
+      // 오토 플레이
+      function autoPlay() {
+        sliderTimer = setInterval(() => {
+          // const intervalNum = currentIndex + 1;
+          gotoSlider(currentIndex + 1);
+        }, interval);
+      }
+      autoPlay();
+
+      // 스탑
+      function stopPlay() {
+        clearInterval(sliderTimer);
+      }
+
+      // 이전 버튼
+      sliderBtnPrev.addEventListener("click", () => {
+        let prevIndex = currentIndex - 1;
+        gotoSlider(prevIndex);
+      });
+
+      // 다음 버튼
+      sliderBtnNext.addEventListener("click", () => {
+        let nextIndex = currentIndex + 1;
+        gotoSlider(nextIndex);
+      });
+
+      // 초기화
+      sliderInner.addEventListener("transitionend", () => {
+        sliderInner.classList.remove("transition");
+
+        // 처음 이미지에 왔을 때
+        if (currentIndex == -1) {
+          sliderInner.style.left = -(sliderLength * sliderWidth) + "px";
+          currentIndex = 0;
         }
+        // 마지막 이미지에 왔을 때
+        if (currentIndex == sliderLength) {
+          sliderInner.style.left = -(1 * sliderWidth) + "px";
+          currentIndex = 0;
+        }
+      });
+
+      sliderInner.addEventListener("mouseenter", () => {
+        stopPlay();
+      });
+      sliderInner.addEventListener("mouseleave", () => {
+        if (document.querySelector(".play").classList.contains("show")) {
+          stopPlay();
+        } else {
+          autoPlay();
+        }
+      });
+
+      document.querySelector(".play").addEventListener("click", () => {
+        document.querySelector(".play").classList.remove("show");
+        document.querySelector(".stop").classList.add("show");
         autoPlay();
-
-        // 스탑
-        function stopPlay(){
-            clearInterval(sliderTimer);
-        }
-
-        // 이전 버튼
-        sliderBtnPrev.addEventListener("click", () => {
-            let prevIndex = currentIndex - 1;
-            gotoSlider(prevIndex);
-        });
-
-        // 다음 버튼
-        sliderBtnNext.addEventListener("click", () => {
-            let nextIndex = currentIndex + 1;
-            gotoSlider(nextIndex);
-        });
-
-        // 초기화
-        sliderInner.addEventListener("transitionend", () => {
-            sliderInner.classList.remove("transition");
-
-            // 처음 이미지에 왔을 때 
-            if(currentIndex == -1){
-                sliderInner.style.left = -(sliderLength * sliderWidth) + "px";
-                currentIndex = 0;
-            }
-            // 마지막 이미지에 왔을 때
-            if(currentIndex == sliderLength){
-                sliderInner.style.left = -(1 * sliderWidth) + "px";
-                currentIndex = 0;
-            }
-        });
-
-        sliderInner.addEventListener("mouseenter", () => {
-            stopPlay();
-        })
-        sliderInner.addEventListener("mouseleave", () => {
-            if(document.querySelector(".play").classList.contains("show")){
-                stopPlay();
-            } else {
-                autoPlay();
-            }
-        })
-
-        document.querySelector(".play").addEventListener("click", () => {
-            document.querySelector(".play").classList.remove("show");
-            document.querySelector(".stop").classList.add("show");
-            autoPlay();
-        })
-        document.querySelector(".stop").addEventListener("click", () => {
-            document.querySelector(".stop").classList.remove("show");
-            document.querySelector(".play").classList.add("show");
-            stopPlay();
-        })
-        
-
+      });
+      document.querySelector(".stop").addEventListener("click", () => {
+        document.querySelector(".stop").classList.remove("show");
+        document.querySelector(".play").classList.add("show");
+        stopPlay();
+      });
     </script>
-</body>
+  </body>
 </html>
