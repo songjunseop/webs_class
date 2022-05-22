@@ -18,6 +18,7 @@
   --tex_color: #00398a;
   --desc_color: #07285a;
 }
+
 body {
   background-color: var(--main_bg);
 }

@@ -8,6 +8,7 @@
 
     <!-- css -->
     <link rel="stylesheet" href="assets/fonts/font.css" />
+    <link rel="stylesheet" href="assets/fonts/Korolev Compressed W04 Heavy.ttf" />
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style02.css" />
     <link rel="stylesheet" href="assets/css/common.css  " />
@@ -500,7 +501,7 @@
           <div class="refer__border"></div>
         </div>
         <div class="rail__white">
-          <p data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">JAVASCRIPT <em>WORKS</em> JAVASCRIPT <em>WORKS</em> JAVASCRIPT <em>WORKS</em></p>
+          <p data-scroll data-scroll-speed="-3" data-scroll-direction="horizontal">JAVASCRIPT <em>WORKS</em> JAVASCRIPT <em>WORKS</em> JAVASCRIPT <em>WORKS</em></p>
         </div>
         <div class="container">
           <!-- article01 -->
@@ -526,11 +527,12 @@
                     >#javascript &nbsp; #effect &nbsp; #MOUSE</span
                   >
                 </p>
-                <a
-                  href="../javascript/effect/mouseEffect05.html"
-                  class="btn__primary"
-                  ><em>Code View</em></a
-                >
+                <a href="../javascript/effect/mouseEffect05.html" class="learn-more">
+                  <span class="btn-circle">
+                    <span class="btn-icon arrow"></span>
+                  </span>
+                  <span class="button-text">Learn More</span>
+                </a>
               </div>
             </div>
           </article>
@@ -558,11 +560,12 @@
                     >#javascript &nbsp; #effect &nbsp; #parallax</span
                   >
                 </p>
-                <a
-                  href="../javascript/effect/parallaxEffect05.html"
-                  class="btn__primary"
-                  ><em>Code View</em></a
-                >
+                <a href="../javascript/effect/parallaxEffect05.html" class="learn-more">
+                  <span class="btn-circle">
+                    <span class="btn-icon arrow"></span>
+                  </span>
+                  <span class="button-text">Learn More</span>
+                </a>
               </div>
             </div>
           </article>
@@ -590,11 +593,12 @@
                     >#javascript &nbsp; #effect &nbsp; #slider</span
                   >
                 </p>
-                <a
-                  href="../javascript/effect/sliderEffect08.html"
-                  class="btn__primary"
-                  ><em>Code View</em></a
-                >
+                <a href="../javascript/effect/sliderEffect08.html" class="learn-more">
+                  <span class="btn-circle">
+                    <span class="btn-icon arrow"></span>
+                  </span>
+                  <span class="button-text">Learn More</span>
+                </a>
               </div>
             </div>
           </article>
@@ -621,11 +625,12 @@
                     >#javascript &nbsp; #effect &nbsp; #quiz</span
                   >
                 </p>
-                <a
-                  href="../javascript/effect/quizEffect01.html"
-                  class="btn__primary"
-                  ><em>Code View</em></a
-                >
+                <a href="../javascript/effect/quizEffect01.html" class="learn-more">
+                  <span class="btn-circle">
+                    <span class="btn-icon arrow"></span>
+                  </span>
+                  <span class="button-text">Learn More</span>
+                </a>
               </div>
             </div>
           </article>
@@ -652,11 +657,12 @@
                     >#javascript &nbsp; #game &nbsp; #music player</span
                   >
                 </p>
-                <a
-                  href="../javascript/effect/musicPlayer/index.html"
-                  class="btn__primary"
-                  ><em>Code View</em></a
-                >
+                <a href="../javascript/effect/musicPlayer/index.html" class="learn-more">
+                  <span class="btn-circle">
+                    <span class="btn-icon arrow"></span>
+                  </span>
+                  <span class="button-text">Learn More</span>
+                </a>
               </div>
             </div>
           </article>
@@ -683,11 +689,12 @@
                     >#javascript &nbsp; #game &nbsp; #typing game</span
                   >
                 </p>
-                <a
-                  href="../javascript/effect/typingGame/index.html"
-                  class="btn__primary"
-                  ><em>Code View</em></a
-                >
+                <a href="../javascript/effect/typingGame/index.html" class="learn-more">
+                  <span class="btn-circle">
+                    <span class="btn-icon arrow"></span>
+                  </span>
+                  <span class="button-text">Learn More</span>
+                </a>
               </div>
             </div>
           </article>
@@ -714,11 +721,12 @@
                     >#javascript &nbsp; #game &nbsp; #Memory Game</span
                   >
                 </p>
-                <a
-                  href="../javascript/effect/memoryGame/index.html"
-                  class="btn__primary"
-                  ><em>Code View</em></a
-                >
+                <a href="../javascript/effect/memoryGame/index.html" class="learn-more">
+                  <span class="btn-circle">
+                    <span class="btn-icon arrow"></span>
+                  </span>
+                  <span class="button-text">Learn More</span>
+                </a>
               </div>
             </div>
           </article>
@@ -746,9 +754,12 @@
                     >#javascript &nbsp; #game &nbsp; #Tetris Game</span
                   >
                 </p>
-                <a href="../game/tetrisGame/index.html" class="btn__primary"
-                  ><em>Code View</em></a
-                >
+                <a href="../game/tetrisGame/index.html" class="learn-more">
+                  <span class="btn-circle">
+                    <span class="btn-icon arrow"></span>
+                  </span>
+                  <span class="button-text">Learn More</span>
+                </a>
               </div>
             </div>
           </article>
@@ -843,7 +854,7 @@
       </div>
     </footer>
     <!-- //footer -->
-
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.1/dist/lazyload.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <script
@@ -863,6 +874,12 @@
         smooth: true,
         lerp: 0.05,
       });
+
+      var lazyLoadInstance = new LazyLoad({
+        // container: document.getElementsByTagName("img")
+      });
+      lazyLoadInstance.update();
+      
     </script>
   </body>
 </html>
