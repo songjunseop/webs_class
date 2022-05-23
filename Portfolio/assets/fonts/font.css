@@ -196,3 +196,7 @@
       format("truetype");
   font-display: swap;
 }
+@font-face {
+  font-family: "KorolevCompressedW04-Heavy";
+  src: url("../fonts/Korolev\ Compressed\ W04\ Heavy.ttf");
+}

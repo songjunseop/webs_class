@@ -469,7 +469,8 @@
 .about__img {
   width: 50%;
   height: 33.9vw;
-  background-color: #000;
+  background-image: url(../image/profileimg01.jpg);
+  background-size: cover;
 }
 .skill {
   background: #f3f3ff;
@@ -880,7 +881,6 @@
   top: 16.4vw;
   background: url(../image/mockup01.png) no-repeat;
   background-size: 100%;
-  
 }
 .works__mockup.mockup03 {
   position: absolute;
