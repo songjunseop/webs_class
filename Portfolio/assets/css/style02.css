@@ -4,7 +4,7 @@
 /* //main */
 
 /* scroll */
-.scrollTop {
+/* .scrollTop {
   position: fixed;
   right: 20px;
   top: 20px;
@@ -22,7 +22,7 @@
     left: 20px;
     bottom: 20px;
   }
-}
+} */
 
 /* nav */
 #nav {
@@ -781,6 +781,7 @@
   line-height: 1;
   color: var(--sub_color);
   margin-bottom: 1vw;
+  position: relative;
 }
 .works__title em {
   color: var(--main_color);
@@ -1084,6 +1085,7 @@
   background: url(../image/worksicon09.svg) no-repeat;
   background-size: 100%;
 }
+
 @media (max-width: 1155px) {
   .works__cont.left .view__circle {
     right: 28.5vw;
@@ -1428,6 +1430,11 @@
 .rail__white p em {
   color: var(--desc_color);
 }
+
+.refer__contain {
+  z-index: -1;
+}
+
 .refer__cont {
   /* border-left: 1px solid var(--main_border);
   border-right: 1px solid var(--main_border); */
