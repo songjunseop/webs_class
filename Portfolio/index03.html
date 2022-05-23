@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/fonts/font.css" />
     <link rel="stylesheet" href="assets/fonts/Korolev Compressed W04 Heavy.ttf" />
     <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/style02.css" />
+    <link rel="stylesheet" href="assets/css/style03.css" />
     <link rel="stylesheet" href="assets/css/common.css  " />
     <link rel="stylesheet" href="assets/css/locomotive.css  " />
 
@@ -472,32 +472,48 @@
           <div class="prevbtn"></div>
           <div class="nextbtn"></div>
         </div>
-        <div class="rail__blue">
-          <a href="../javascript/effect/parallaxEffect.html"
-            ><img src="assets/image/Ellipse01.png" alt="img01" /><em
-              >ParallaxEffect</em
-            ></a
-          >
-          <a href="../javascript/effect/mouseEffect.html"
-            ><img src="assets/image/Ellipse02.png" alt="img02" /><em
-              >MouseEffect</em
-            ></a
-          >
-          <a href="../javascript/effect/searchEffect.html"
-            ><img src="assets/image/Ellipse03.png" alt="img03" /><em
-              >SearchEffect</em
-            ></a
-          >
-          <a href="../javascript/effect/quizEffect.html"
-            ><img src="assets/image/Ellipse04.png" alt="img04" /><em
-              >QuizEffect</em
-            ></a
-          >
-          <a href="../javascript/effect/sliderEffect.html"
-            ><img src="assets/image/Ellipse04.png" alt="img04" /><em
-              >QuizEffect</em
-            ></a
-          >
+        <div class="slider js-slider">
+            <div class="slider__inner js-slider__inner">
+              <div class="slide js-slide">
+                <a href="naver.com" class="slide__bg" style="background-image: url('assets/image/Ellipse01.png');"></a>
+              </div>
+              <div class="slide js-slide">
+                <div class="slide__bg" style="background-image: url('assets/image/Ellipse02.png');"><em>Parallax Effect</em></div>
+              </div>
+              <div class="slide js-slide">
+                <div class="slide__bg" style="background-image: url('assets/image/Ellipse03.png');"><em>Mouse Effect</em></div>
+              </div>
+              <div class="slide js-slide">
+                <div class="slide__bg" style="background-image: url('assets/image/Ellipse04.png');"><em>Search Effect</em></div>
+              </div>
+              <div class="slide js-slide">
+                <div class="slide__bg" style="background-image: url('assets/image/Ellipse01.png');"><em>Quiz Effect</em></div>
+              </div>
+              <div class="slide js-slide">
+                <div class="slide__bg" style="background-image: url('assets/image/Ellipse02.png');"><em>Parallax Effect</em></div>
+              </div>
+              <div class="slide js-slide">
+                <div class="slide__bg" style="background-image: url('assets/image/Ellipse03.png');"><em>Mouse Effect</em></div>
+              </div>
+              <div class="slide js-slide">
+                <div class="slide__bg" style="background-image: url('assets/image/Ellipse02.png');"><em>Parallax Effect</em></div>
+              </div>
+              <div class="slide js-slide">
+                <div class="slide__bg" style="background-image: url('assets/image/Ellipse03.png');"><em>Mouse Effect</em></div>
+              </div>
+              <div class="slide js-slide">
+                <div class="slide__bg" style="background-image: url('assets/image/Ellipse04.png');"><em>Search Effect</em></div>
+              </div>
+              <div class="slide js-slide">
+                <div class="slide__bg" style="background-image: url('assets/image/Ellipse01.png');"><em>Parallax Effect</em></div>
+              </div>
+              <div class="slide js-slide">
+                <div class="slide__bg" style="background-image: url('assets/image/Ellipse02.png');"><em>Parallax Effect</em></div>
+              </div>
+              <div class="slide js-slide">
+                <div class="slide__bg" style="background-image: url('assets/image/Ellipse03.png');"><em>Mouse Effect</em></div>
+              </div>
+            </div>
         </div>
         <div class="container border">
           <div class="refer__border"></div>
@@ -874,6 +890,7 @@
     <script src="assets/js/banner.js"></script>
     <script src="assets/js/about.js"></script>
     <script src="assets/js/works.js"></script>
+    <script src="assets/js/refer.js"></script>
     <script>
       const scroll = new LocomotiveScroll({
         el: document.querySelector("[data-scroll-container]"),

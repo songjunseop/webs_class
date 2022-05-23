@@ -35,11 +35,11 @@ gsap.to("#nav", {
 // resize();
 
 // scroll
-window.addEventListener("scroll", () => {
-  let scrollTop =
-    window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-  document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
-});
+// window.addEventListener("scroll", () => {
+//   let scrollTop =
+//     window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+//   document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
+// });
 
 // emailto
 (function () {
