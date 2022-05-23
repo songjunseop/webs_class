@@ -466,11 +466,22 @@
   font-size: 0.94vw;
   height: 33vw;
 }
-.about__img {
+.about__imgWrap {
   width: 50%;
   height: 33.9vw;
+  background: #e5e5e5;
+  position: relative;
+  overflow: hidden;
+}
+.about__img {
   background-image: url(../image/profileimg01.jpg);
   background-size: cover;
+  background-position: center center;
+  position: absolute;
+  left: -5%;
+  top: -5%;
+  width: 110%;
+  height: 110%;
 }
 .skill {
   background: #f3f3ff;
