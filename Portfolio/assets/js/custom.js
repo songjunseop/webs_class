@@ -1,16 +1,30 @@
 // nav
-const menuList = document.querySelectorAll(".menuBox__list li a");
+// const menuList = document.querySelectorAll(".menuBox__list li a");
 
-document.querySelector(".nav__bar").addEventListener("click", () => {
-  document.querySelector(".nav__bar").classList.toggle("active");
-});
+// document.querySelector(".nav__bar").addEventListener("click", () => {
+//   document.querySelector(".nav__bar").classList.toggle("active");
+// });
 
-gsap.to("#nav", {
-  duration: 2,
-  ease: "power4.out",
-  height: 95 + "%",
-  delay: 2,
-  opacity: 1,
+// gsap.to("#nav", {
+//   duration: 2,
+//   ease: "power4.out",
+//   height: 95 + "%",
+//   delay: 2,
+//   opacity: 1,
+// });
+
+var menuBtn = document.querySelector(".menu-btn");
+var nav = document.querySelector("nav");
+var lineOne = document.querySelector("nav .menu-btn .line--1");
+var lineTwo = document.querySelector("nav .menu-btn .line--2");
+var lineThree = document.querySelector("nav .menu-btn .line--3");
+var link = document.querySelector("nav .nav-links");
+menuBtn.addEventListener("click", () => {
+  nav.classList.toggle("nav-open");
+  lineOne.classList.toggle("line-cross");
+  lineTwo.classList.toggle("line-fade-out");
+  lineThree.classList.toggle("line-cross");
+  link.classList.toggle("fade-in");
 });
 
 // function resize() {
