@@ -1,357 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- <link rel="stylesheet" href="assets/css/bg.css"> -->
-    <link href="https://webfontworld.github.io/fontlab/LABDigital.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/bg.css" />
+    <link
+      href="https://webfontworld.github.io/fontlab/LABDigital.css"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'LAB디지털';
-        }
-        button {
-            border: 0;
-        }
-        body {
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            cursor: none;
-        }
-        header {
-            background: rgb(120, 67, 182);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 10px;
-        }
-        header h1 {
-            font-size: 20px;
-            padding: 5px;
-            color: #fff;
-            text-transform: uppercase;
-            
-        }
-        header #clock {
-            color: #fff;
-            font-size: 18px;
-        }
-        .hoverBtn1 {
-        }
-        .btn {
-            position: absolute;
-            text-align: center;
-        }
-        .btn a {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(140deg, #ED99FB 30%, #C1BBFC 50%, rgba(255,255,255,.6) 70%);
-            transition: all 0.3s;
-        }
-        .btn a img {
-            width: 30px;
-            padding-top: 10px;
-        }
-        .btn a span {
-            position: absolute;
-            left: 50%; bottom: -20px;
-            transform: translateX(-50%);
-            background: rgb(49, 248, 204);
-            padding: 0 10px;
-            white-space: nowrap;
-        }
-        .btn:hover a {
-            background: rgb(49, 248, 204);
-        }
-        .btn4:hover a {
-            background: rgb(255, 124, 124);
-        }
-        .btn1 {
-            left: 100px;
-            top: 100px;
-        }
-        .btn2 {
-            left: 200px;
-            top: 100px;
-        }
-        .btn3 {
-            left: 330px;
-            top: 100px;
-        }
-        .btn4 {
-            right: 100px;
-            top: 100px;
-        }
-        .btn5 {
-            left: 450px;
-            top: 100px;
-        }
-        .btn4 a span {
-            position: absolute;
-            left: 50%; bottom: -20px;
-            transform: translateX(-50%);
-            background: rgb(255, 124, 124);
-            padding: 0 10px;
-            white-space: nowrap;
-            color: #fff;
-        }
-        .musicBox {
-            position: absolute;
-            right: -500px;
-            top: 100px;
-            width: 380px;
-            height: 587px;
-            transition: all 0.4s;
-        }
-        .musicBox.show {
-            right: 10px;
-        }
-        .memoryBox {
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: -1800px;
-            margin: auto;
-            width: 600px;
-            height: 620px;
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
-                        0 6px 10px 0 rgba(0,0,0,0.17);
-            transition: all 0.5s;
-        }
-        .memoryBox.show {
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-            width: 600px;
-            height: 620px;
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
-                        0 6px 10px 0 rgba(0,0,0,0.17);
-        }
-        .typingBox {
-            position: absolute;
-            top: -100%;
-            left: calc(50% - 475px);
-            width: 950px;
-            height: 610px;
-            transition: all 0.4s;
-        }
-        .typingBox.show {
-            top: calc(50% - 305px);
-        }
-        .tetrisBox {
-            position: absolute;
-            top: calc(50% - 300px);
-            left: -600px;
-            width: 600px;
-            height: 600px;
-            transition: all 0.4s;
-        }
-        .tetrisBox.show {
-            left: calc(50% - 300px);
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "LAB디지털";
+      }
+      button {
+        border: 0;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        cursor: none;
+      }
+      header {
+        background: rgb(120, 67, 182);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+      }
+      header h1 {
+        font-size: 20px;
+        padding: 5px;
+        color: #fff;
+        text-transform: uppercase;
+      }
+      header #clock {
+        color: #fff;
+        font-size: 18px;
+      }
+      .hoverBtn1 {
+      }
+      .btn {
+        position: absolute;
+        text-align: center;
+      }
+      .btn a {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: linear-gradient(
+          140deg,
+          #ed99fb 30%,
+          #c1bbfc 50%,
+          rgba(255, 255, 255, 0.6) 70%
+        );
+        transition: all 0.3s;
+      }
+      .btn a img {
+        width: 70px;
+        padding-top: 15px;
+      }
+      .btn a span {
+        position: absolute;
+        left: 50%;
+        bottom: -30px;
+        transform: translateX(-50%);
+        background: rgb(49, 248, 204);
+        padding: 0 10px;
+        white-space: nowrap;
+        font-size: 20px;
+      }
+      .btn:hover a {
+        background: rgb(49, 248, 204);
+      }
+      .btn4:hover a {
+        background: rgb(255, 124, 124);
+      }
+      .btn1 {
+        left: 100px;
+        top: 100px;
+      }
+      .btn2 {
+        left: 250px;
+        top: 100px;
+      }
+      .btn3 {
+        left: 100px;
+        top: 250px;
+      }
+      .btn4 {
+        right: 100px;
+        top: 100px;
+      }
+      .btn5 {
+        left: 250px;
+        top: 250px;
+      }
+      .btn4 a span {
+        position: absolute;
+        left: 50%;
+        bottom: -20px;
+        transform: translateX(-50%);
+        background: rgb(255, 124, 124);
+        padding: 0 10px;
+        white-space: nowrap;
+        color: #fff;
+      }
+      .musicBox {
+        position: absolute;
+        right: -500px;
+        top: 100px;
+        width: 380px;
+        height: 587px;
+        transition: all 0.4s;
+      }
+      .musicBox.show {
+        right: 10px;
+      }
+      .memoryBox {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: -1800px;
+        margin: auto;
+        width: 600px;
+        height: 620px;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
+          0 6px 10px 0 rgba(0, 0, 0, 0.17);
+        transition: all 0.5s;
+      }
+      .memoryBox.show {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 600px;
+        height: 620px;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
+          0 6px 10px 0 rgba(0, 0, 0, 0.17);
+      }
+      .typingBox {
+        position: absolute;
+        top: -100%;
+        left: calc(50% - 475px);
+        width: 950px;
+        height: 610px;
+        transition: all 0.4s;
+      }
+      .typingBox.show {
+        top: calc(50% - 305px);
+      }
+      .tetrisBox {
+        position: absolute;
+        top: calc(50% - 300px);
+        left: -600px;
+        width: 600px;
+        height: 600px;
+        transition: all 0.4s;
+      }
+      .tetrisBox.show {
+        left: calc(50% - 300px);
+      }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-        }
-        .cursor {
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: 100;
-            width: 50px;
-            user-select: none;
-            pointer-events: none;
-        }
-        .close__btn {
-            position: absolute;
-            right: 7px;
-            top: 7px;
-            cursor: pointer;
-        }
+      iframe {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+      }
+      .cursor {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        width: 50px;
+        user-select: none;
+        pointer-events: none;
+      }
+      .close__btn {
+        position: absolute;
+        right: 7px;
+        top: 7px;
+        cursor: pointer;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header id="header">
-        <h1>Game Site</h1>
-        <span id="clock"></span>
+      <h1>Game Site</h1>
+      <span id="clock"></span>
     </header>
     <div class="cursor">
-        <img src="assets/img/cursor.svg" alt="">
+      <img src="assets/img/cursor.svg" alt="" />
     </div>
     <main>
-        <div class="btn btn1">
-            <a href="#">
-                <img src="assets/img/icon01.svg" alt="">
-                <span>Music</span>
-            </a>
-        </div>
-        <div class="btn btn2 memory">
-            <a href="#">
-                <img src="assets/img/icon02.svg" alt="">
-                <span>Momory Game</span>
-            </a>
-        </div>
-        <div class="btn btn3">
-            <a href="#">
-                <img src="assets/img/icon03.svg" alt="">
-                <span>Typing Game</span>
-            </a>
-        </div>
-        <div class="btn btn4">
-            <a href="https://junseop00.netlify.app/">
-                <img src="assets/img/icon04.svg" alt="">
-                <span>React</span>
-            </a>
-        </div>
-        <div class="btn btn5">
-            <a href="#">
-                <img src="assets/img/tetris.png" alt="">
-                <span>Tetris Game</span>
-            </a>
-        </div>
+      <div class="btn btn1">
+        <a href="#">
+          <img src="assets/img/icon01.svg" alt="" />
+          <span>Music</span>
+        </a>
+      </div>
+      <div class="btn btn2 memory">
+        <a href="#">
+          <img src="assets/img/icon02.svg" alt="" />
+          <span>Momory Game</span>
+        </a>
+      </div>
+      <div class="btn btn3">
+        <a href="#">
+          <img src="assets/img/icon03.svg" alt="" />
+          <span>Typing Game</span>
+        </a>
+      </div>
+      <div class="btn btn4">
+        <a href="https://junseop00.netlify.app/">
+          <img src="assets/img/icon04.svg" alt="" />
+          <span>React</span>
+        </a>
+      </div>
+      <div class="btn btn5">
+        <a href="#">
+          <img src="assets/img/tetris.png" alt="" />
+          <span>Tetris Game</span>
+        </a>
+      </div>
     </main>
     <div class="musicBox">
-        <div class="close__btn"><svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4C1 2.34315 2.34315 1 4 1H19C20.6569 1 22 2.34315 22 4V19C22 20.6569 20.6569 22 19 22H4C2.34315 22 1 20.6569 1 19V4Z" stroke="white" stroke-opacity="0.1"/>
-            <path d="M1.5 4.5C1.5 2.84315 2.84315 1.5 4.5 1.5H18.5C20.1569 1.5 21.5 2.84315 21.5 4.5V18.5C21.5 20.1569 20.1569 21.5 18.5 21.5H4.5C2.84315 21.5 1.5 20.1569 1.5 18.5V4.5Z" fill="black" fill-opacity="0.15"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.396 5.95201C16.5761 5.77196 16.868 5.77196 17.048 5.95201V5.95201C17.2281 6.13205 17.2281 6.42396 17.048 6.60401L6.60401 17.048C6.42396 17.2281 6.13205 17.2281 5.95201 17.048V17.048C5.77196 16.868 5.77196 16.5761 5.95201 16.396L16.396 5.95201Z" fill="white"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.95201 5.95201C6.13205 5.77196 6.42396 5.77196 6.60401 5.95201L17.048 16.396C17.2281 16.5761 17.2281 16.868 17.048 17.048V17.048C16.868 17.2281 16.5761 17.2281 16.396 17.048L5.95201 6.60401C5.77196 6.42396 5.77196 6.13205 5.95201 5.95201V5.95201Z" fill="white"/>
-            </svg>
-            </div>
-        <iframe class="musicBoxIframe" src="../javascript/effect/musicPlayer/index.html" frameborder="0"></iframe>
+      <div class="close__btn">
+        <svg
+          width="23"
+          height="23"
+          viewBox="0 0 23 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M1 4C1 2.34315 2.34315 1 4 1H19C20.6569 1 22 2.34315 22 4V19C22 20.6569 20.6569 22 19 22H4C2.34315 22 1 20.6569 1 19V4Z"
+            stroke="white"
+            stroke-opacity="0.1"
+          />
+          <path
+            d="M1.5 4.5C1.5 2.84315 2.84315 1.5 4.5 1.5H18.5C20.1569 1.5 21.5 2.84315 21.5 4.5V18.5C21.5 20.1569 20.1569 21.5 18.5 21.5H4.5C2.84315 21.5 1.5 20.1569 1.5 18.5V4.5Z"
+            fill="black"
+            fill-opacity="0.15"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16.396 5.95201C16.5761 5.77196 16.868 5.77196 17.048 5.95201V5.95201C17.2281 6.13205 17.2281 6.42396 17.048 6.60401L6.60401 17.048C6.42396 17.2281 6.13205 17.2281 5.95201 17.048V17.048C5.77196 16.868 5.77196 16.5761 5.95201 16.396L16.396 5.95201Z"
+            fill="white"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M5.95201 5.95201C6.13205 5.77196 6.42396 5.77196 6.60401 5.95201L17.048 16.396C17.2281 16.5761 17.2281 16.868 17.048 17.048V17.048C16.868 17.2281 16.5761 17.2281 16.396 17.048L5.95201 6.60401C5.77196 6.42396 5.77196 6.13205 5.95201 5.95201V5.95201Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+      <iframe
+        class="musicBoxIframe"
+        src="../javascript/effect/musicPlayer/index.html"
+        frameborder="0"
+      ></iframe>
     </div>
     <div class="memoryBox">
-        <div class="close__btn"><svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4C1 2.34315 2.34315 1 4 1H19C20.6569 1 22 2.34315 22 4V19C22 20.6569 20.6569 22 19 22H4C2.34315 22 1 20.6569 1 19V4Z" stroke="white" stroke-opacity="0.1"/>
-            <path d="M1.5 4.5C1.5 2.84315 2.84315 1.5 4.5 1.5H18.5C20.1569 1.5 21.5 2.84315 21.5 4.5V18.5C21.5 20.1569 20.1569 21.5 18.5 21.5H4.5C2.84315 21.5 1.5 20.1569 1.5 18.5V4.5Z" fill="black" fill-opacity="0.15"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.396 5.95201C16.5761 5.77196 16.868 5.77196 17.048 5.95201V5.95201C17.2281 6.13205 17.2281 6.42396 17.048 6.60401L6.60401 17.048C6.42396 17.2281 6.13205 17.2281 5.95201 17.048V17.048C5.77196 16.868 5.77196 16.5761 5.95201 16.396L16.396 5.95201Z" fill="white"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.95201 5.95201C6.13205 5.77196 6.42396 5.77196 6.60401 5.95201L17.048 16.396C17.2281 16.5761 17.2281 16.868 17.048 17.048V17.048C16.868 17.2281 16.5761 17.2281 16.396 17.048L5.95201 6.60401C5.77196 6.42396 5.77196 6.13205 5.95201 5.95201V5.95201Z" fill="white"/>
-            </svg>
-            </div>
-        <iframe id="memoryBoxIframe" src="index2.html" frameborder="0"></iframe>
+      <div class="close__btn">
+        <svg
+          width="23"
+          height="23"
+          viewBox="0 0 23 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M1 4C1 2.34315 2.34315 1 4 1H19C20.6569 1 22 2.34315 22 4V19C22 20.6569 20.6569 22 19 22H4C2.34315 22 1 20.6569 1 19V4Z"
+            stroke="white"
+            stroke-opacity="0.1"
+          />
+          <path
+            d="M1.5 4.5C1.5 2.84315 2.84315 1.5 4.5 1.5H18.5C20.1569 1.5 21.5 2.84315 21.5 4.5V18.5C21.5 20.1569 20.1569 21.5 18.5 21.5H4.5C2.84315 21.5 1.5 20.1569 1.5 18.5V4.5Z"
+            fill="black"
+            fill-opacity="0.15"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16.396 5.95201C16.5761 5.77196 16.868 5.77196 17.048 5.95201V5.95201C17.2281 6.13205 17.2281 6.42396 17.048 6.60401L6.60401 17.048C6.42396 17.2281 6.13205 17.2281 5.95201 17.048V17.048C5.77196 16.868 5.77196 16.5761 5.95201 16.396L16.396 5.95201Z"
+            fill="white"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M5.95201 5.95201C6.13205 5.77196 6.42396 5.77196 6.60401 5.95201L17.048 16.396C17.2281 16.5761 17.2281 16.868 17.048 17.048V17.048C16.868 17.2281 16.5761 17.2281 16.396 17.048L5.95201 6.60401C5.77196 6.42396 5.77196 6.13205 5.95201 5.95201V5.95201Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+      <iframe id="memoryBoxIframe" src="index2.html" frameborder="0"></iframe>
     </div>
     <div class="typingBox">
-        <div class="close__btn"><svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4C1 2.34315 2.34315 1 4 1H19C20.6569 1 22 2.34315 22 4V19C22 20.6569 20.6569 22 19 22H4C2.34315 22 1 20.6569 1 19V4Z" stroke="white" stroke-opacity="0.1"/>
-            <path d="M1.5 4.5C1.5 2.84315 2.84315 1.5 4.5 1.5H18.5C20.1569 1.5 21.5 2.84315 21.5 4.5V18.5C21.5 20.1569 20.1569 21.5 18.5 21.5H4.5C2.84315 21.5 1.5 20.1569 1.5 18.5V4.5Z" fill="black" fill-opacity="0.15"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.396 5.95201C16.5761 5.77196 16.868 5.77196 17.048 5.95201V5.95201C17.2281 6.13205 17.2281 6.42396 17.048 6.60401L6.60401 17.048C6.42396 17.2281 6.13205 17.2281 5.95201 17.048V17.048C5.77196 16.868 5.77196 16.5761 5.95201 16.396L16.396 5.95201Z" fill="white"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.95201 5.95201C6.13205 5.77196 6.42396 5.77196 6.60401 5.95201L17.048 16.396C17.2281 16.5761 17.2281 16.868 17.048 17.048V17.048C16.868 17.2281 16.5761 17.2281 16.396 17.048L5.95201 6.60401C5.77196 6.42396 5.77196 6.13205 5.95201 5.95201V5.95201Z" fill="white"/>
-            </svg>
-        </div>
-        <iframe class="typingBoxIframe"src="../javascript/effect/typingGame/index.html" frameborder="0"></iframe>
+      <div class="close__btn">
+        <svg
+          width="23"
+          height="23"
+          viewBox="0 0 23 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M1 4C1 2.34315 2.34315 1 4 1H19C20.6569 1 22 2.34315 22 4V19C22 20.6569 20.6569 22 19 22H4C2.34315 22 1 20.6569 1 19V4Z"
+            stroke="white"
+            stroke-opacity="0.1"
+          />
+          <path
+            d="M1.5 4.5C1.5 2.84315 2.84315 1.5 4.5 1.5H18.5C20.1569 1.5 21.5 2.84315 21.5 4.5V18.5C21.5 20.1569 20.1569 21.5 18.5 21.5H4.5C2.84315 21.5 1.5 20.1569 1.5 18.5V4.5Z"
+            fill="black"
+            fill-opacity="0.15"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16.396 5.95201C16.5761 5.77196 16.868 5.77196 17.048 5.95201V5.95201C17.2281 6.13205 17.2281 6.42396 17.048 6.60401L6.60401 17.048C6.42396 17.2281 6.13205 17.2281 5.95201 17.048V17.048C5.77196 16.868 5.77196 16.5761 5.95201 16.396L16.396 5.95201Z"
+            fill="white"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M5.95201 5.95201C6.13205 5.77196 6.42396 5.77196 6.60401 5.95201L17.048 16.396C17.2281 16.5761 17.2281 16.868 17.048 17.048V17.048C16.868 17.2281 16.5761 17.2281 16.396 17.048L5.95201 6.60401C5.77196 6.42396 5.77196 6.13205 5.95201 5.95201V5.95201Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+      <iframe
+        class="typingBoxIframe"
+        src="../javascript/effect/typingGame/index.html"
+        frameborder="0"
+      ></iframe>
     </div>
     <div class="tetrisBox">
-        <div class="close__btn"><svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4C1 2.34315 2.34315 1 4 1H19C20.6569 1 22 2.34315 22 4V19C22 20.6569 20.6569 22 19 22H4C2.34315 22 1 20.6569 1 19V4Z" stroke="white" stroke-opacity="0.1"/>
-            <path d="M1.5 4.5C1.5 2.84315 2.84315 1.5 4.5 1.5H18.5C20.1569 1.5 21.5 2.84315 21.5 4.5V18.5C21.5 20.1569 20.1569 21.5 18.5 21.5H4.5C2.84315 21.5 1.5 20.1569 1.5 18.5V4.5Z" fill="black" fill-opacity="0.15"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.396 5.95201C16.5761 5.77196 16.868 5.77196 17.048 5.95201V5.95201C17.2281 6.13205 17.2281 6.42396 17.048 6.60401L6.60401 17.048C6.42396 17.2281 6.13205 17.2281 5.95201 17.048V17.048C5.77196 16.868 5.77196 16.5761 5.95201 16.396L16.396 5.95201Z" fill="white"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.95201 5.95201C6.13205 5.77196 6.42396 5.77196 6.60401 5.95201L17.048 16.396C17.2281 16.5761 17.2281 16.868 17.048 17.048V17.048C16.868 17.2281 16.5761 17.2281 16.396 17.048L5.95201 6.60401C5.77196 6.42396 5.77196 6.13205 5.95201 5.95201V5.95201Z" fill="white"/>
-            </svg>
-        </div>
-        <iframe class="tetrisBoxIframe"src="tetrisGame/index.html" frameborder="0"></iframe>
+      <div class="close__btn">
+        <svg
+          width="23"
+          height="23"
+          viewBox="0 0 23 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M1 4C1 2.34315 2.34315 1 4 1H19C20.6569 1 22 2.34315 22 4V19C22 20.6569 20.6569 22 19 22H4C2.34315 22 1 20.6569 1 19V4Z"
+            stroke="white"
+            stroke-opacity="0.1"
+          />
+          <path
+            d="M1.5 4.5C1.5 2.84315 2.84315 1.5 4.5 1.5H18.5C20.1569 1.5 21.5 2.84315 21.5 4.5V18.5C21.5 20.1569 20.1569 21.5 18.5 21.5H4.5C2.84315 21.5 1.5 20.1569 1.5 18.5V4.5Z"
+            fill="black"
+            fill-opacity="0.15"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16.396 5.95201C16.5761 5.77196 16.868 5.77196 17.048 5.95201V5.95201C17.2281 6.13205 17.2281 6.42396 17.048 6.60401L6.60401 17.048C6.42396 17.2281 6.13205 17.2281 5.95201 17.048V17.048C5.77196 16.868 5.77196 16.5761 5.95201 16.396L16.396 5.95201Z"
+            fill="white"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M5.95201 5.95201C6.13205 5.77196 6.42396 5.77196 6.60401 5.95201L17.048 16.396C17.2281 16.5761 17.2281 16.868 17.048 17.048V17.048C16.868 17.2281 16.5761 17.2281 16.396 17.048L5.95201 6.60401C5.77196 6.42396 5.77196 6.13205 5.95201 5.95201V5.95201Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+      <iframe
+        class="tetrisBoxIframe"
+        src="tetrisGame/index.html"
+        frameborder="0"
+      ></iframe>
     </div>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
-        // 드래그
-        $(".btn1").draggable();
-        $(".btn2").draggable();
-        $(".btn3").draggable();
-        $(".btn4").draggable();
-        $(".btn5").draggable();
+      // 드래그
+      $(".btn1").draggable();
+      $(".btn2").draggable();
+      $(".btn3").draggable();
+      $(".btn4").draggable();
+      $(".btn5").draggable();
 
-        // irfame
-        $(".btn1").click(function(){
-            
-            $(".musicBox").toggleClass("show")
-            $(".memoryBox").removeClass("show")
-            $(".typingBox").removeClass("show")
-            $(".tetrisBox").removeClass("show")
+      // irfame
+      $(".btn1").click(function () {
+        $(".musicBox").toggleClass("show");
+        $(".memoryBox").removeClass("show");
+        $(".typingBox").removeClass("show");
+        $(".tetrisBox").removeClass("show");
+      });
+      $(".btn2").click(function () {
+        $(".memoryBox").toggleClass("show");
+        $(".musicBox").removeClass("show");
+        $(".typingBox").removeClass("show");
+        $(".tetrisBox").removeClass("show");
+      });
+      $(".btn3").click(function () {
+        $(".typingBox").toggleClass("show");
+        $(".musicBox").removeClass("show");
+        $(".memoryBox").removeClass("show");
+        $(".tetrisBox").removeClass("show");
+      });
+      $(".btn5").click(function () {
+        $(".tetrisBox").toggleClass("show");
+        $(".typingBox").removeClass("show");
+        $(".musicBox").removeClass("show");
+        $(".memoryBox").removeClass("show");
+      });
+
+      // 마우스 움직이기
+      window.addEventListener("mousemove", (e) => {
+        document.querySelector(".cursor").style.left = e.clientX - 25 + "px";
+        document.querySelector(".cursor").style.top = e.clientY - 25 + "px";
+        let x = e.clientX - 25 + "px";
+        let y = e.clientY - 25 + "px";
+        document.querySelector(".cursor").style.cssText =
+          "left:" + x + "; top:" + y;
+      });
+
+      // 현재 시간
+      function printTime() {
+        var clock = document.getElementById("clock"); // 출력할 장소 선택
+
+        var now = new Date(); // 현재시간
+
+        var nowTime =
+          now.getMonth() +
+          1 +
+          "월" +
+          now.getDate() +
+          "일 " +
+          now.getHours() +
+          ":" +
+          now.getMinutes() +
+          ":" +
+          now.getSeconds();
+
+        clock.innerHTML = nowTime; // 현재시간을 출력
+
+        setTimeout("printTime()", 1000); // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
+      }
+
+      window.onload = function () {
+        // 페이지가 로딩되면 실행
+
+        printTime();
+      };
+
+      document.querySelectorAll(".close__btn").forEach((el) => {
+        el.addEventListener("click", () => {
+          document.querySelector(".typingBox").classList.remove("show");
+
+          document.querySelector(".musicBox").classList.remove("show");
+
+          document.querySelector(".memoryBox").classList.remove("show");
+
+          document.querySelector(".tetrisBox").classList.remove("show");
         });
-        $(".btn2").click(function(){
-            $(".memoryBox").toggleClass("show")
-            $(".musicBox").removeClass("show")
-            $(".typingBox").removeClass("show")
-            $(".tetrisBox").removeClass("show")
-        })
-        $(".btn3").click(function(){
-            $(".typingBox").toggleClass("show")
-            $(".musicBox").removeClass("show")
-            $(".memoryBox").removeClass("show")
-            $(".tetrisBox").removeClass("show")
-        })
-        $(".btn5").click(function(){
-            $(".tetrisBox").toggleClass("show")
-            $(".typingBox").removeClass("show")
-            $(".musicBox").removeClass("show")
-            $(".memoryBox").removeClass("show")
-        })
-
-        // 마우스 움직이기
-        window.addEventListener("mousemove", (e) => {
-            document.querySelector(".cursor").style.left = e.clientX - 25 + "px";
-            document.querySelector(".cursor").style.top = e.clientY - 25 + "px";
-            let x = e.clientX - 25 + "px";
-            let y = e.clientY - 25 + "px";
-            document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y;
-        })
-
-        // 현재 시간
-        function printTime() {
-
-            var clock = document.getElementById("clock");            // 출력할 장소 선택
-
-            var now = new Date();                                                  // 현재시간
-
-            var nowTime = (now.getMonth()+1) + "월" + now.getDate() + "일 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-
-            clock.innerHTML = nowTime;           // 현재시간을 출력
-
-            setTimeout("printTime()",1000);         // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
-
-            }
-
-            window.onload = function() {                         // 페이지가 로딩되면 실행
-
-            printTime();
-        }
-        
-        
-
-        document.querySelectorAll(".close__btn").forEach(el => {
-            el.addEventListener("click", () => {
-                document.querySelector(".typingBox").classList.remove("show")
-
-                document.querySelector(".musicBox").classList.remove("show")
-
-                document.querySelector(".memoryBox").classList.remove("show")
-
-                document.querySelector(".tetrisBox").classList.remove("show")
-            })
-            
-        })
+      });
     </script>
-</body>
+  </body>
 </html>
