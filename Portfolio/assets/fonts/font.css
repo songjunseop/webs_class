@@ -200,3 +200,11 @@
   font-family: "KorolevCompressedW04-Heavy";
   src: url("../fonts/Korolev\ Compressed\ W04\ Heavy.ttf");
 }
+@font-face {
+  font-family: "Korolev";
+  /* src: url(../fonts/Korolev\ Bold.otf); */
+  /* src: url(../fonts/Korolev\ Heavy.otf); */
+  src: url(../fonts/Korolev\ Light.otf);
+  /* src: url(../fonts/Korolev\ Medium.otf); */
+  /* src: url(../fonts/Korolev\ Thin.otf); */
+}

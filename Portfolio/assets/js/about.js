@@ -12,6 +12,6 @@
 
 //   gsap.to(target1, { duration: 0.3, y: offset1, ease: "power1.out" });
 
-//   requestAnimationFrame(scroll);
+//   requestAnimationFrame(scrollT);
 // }
 // scrollT();

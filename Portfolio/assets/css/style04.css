@@ -25,11 +25,10 @@
 } */
 
 /* nav */
-#nav {
+/* #nav {
   position: fixed;
   z-index: 9999;
   height: 0%;
-  /* display: none; */
   opacity: 0;
 }
 .nav__bar {
@@ -109,7 +108,6 @@
   display: none;
 }
 
-/* .nav__bar.active */
 .nav__bar.active {
   width: 350px;
 }
@@ -129,7 +127,6 @@
 }
 .nav__bar.active .menu__line .menu__line__02 {
   opacity: 0;
-  /* display: none; */
 }
 .nav__bar.active .menu__line .menu__line__03 {
   position: absolute;
@@ -181,7 +178,6 @@
   }
   .nav__bar {
     width: 100%;
-    /* min-width: 400px; */
     height: 80px;
     min-height: 80px;
     border-radius: 0px 40px 0px 40px;
@@ -226,7 +222,7 @@
   #nav {
     width: 90%;
   }
-}
+} */
 /* //nav */
 
 /* banner */
