@@ -1,40 +1,4 @@
 // banner
-gsap.to(".circle", {
-  duration: 2,
-  ease: "power4.out",
-  delay: 1.5,
-  scale: 1,
-});
-
-gsap.to(".section__box__left", {
-  duration: 3,
-  ease: "power4.out",
-  delay: 0.5,
-  height: 100 + "%",
-});
-
-gsap.to(".section__box__left02", {
-  duration: 2,
-  ease: "power4.out",
-  delay: 3,
-  width: 100 + "%",
-});
-
-gsap.to(".banner__desc", {
-  ease: "power4.out",
-  delay: 4,
-  duration: 2,
-  y: 0,
-  opacity: 1,
-});
-
-gsap.to(".section__box__right", {
-  ease: "power4.out",
-  delay: 0.5,
-  duration: 3,
-  height: 100 + "%",
-  opacity: 1,
-});
 
 // 한글자씩 올라오기
 // gsap.from(".section__box .section__box__right h4", {
@@ -78,31 +42,31 @@ gsap.to(".section__box__right", {
 // });
 
 // 한번에 올라오기
-gsap.to(".section__box__right h4:nth-child(1)", {
-  ease: "power4.out",
-  delay: 3,
-  duration: 1,
-  y: 0,
-  opacity: 1,
-});
-gsap.to(".section__box__right h4:nth-child(2)", {
-  ease: "power4.out",
-  delay: 3.5,
-  duration: 1,
-  y: 0,
-  opacity: 1,
-});
-gsap.to(".section__box__right h4:nth-child(3)", {
-  ease: "power4.out",
-  delay: 4,
-  duration: 1,
-  y: 0,
-  opacity: 1,
-});
-gsap.to(".section__box__right h4:nth-child(4)", {
-  ease: "power4.out",
-  delay: 4.5,
-  duration: 1,
-  y: 0,
-  opacity: 1,
-});
+// gsap.to(".section__box__right h4:nth-child(1)", {
+//   ease: "power4.out",
+//   delay: 3,
+//   duration: 1,
+//   y: 0,
+//   opacity: 1,
+// });
+// gsap.to(".section__box__right h4:nth-child(2)", {
+//   ease: "power4.out",
+//   delay: 3.5,
+//   duration: 1,
+//   y: 0,
+//   opacity: 1,
+// });
+// gsap.to(".section__box__right h4:nth-child(3)", {
+//   ease: "power4.out",
+//   delay: 4,
+//   duration: 1,
+//   y: 0,
+//   opacity: 1,
+// });
+// gsap.to(".section__box__right h4:nth-child(4)", {
+//   ease: "power4.out",
+//   delay: 4.5,
+//   duration: 1,
+//   y: 0,
+//   opacity: 1,
+// });

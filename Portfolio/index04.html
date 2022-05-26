@@ -33,20 +33,8 @@
 
   <body data-scroll-container>
     <!-- loading -->
-    <div class="loading_wrap">
-      <ul>
-          <li class="item"></li>
-          <li class="item"></li>
-          <li class="item"></li>
-          <li class="item"></li>
-          <li class="item"></li>
-          <li class="item"></li>
-          <li class="item"></li>
-          <li class="item"></li>
-          <li class="item"></li>
-      </ul>
-      <span>Loading...</span>
-  </div>
+    <div class="progress"><span class="progress-text">0</span></div>
+
     <noscript
       >"페이지를 보려면 자바스크립트 옵션이 활성화 되어 있어야
       합니다."</noscript
@@ -969,86 +957,214 @@
     <script src="assets/js/refer.js"></script>
     <script>
       //loading
-      $( document ).ready( function() {
-        $( 'body' ).imagesLoaded( function() {
-          $( 'body' ).after( function() {
-            setTimeout(function(mainAnimation){
-              $( '.loading_wrap' ).addClass("active")
-            },2000)
-          });
-        });
-      });
+      function loading() {
+            console.log('loading')
+            let progress = $(".progress"),
+                progressText = progress.find(".progress-text"),
+                imgLoad = imagesLoaded("body"),
+                imgTotal = imgLoad.images.length,
+                imgLoaded = 0,
+                imgCurrent = 0,
+                progressTimer = setInterval(updateProgress, 1000 / 60);
+              
+
+            imgLoad.on("progress", function () {
+                imgLoaded++;
+            });
+
+            function updateProgress() {
+                let target = (imgLoaded / imgTotal) * 100;
+
+                imgCurrent += (target - imgCurrent) * 0.1;
+                progressText.text(Math.floor(imgCurrent) + "%");
+
+                if (imgCurrent >= 100) {
+                    clearInterval(progressTimer);
+                    progress.delay(1000).animate({
+                        top: "-130%"
+                    }, 400);
+
+                    $("body").addClass("show");
+
+                    gsap.to("#nav", {
+                      duration: 2,
+                      ease: "power4.out",
+                      left: 0,
+                      delay: 2,
+                      opacity: 1,
+                    });
+
+                    gsap.to(".nav__bar", {
+                      duration: 2,
+                      ease: "power4.out",
+                      left: 0,
+                      delay: 2,
+                      opacity: 1,
+                    });
+                    
+                    // banner
+                    gsap.to(".circle", {
+                      duration: 2,
+                      ease: "power4.out",
+                      delay: 1.5,
+                      scale: 1,
+                    });
+
+                    gsap.to(".section__box__left", {
+                      duration: 3,
+                      ease: "power4.out",
+                      delay: 0.5,
+                      height: 100 + "%",
+                    });
+
+                    gsap.to(".section__box__left02", {
+                      duration: 2,
+                      ease: "power4.out",
+                      delay: 3,
+                      width: 100 + "%",
+                    });
+
+                    gsap.to(".banner__desc", {
+                      ease: "power4.out",
+                      delay: 4,
+                      duration: 2,
+                      y: 0,
+                      opacity: 1,
+                    });
+
+                    gsap.to(".section__box__right", {
+                      ease: "power4.out",
+                      delay: 0.5,
+                      duration: 3,
+                      height: 100 + "%",
+                      opacity: 1,
+                    });
+
+                    // 한번에 올라오기
+                    gsap.to(".section__box__right h4:nth-child(1)", {
+                      ease: "power4.out",
+                      delay: 3,
+                      duration: 1,
+                      y: 0,
+                      opacity: 1,
+                    });
+                    gsap.to(".section__box__right h4:nth-child(2)", {
+                      ease: "power4.out",
+                      delay: 3.5,
+                      duration: 1,
+                      y: 0,
+                      opacity: 1,
+                    });
+                    gsap.to(".section__box__right h4:nth-child(3)", {
+                      ease: "power4.out",
+                      delay: 4,
+                      duration: 1,
+                      y: 0,
+                      opacity: 1,
+                    });
+                    gsap.to(".section__box__right h4:nth-child(4)", {
+                      ease: "power4.out",
+                      delay: 4.5,
+                      duration: 1,
+                      y: 0,
+                      opacity: 1,
+                    });
+                }
+
+                if (imgCurrent > 99) {
+                    imgCurrent = 100;
+                    
+                }
+            }
+        }
+        loading();
       
 
-      function mainAnimation() {
-        // banner
-        gsap.to(".circle", {
-          duration: 2,
-          ease: "power4.out",
-          delay: 1.5,
-          scale: 1,
-        });
+      // function mainAnimation() {
+      //   gsap.to("#nav", {
+      //     duration: 2,
+      //     ease: "power4.out",
+      //     height: 95 + "%",
+      //     delay: 2,
+      //     opacity: 1,
+      //   });
 
-        gsap.to(".section__box__left", {
-          duration: 3,
-          ease: "power4.out",
-          delay: 0.5,
-          height: 100 + "%",
-        });
+      //   gsap.to(".nav__bar", {
+      //     duration: 2,
+      //     ease: "power4.out",
+      //     height: 100 + "%",
+      //     delay: 2,
+      //     opacity: 1,
+      //   });
+        
+      //   // banner
+      //   gsap.to(".circle", {
+      //     duration: 2,
+      //     ease: "power4.out",
+      //     delay: 1.5,
+      //     scale: 1,
+      //   });
 
-        gsap.to(".section__box__left02", {
-          duration: 2,
-          ease: "power4.out",
-          delay: 3,
-          width: 100 + "%",
-        });
+      //   gsap.to(".section__box__left", {
+      //     duration: 3,
+      //     ease: "power4.out",
+      //     delay: 0.5,
+      //     height: 100 + "%",
+      //   });
 
-        gsap.to(".banner__desc", {
-          ease: "power4.out",
-          delay: 4,
-          duration: 2,
-          y: 0,
-          opacity: 1,
-        });
+      //   gsap.to(".section__box__left02", {
+      //     duration: 2,
+      //     ease: "power4.out",
+      //     delay: 3,
+      //     width: 100 + "%",
+      //   });
 
-        gsap.to(".section__box__right", {
-          ease: "power4.out",
-          delay: 0.5,
-          duration: 3,
-          height: 100 + "%",
-          opacity: 1,
-        });
+      //   gsap.to(".banner__desc", {
+      //     ease: "power4.out",
+      //     delay: 4,
+      //     duration: 2,
+      //     y: 0,
+      //     opacity: 1,
+      //   });
 
-        // 한번에 올라오기
-        gsap.to(".section__box__right h4:nth-child(1)", {
-          ease: "power4.out",
-          delay: 3,
-          duration: 1,
-          y: 0,
-          opacity: 1,
-        });
-        gsap.to(".section__box__right h4:nth-child(2)", {
-          ease: "power4.out",
-          delay: 3.5,
-          duration: 1,
-          y: 0,
-          opacity: 1,
-        });
-        gsap.to(".section__box__right h4:nth-child(3)", {
-          ease: "power4.out",
-          delay: 4,
-          duration: 1,
-          y: 0,
-          opacity: 1,
-        });
-        gsap.to(".section__box__right h4:nth-child(4)", {
-          ease: "power4.out",
-          delay: 4.5,
-          duration: 1,
-          y: 0,
-          opacity: 1,
-        }); 
-      }
+      //   gsap.to(".section__box__right", {
+      //     ease: "power4.out",
+      //     delay: 0.5,
+      //     duration: 3,
+      //     height: 100 + "%",
+      //     opacity: 1,
+      //   });
+
+      //   // 한번에 올라오기
+      //   gsap.to(".section__box__right h4:nth-child(1)", {
+      //     ease: "power4.out",
+      //     delay: 3,
+      //     duration: 1,
+      //     y: 0,
+      //     opacity: 1,
+      //   });
+      //   gsap.to(".section__box__right h4:nth-child(2)", {
+      //     ease: "power4.out",
+      //     delay: 3.5,
+      //     duration: 1,
+      //     y: 0,
+      //     opacity: 1,
+      //   });
+      //   gsap.to(".section__box__right h4:nth-child(3)", {
+      //     ease: "power4.out",
+      //     delay: 4,
+      //     duration: 1,
+      //     y: 0,
+      //     opacity: 1,
+      //   });
+      //   gsap.to(".section__box__right h4:nth-child(4)", {
+      //     ease: "power4.out",
+      //     delay: 4.5,
+      //     duration: 1,
+      //     y: 0,
+      //     opacity: 1,
+      //   });
+      // }
 
 
       // locomotive

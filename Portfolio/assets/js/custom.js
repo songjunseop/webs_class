@@ -1,25 +1,4 @@
 // nav
-// const menuList = document.querySelectorAll(".menuBox__list li a");
-
-// document.querySelector(".nav__bar").addEventListener("click", () => {
-//   document.querySelector(".nav__bar").classList.toggle("active");
-// });
-
-gsap.to("#nav", {
-  duration: 2,
-  ease: "power4.out",
-  height: 95 + "%",
-  delay: 2,
-  opacity: 1,
-});
-
-gsap.to(".nav__bar", {
-  duration: 2,
-  ease: "power4.out",
-  height: 100 + "%",
-  delay: 2,
-  opacity: 1,
-});
 
 var menuBtn = document.querySelector(".menu-btn");
 var nav = document.querySelector("nav");
@@ -55,10 +34,3 @@ menuBtn.addEventListener("click", () => {
 //   requestAnimationFrame(resize);
 // }
 // resize();
-
-// scroll
-// window.addEventListener("scroll", () => {
-//   let scrollTop =
-//     window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-//   document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
-// });
