@@ -579,6 +579,25 @@
             <section id="section03">
                 <div class="container">
                     <h4><b><em>HOT</em>키워드</b>TOP20</h4>
+                    <ul class="hotkeyword__list">
+                        <li class="list__el">
+                            <a href="#">
+                                <div class="img__box">
+                                    <img src="" alt="토익">
+                                    <h5 class="hot__title"></h5>
+                                    <p class="d__day"></p>
+                                </div>
+                                <div class="hot__desc">
+                                    <p class="licenseOrgan"></p>
+                                    <p class="date">시험일:<span></span></p>
+                                </div>
+                                <div class="hide">
+                                    <p><em>유형:</em> 제463회</p>
+                                    <p><em>접수기간:</em> 2022-04-25 ~ 30</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </section>
             <!-- //section03 -->
@@ -590,6 +609,7 @@
     <!-- //wrap -->
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="assets/api/janet.js"></script>
     <script>
         const swiper = new Swiper('.swiper01', {
             // Optional parameters
@@ -637,6 +657,29 @@
                 prevEl : '.swiper-button-prev',
             },
         });
+
+        const hotImg = document.querySelector(".img__box img");
+        const hotTitle = document.querySelector(".img__box .hot__title");
+        const Dday = document.querySelector(".img__box .d__day");
+        const organ = document.querySelector(".hot__desc .licenseOrgan");
+        const esRegdt = document.querySelector(".hot__desc .date span")
+
+        console.log(hot)
+        
+        for(let i=0; i<=`${hot[0]}`.length; i++){
+        // for(let i=0; i<=8; i++){
+            const setDate = new Date(`${hot[0]}.esRegdt`);
+            const now = new Date();
+            const distance = setDate.getTime() - now.getTime();
+            const day = Math.floor(distance/(1000*60*60*24));
+            
+            hotImg.src = `assets/img/${hot[0].img}.webp`;
+            hotTitle.innerText = hot[0].title;
+            Dday.innerText = day;
+            organ.innerText = hot[0].licenseOrgan;
+        }
+
+
     </script>
 </body>
 </html>
