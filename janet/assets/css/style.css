@@ -496,6 +496,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 300px;
 }
 .list__el {
     width: 300px;
